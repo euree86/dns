@@ -1,5 +1,5 @@
 import React from "react";
-import img from "./image/img1.png";
+import img from "../image/img1.png";
 import { Link } from "react-router-dom";
 import {
   Shield,
