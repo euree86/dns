@@ -4,7 +4,7 @@ import About from "./component/about";
 import Products from "./component/products";
 import Services from "./component/services";
 import Whatwedo from "./component/whatwedo";
-
+import Portfolio from "./component/portfolio";
 function App() {
   return (
     <Router>
@@ -15,6 +15,7 @@ function App() {
 
         <Route path="/services" element={<Services />} />
         <Route path="/whatwedo" element={<Whatwedo />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </Router>
   );

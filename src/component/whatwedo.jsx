@@ -5,7 +5,13 @@ import {
   FaUserShield,
   FaArrowRight,
 } from "react-icons/fa";
-import { FaCode, FaServer, FaMicrochip, FaNetworkWired,FaStar } from "react-icons/fa";
+import {
+  FaCode,
+  FaServer,
+  FaMicrochip,
+  FaNetworkWired,
+  FaStar,
+} from "react-icons/fa";
 
 const statsData = [
   {
