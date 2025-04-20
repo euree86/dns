@@ -3,6 +3,7 @@ import Home from "./component/home";
 import About from "./component/about";
 import Products from "./component/products";
 import Services from "./component/services";
+import Whatwedo from "./component/whatwedo";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/products" element={<Products />} />
 
         <Route path="/services" element={<Services />} />
+        <Route path="/whatwedo" element={<Whatwedo />} />
       </Routes>
     </Router>
   );
