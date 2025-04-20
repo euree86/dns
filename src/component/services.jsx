@@ -1,5 +1,8 @@
 import React from "react";
-import { FaBus } from "react-icons/fa";
+import { IoMdCall } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { IoTime } from "react-icons/io5";
+import { FaLocationDot } from "react-icons/fa6";
 
 const services = [
   {
@@ -48,31 +51,66 @@ const services = [
   },
 ];
 
-const choose = [
+const features = [
   {
-    title: "Service Delivery Time",
-    icon: <FaBus />,
+    number: "01",
+    title: "Service Delivery Timec",
+    description:
+      "From soothing aloe vera to revitalizing lavender, each element is handpicked.",
   },
-
   {
+    number: "02",
     title: "Certified Professionals",
-    icon: null,
+    description:
+      "Reprehenderit esse labore id veniam ut veniam non ex adipisicing amet ullamco.",
   },
-
   {
+    number: "03",
     title: "Customer Support",
-    icon: null,
+    description:
+      "Experience hair that's not only clean but also deeply nourished and beautifully rejuvenated.",
   },
-
   {
+    number: "04",
     title: "Trust Partner",
-    icon: null,
+    description:
+      "We are committed to reducing our carbon footprint. Our packaging is eco-friendly.",
+  },
+];
+
+const images = [
+  "https://cdn.pixabay.com/photo/2020/08/09/14/25/business-5475661_960_720.jpg",
+  "https://cdn.pixabay.com/photo/2020/07/08/04/12/work-5382501_1280.jpg",
+  "https://cdn.pixabay.com/photo/2021/11/14/18/36/telework-6795505_1280.jpg",
+  "https://cdn.pixabay.com/photo/2014/12/15/14/05/home-office-569153_1280.jpg",
+];
+
+const contactItems = [
+  {
+    icon: <IoMdCall />,
+    title: "Call for inquiry",
+    text: "+257 388-6895",
+  },
+  {
+    icon: <MdEmail />,
+    title: "Send us email",
+    text: "nepwears@gmail.com",
+  },
+  {
+    icon: <IoTime />,
+    title: "Opening hours",
+    text: "Mon - Fri: 10AM - 10PM",
+  },
+  {
+    icon: <FaLocationDot />,
+    title: "Office",
+    text: "Lorem ipsum",
   },
 ];
 
 const Services = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="">
       {/* Header Section */}
       <div className="container mx-auto px-4 py-12 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -175,41 +213,162 @@ const Services = () => {
       </div>
 
       {/* why choose us */}
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Why Choose Us
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            We combine quality, expertise and outstanding service to deliver
-            exceptional results
-          </p>
-        </div>
+      <div className="container mx-auto px-4 py-16 mb-12 bg-gradient-to-r from-blue-300 via-white to-white rounded-2xl border-1 border-blue-50 ">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 my-12">
+          {/* Left Side */}
+          <div className="flex flex-col gap-16">
+            <h2 className="text-3xl font-bold text-gray-800 ">Why Choose Us</h2>
+            <p className="text-gray-600 mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              varius tortor nibh, sit amet tempor nibh f
+            </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            {choose.map((item, index) => (
-              <div
-                key={index}
-                className="flex items-start space-x-6 p-6 rounded-xl "
-              >
-                <div className="text-blue-600 text-2xl">{item.icon}</div>
+            {/* Image Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {images.map((src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt={`Product ${index + 1}`}
+                  className="rounded-lg shadow-md object-cover"
+                />
+              ))}
+            </div>
+          </div>
 
+          {/* Right Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {features.map((feature, index) => (
+              <div key={index} className="flex flex-col items-start gap-8">
+                <div className="bg-white shadow-md p-2 px-4 rounded-lg text-blue-500 font-bold text-lg">
+                  {feature.number}
+                </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {item.title}
+                  <h3 className="text-lg font-semibold text-gray-800">
+                    {feature.title}
                   </h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </div>
 
-          <div className="relative h-80 md:h-[28rem] rounded-2xl overflow-hidden shadow-xl">
-            <img
-              src="https://cdn.pixabay.com/photo/2019/12/17/17/09/woman-4702060_1280.jpg"
-              alt="Why choose us illustration"
-              className="object-cover w-full h-full"
-            />
+      {/* free consultation */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="flex flex-col lg:flex-row gap-8 mb-12">
+          {/* Left Column - Contact Info */}
+          <div className="lg:w-1/2 lg:py-12">
+            <div className="mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center lg:text-left mb-4">
+                You Will Grow, You Will Succeed. We Promise That
+              </h2>
+              <p className="text-base text-center lg:text-left">
+                Pellentesque arcu facilisis nunc mi proin. Dignissim mattisin
+                lectus tincidunt tincidunt ultrices. Diam convallis morbi
+                pellentesque adipiscing ultrices.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {contactItems.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-between h-full min-h-[180px] p-6 rounded-lg
+                 shadow-sm bg-white"
+                >
+                  <div className="text-[#D2302C] text-3xl">{item.icon}</div>
+
+                  <div className="flex flex-col gap-2 ">
+                    <h3 className="font-bold text-lg md:text-xl lg:text-2xl font-[Figtree]">
+                      {item.title}
+                    </h3>
+                    <p className="font-medium text-base md:text-lg lg:text-xl font-[Figtree]">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Contact Form */}
+          <div className="lg:w-1/2">
+            <div className="bg-[#EBEEED] rounded-lg p-6 sm:p-8 md:p-10">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                  Contact Info
+                </h3>
+                <p className="text-base">
+                  Nibh dis faucibus proin lacus tristique
+                </p>
+              </div>
+
+              <form className="space-y-6">
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <div className="w-full sm:w-1/2">
+                    <label
+                      htmlFor="firstname"
+                      className="block font-semibold mb-2"
+                    >
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      id="firstname"
+                      placeholder="Your name"
+                      className="w-full px-4 py-3  bg-white rounded-md focus:outline-none"
+                    />
+                  </div>
+                  <div className="w-full sm:w-1/2">
+                    <label
+                      htmlFor="lastname"
+                      className="block font-semibold mb-2"
+                    >
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      id="lastname"
+                      placeholder="Your last name"
+                      className="w-full px-4 py-3 bg-white rounded-md focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block font-semibold mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your E-mail address"
+                    className="w-full px-4 py-3  bg-white rounded-md focus:outline-none"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block font-semibold mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    placeholder="Your message..."
+                    className="w-full h-40 px-4  bg-white py-3 rounded-md focus:outline-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full md:w-auto px-8 py-3 bg-[#D2302C] text-white  rounded-md font-semibold
+                 hover:bg-white hover:text-[#D2302C] "
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
