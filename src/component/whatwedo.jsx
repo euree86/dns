@@ -229,7 +229,8 @@ const WhatWeDo = () => {
             {statsData.map((stat, index) => (
               <div
                 key={index}
-                className="bg-white shadow-lg rounded-xl p-8 flex flex-col items-start gap-4 hover:shadow-xl transition-shadow duration-300 border-l-4 border-red-600 hover:-translate-y-1"
+                className="bg-white shadow-lg rounded-xl p-8 flex flex-col items-start gap-4 hover:shadow-xl 
+                transition-shadow duration-300 border-l-4 border-red-600 hover:-translate-y-1"
               >
                 <div className="bg-red-100 p-3 rounded-full">{stat.icon}</div>
                 <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
