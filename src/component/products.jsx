@@ -175,7 +175,7 @@ const Products = () => {
                   </div>
                   <p className="text-sm">In Stock</p>
                 </div>
-                <div className="absolute bottom-4 right-4">
+                <div className="absolute bottom-2 right-4">
                   <ArrowRight size={18} />
                 </div>
               </div>

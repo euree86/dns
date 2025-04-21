@@ -11,28 +11,28 @@ import { FaUserTie, FaChartLine, FaLightbulb } from "react-icons/fa";
 
 const stats = [
   {
-    icon: <FaUserTie className="text-blue-600 text-2xl mr-3" />,
+    icon: <FaUserTie className="text-red-600 text-2xl mr-3" />,
     value: "50+",
     label: "Experts",
-    bgColor: "bg-blue-50",
+    bgColor: "bg-red-50",
   },
   {
-    icon: <FaChartLine className="text-indigo-600 text-2xl mr-3" />,
+    icon: <FaChartLine className="text-red-700 text-2xl mr-3" />,
     value: "15 Years",
     label: "Experience",
-    bgColor: "bg-indigo-50",
+    bgColor: "bg-red-100",
   },
   {
-    icon: <FaLightbulb className="text-blue-600 text-2xl mr-3" />,
+    icon: <FaLightbulb className="text-red-600 text-2xl mr-3" />,
     value: "200+",
     label: "Projects",
-    bgColor: "bg-blue-50",
+    bgColor: "bg-red-50",
   },
   {
-    icon: <BiServer className="text-indigo-600 text-2xl mr-3" />,
+    icon: <BiServer className="text-red-700 text-2xl mr-3" />,
     value: "24/7",
     label: "Support",
-    bgColor: "bg-indigo-50",
+    bgColor: "bg-red-100",
   },
 ];
 
@@ -41,68 +41,68 @@ const services = [
     title: "CCTV Installations",
     description:
       "Protect your property with our expert CCTV installation services. We provide tailored surveillance solutions for homes, offices, and commercial premises.",
-    icon: <BiSolidCctv className="text-blue-600 text-2xl" />,
-    bgColor: "bg-blue-100",
+    icon: <BiSolidCctv className="text-red-600 text-2xl" />,
+    bgColor: "bg-red-100",
   },
   {
     title: "Network Solutions",
     description:
       "From design to implementation, we provide robust network infrastructure that ensures seamless connectivity and optimal performance.",
-    icon: <BiNetworkChart className="text-indigo-600 text-2xl" />,
-    bgColor: "bg-indigo-100",
+    icon: <BiNetworkChart className="text-red-700 text-2xl" />,
+    bgColor: "bg-red-200",
   },
   {
     title: "Cybersecurity",
     description:
       "Comprehensive security solutions to protect your digital assets from evolving threats in today's complex cyber landscape.",
-    icon: <BiShieldAlt className="text-blue-600 text-2xl" />,
-    bgColor: "bg-blue-100",
+    icon: <BiShieldAlt className="text-red-600 text-2xl" />,
+    bgColor: "bg-red-100",
   },
   {
     title: "Cloud Services",
     description:
       "Scalable cloud solutions that enhance flexibility, reduce costs, and improve collaboration across your organization.",
-    icon: <BiCloud className="text-indigo-600 text-2xl" />,
-    bgColor: "bg-indigo-100",
+    icon: <BiCloud className="text-red-700 text-2xl" />,
+    bgColor: "bg-red-200",
   },
   {
     title: "IT Infrastructure",
     description:
       "End-to-end IT infrastructure solutions designed to support your business operations and drive digital transformation.",
-    icon: <BiServer className="text-blue-600 text-2xl" />,
-    bgColor: "bg-blue-100",
+    icon: <BiServer className="text-red-600 text-2xl" />,
+    bgColor: "bg-red-100",
   },
   {
     title: "Custom Software",
     description:
       "Bespoke software development tailored to your specific business requirements and operational workflows.",
-    icon: <BiCodeAlt className="text-indigo-600 text-2xl" />,
-    bgColor: "bg-indigo-100",
+    icon: <BiCodeAlt className="text-red-700 text-2xl" />,
+    bgColor: "bg-red-200",
   },
 ];
 
 const teamMembers = [
   {
-    name: "Sarah Johnson",
-    title: "Lead Developer",
+    name: "Sarad Bhatta",
+    title: " Developer",
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419_1280.jpg",
     description:
       "Full-stack developer with expertise in modern JavaScript frameworks and cloud architecture.",
   },
   {
-    name: "Michael Chen",
-    title: "UX Designer",
+    name: "Ranjit dai",
+    title: "Dot Net Developer",
     image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      "https://cdn.pixabay.com/photo/2022/08/05/07/31/employee-7366214_1280.jpg",
     description:
       "Creating intuitive user experiences with a focus on accessibility and human-centered design principles.",
   },
   {
-    name: "Emma Rodriguez",
-    title: "Marketing Director",
+    name: "Sailesh Kandel",
+    title: "Next JS",
     image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80",
+      "https://cdn.pixabay.com/photo/2021/04/26/09/30/man-6208470_1280.jpg",
     description:
       "Strategic marketer with expertise in digital campaigns, brand development, and customer engagement.",
   },
@@ -120,7 +120,7 @@ const About = () => {
     <div className="bg-gray-50">
       {/* Hero Section */}
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-indigo-800 opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-red-800 to-black opacity-80"></div>
         <img
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
           alt="Technology background"
@@ -128,9 +128,9 @@ const About = () => {
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About <span className="text-blue-300">DNS Technology</span>
+            About <span className="text-red-300">DNS Technology</span>
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl">
+          <p className="text-xl text-red-100 max-w-2xl">
             Innovating the future of network solutions and IT services
           </p>
         </div>
@@ -142,7 +142,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Our Story & Mission
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6" />
+          <div className="w-20 h-1 bg-gradient-to-r from-red-700 to-red-500 mx-auto mb-6" />
           <p className="text-lg text-gray-600 max-w-4xl mx-auto">
             Founded with a vision to transform the technology landscape, DNS
             Technology has grown from a small startup to a trusted industry
@@ -191,13 +191,13 @@ const About = () => {
       </div>
 
       {/* Services */}
-      <div className=" bg-gradient-to-br from-blue-50 to-indigo-50">
+      <div className="bg-red-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Our Core Services
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Comprehensive solutions designed to meet your technology needs
             </p>
@@ -219,7 +219,7 @@ const About = () => {
                     </h3>
                   </div>
                   <p className="text-gray-600 mb-6">{service.description}</p>
-                  <button className="text-blue-600 font-medium flex items-center hover:text-blue-800 transition-colors">
+                  <button className="text-red-600 font-medium flex items-center hover:text-red-800 transition-colors">
                     Learn more
                     <svg
                       className="w-4 h-4 ml-2"
@@ -249,7 +249,7 @@ const About = () => {
             <div className="lg:w-1/2">
               <div className="relative group">
                 <div
-                  className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl opacity-75
+                  className="absolute -inset-2 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-75
                  blur-md group-hover:opacity-100 transition duration-200"
                 ></div>
                 <img
@@ -263,11 +263,11 @@ const About = () => {
               <h2 className="text-3xl font-bold text-gray-800 mb-2">
                 Message from Our CEO
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mb-6"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-6"></div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-1">
                 Dipesh Silwal
               </h3>
-              <p className="text-indigo-600 font-medium mb-6">
+              <p className="text-red-600 font-medium mb-6">
                 Founder and Chief Executive Officer
               </p>
               <p className="text-gray-600 mb-4">
@@ -286,7 +286,7 @@ const About = () => {
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="text-gray-500 hover:text-blue-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                 >
                   <svg
                     className="h-6 w-6"
@@ -298,7 +298,7 @@ const About = () => {
                 </a>
                 <a
                   href="#"
-                  className="text-gray-500 hover:text-blue-600 transition-colors"
+                  className="text-gray-500 hover:text-red-600 transition-colors"
                 >
                   <svg
                     className="h-6 w-6"
@@ -321,7 +321,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Meet Our Team
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6" />
+            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6" />
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               A diverse group of passionate professionals dedicated to
               excellence
@@ -345,7 +345,7 @@ const About = () => {
                     <h3 className="text-xl font-bold text-white">
                       {member.name}
                     </h3>
-                    <p className="text-blue-200">{member.title}</p>
+                    <p className="text-red-200">{member.title}</p>
                   </div>
                 </div>
                 <div className="p-6">
@@ -354,7 +354,7 @@ const About = () => {
                     {/* Twitter */}
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-400 hover:text-red-600 transition-colors"
                     >
                       <svg
                         className="h-5 w-5"
@@ -367,7 +367,7 @@ const About = () => {
                     {/* LinkedIn */}
                     <a
                       href="#"
-                      className="text-gray-400 hover:text-blue-600 transition-colors"
+                      className="text-gray-400 hover:text-red-600 transition-colors"
                     >
                       <svg
                         className="h-5 w-5"
@@ -384,7 +384,7 @@ const About = () => {
           </div>
 
           <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium py-3 px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-colors shadow-lg">
+            <button className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium py-3 px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-colors shadow-lg">
               View All Team Members
             </button>
           </div>
@@ -398,7 +398,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Trusted By Industry Leaders
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto mb-6"></div>
+            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               We're proud to partner with organizations across various
               industries
@@ -420,7 +420,7 @@ const About = () => {
             ))}
           </div>
 
-          <div className="mt-12 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8 md:p-12 text-center">
+          <div className="mt-12 bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-8 md:p-12 text-center">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">
               Ready to transform your business?
             </h3>
@@ -429,7 +429,7 @@ const About = () => {
               technology goals with our innovative solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium py-3 px-8 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-colors shadow-lg">
+              <button className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium py-3 px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-colors shadow-lg">
                 Contact Us
               </button>
               <button className="bg-white text-gray-800 font-medium py-3 px-8 rounded-full hover:bg-gray-100 transition-colors border border-gray-200 shadow-sm">
