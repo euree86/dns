@@ -6,6 +6,7 @@ import Services from "./component/services";
 import Whatwedo from "./component/whatwedo";
 import Portfolio from "./component/portfolio";
 import Nav from "./component/nav";
+import Footer from "./component/footer"
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/whatwedo" element={<Whatwedo />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/nav" element={<Nav/>}/>
+        <Route path="/footer" element={<Footer/>}/>
       </Routes>
     </Router>
   );

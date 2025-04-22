@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="w-full">
       {/* Logo */}
-      <div className="  mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-6 flex items-center justify-between border-b-1 border-gray-400  ">
+      <div className="  mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-6 flex items-center justify-between  ">
         <div className="flex flex-col items-center ">
           <img src={logo} alt="" className="w-8" />
           <p className="font-medium text-normal">DNS Technology Pvt Ltd.</p>
@@ -36,12 +36,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="mx-auto flex h-16  items-center justify-between px-4 sm:px-6 lg:px-24 relative ">
+      <div
+        className="mx-auto flex h-16  items-center justify-between px-4 sm:px-6 lg:px-24 relative  
+      bg-gradient-to-r from-red-800 to-red-700 "
+      >
         {/* Desktop Navigation - Centered */}
         <div className="hidden flex-1 items-center justify-center lg:flex ">
           <ul className="flex space-x-8">
             {/* Product */}
-            <li className="group relative perspective-[300px]">
+            <li className="group relative perspective-[300px] py-6  ">
               <div className="flex items-center text-gray-600 transition-colors hover:text-gray-900 ">
                 Product
                 <svg
@@ -58,7 +61,11 @@ export default function Navbar() {
                   />
                 </svg>
               </div>
-              <div className="pointer-events-none absolute left-1/2 top-full mt-6 w-[1200px] -translate-x-74 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
+              <div
+                className="pointer-events-none absolute  top-full  w-[1200px] -translate-x-74 transform
+               rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out
+                group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50"
+              >
                 <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
                   <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
                     <p className="font-medium text-gray-900">Main Page</p>
@@ -81,7 +88,7 @@ export default function Navbar() {
             </li>
 
             {/* Services*/}
-            <li className="group relative perspective-[300px]">
+            <li className="group relative perspective-[300px] py-6 ">
               <button className="flex items-center text-gray-600 transition-colors hover:text-gray-900">
                 Services
                 <svg
@@ -98,7 +105,7 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <div className="pointer-events-none absolute left-1/2 top-full mt-6 w-[1200px] -translate-x-104 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
+              <div className="pointer-events-none absolute left-1/2 top-full  w-[1200px] -translate-x-104 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
                 <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
                   <div>
                     <h3 className="text-base font-medium text-gray-900">
@@ -182,9 +189,9 @@ export default function Navbar() {
             </li>
 
             {/* What are do */}
-            <li className="group relative perspective-[300px]">
+            <li className="group relative perspective-[300px] py-6 ">
               <button className="flex items-center text-gray-600 transition-colors hover:text-gray-900">
-              What we do
+                What we do
                 <svg
                   className="ml-1 h-4 w-4"
                   fill="none"
@@ -199,7 +206,7 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <div className="pointer-events-none absolute  top-full mt-6 w-[1200px] -translate-x-120 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
+              <div className="pointer-events-none absolute  top-full  w-[1200px] -translate-x-120 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
                 <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
                   <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
                     <p className="font-medium text-gray-900">
@@ -225,9 +232,9 @@ export default function Navbar() {
               </div>
             </li>
 
-            <li className="group relative perspective-[300px]">
+            <li className="group relative perspective-[300px] py-6 ">
               <button className="flex items-center text-gray-600 transition-colors hover:text-gray-900">
-              What are we 
+                What are we
                 <svg
                   className="ml-1 h-4 w-4"
                   fill="none"
@@ -242,7 +249,7 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <div className="pointer-events-none absolute  top-full mt-6 w-[1200px] -translate-x-154 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
+              <div className="pointer-events-none absolute  top-full  w-[1200px] -translate-x-156 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
                 <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
                   <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
                     <p className="font-medium text-gray-900">
@@ -269,7 +276,7 @@ export default function Navbar() {
             </li>
 
             {/* Portfolio */}
-            <li className="group relative perspective-[300px]">
+            <li className="group relative perspective-[300px] py-6 ">
               <button className="flex items-center text-gray-600 transition-colors hover:text-gray-900">
                 Portfolio
                 <svg
@@ -286,7 +293,7 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-              <div className="pointer-events-none absolute left-1/2 top-full mt-6 w-[1200px] -translate-x-6/9 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
+              <div className="pointer-events-none absolute left-1/2 top-full  w-[1200px] -translate-x-6/9 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
                 <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
                   <div className="space-y-4">
                     <h3 className="text-base font-medium text-gray-900">
@@ -360,7 +367,7 @@ export default function Navbar() {
               </div>
             </li>
             {/* Contact */}
-            <li>
+            <li className="py-6">
               <a
                 href="/contact"
                 className="text-gray-600 transition-colors hover:text-gray-900"
