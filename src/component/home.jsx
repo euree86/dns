@@ -50,42 +50,42 @@ const Home = () => {
   const products = [
     {
       title: "FireWalls Devices and Licences",
-      icon: <Shield className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Shield className="w-12 h-12 text-red-600" />,
       description: "Enterprise-grade security solutions",
     },
     {
       title: "Network Cables",
-      icon: <Cable className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Cable className="w-12 h-12  text-red-600" />,
       description: "High-performance connectivity",
     },
     {
       title: "CCTV and Surveillance",
-      icon: <Cctv className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Cctv className="w-12 h-12  text-red-600" />,
       description: "Advanced monitoring systems",
     },
     {
       title: "Server and Network Rack",
-      icon: <Server className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Server className="w-12 h-12  text-red-600" />,
       description: "Reliable infrastructure solutions",
     },
     {
       title: "Network Switches",
-      icon: <Monitor className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Monitor className="w-12 h-12  text-red-600" />,
       description: "Intelligent connectivity management",
     },
     {
       title: "AP (Access Point Devices)",
-      icon: <Wifi className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Wifi className="w-12 h-12  text-red-600" />,
       description: "Seamless wireless coverage",
     },
     {
       title: "Wireless Devices",
-      icon: <Wifi className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Wifi className="w-12 h-12  text-red-600" />,
       description: "Modern wireless technology",
     },
     {
       title: "Server and Computers",
-      icon: <Network className="w-12 h-12 mx-auto mb-4 text-red-600" />,
+      icon: <Network className="w-12 h-12  text-red-600" />,
       description: "Powerful computing solutions",
     },
   ];
@@ -93,22 +93,22 @@ const Home = () => {
   const hardwareservice = [
     {
       title: "Server and Computer Installation",
-      icon: <HardDrive className="w-12 h-12 mx-auto mb-4 text-red-700" />,
+      icon: <HardDrive className="w-12 h-12  text-red-700" />,
       description: "Expert setup and configuration",
     },
     {
       title: "CCTV Installation",
-      icon: <Cctv className="w-12 h-12 mx-auto mb-4 text-red-700" />,
+      icon: <Cctv className="w-12 h-12  text-red-700" />,
       description: "Comprehensive security monitoring",
     },
     {
       title: "Networking and Troubleshooting",
-      icon: <Network className="w-12 h-12 mx-auto mb-4 text-red-700" />,
+      icon: <Network className="w-12 h-12  text-red-700" />,
       description: "Resolving complex connectivity issues",
     },
     {
       title: "Firewall Configuration and Security",
-      icon: <Lock className="w-12 h-12 mx-auto mb-4 text-red-700" />,
+      icon: <Lock className="w-12 h-12  text-red-700" />,
       description: "Robust protection systems",
     },
   ];
@@ -116,22 +116,22 @@ const Home = () => {
   const softwareservice = [
     {
       title: "Website and Software Development",
-      icon: <Code className="w-12 h-12 mx-auto mb-4 text-red-800" />,
+      icon: <Code className="w-12 h-12  text-red-800" />,
       description: "Custom digital solutions",
     },
     {
       title: "Domain and Hosting",
-      icon: <Globe className="w-12 h-12 mx-auto mb-4 text-red-800" />,
+      icon: <Globe className="w-12 h-12  text-red-800" />,
       description: "Reliable web infrastructure",
     },
     {
       title: "Mobile App Development",
-      icon: <Smartphone className="w-12 h-12 mx-auto mb-4 text-red-800" />,
+      icon: <Smartphone className="w-12 h-12  text-red-800" />,
       description: "Native and cross-platform apps",
     },
     {
       title: "UI/UX Design",
-      icon: <Palette className="w-12 h-12 mx-auto mb-4 text-red-800" />,
+      icon: <Palette className="w-12 h-12  text-red-800" />,
       description: "Intuitive user experiences",
     },
   ];
@@ -217,9 +217,9 @@ const Home = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
+              className="bg-white rounded-xl p-6 flex flex-col items-center justify-center  shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
             >
-              <div className="bg-red-50 rounded-full p-4 mb-4">
+              <div className="bg-red-50 rounded-full flex items-center p-4 mb-4">
                 {product.icon}
               </div>
               <h3 className="text-lg font-semibold text-center mb-2">

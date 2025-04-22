@@ -5,6 +5,7 @@ import Products from "./component/products";
 import Services from "./component/services";
 import Whatwedo from "./component/whatwedo";
 import Portfolio from "./component/portfolio";
+import Nav from "./component/nav";
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/whatwedo" element={<Whatwedo />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/nav" element={<Nav/>}/>
       </Routes>
     </Router>
   );

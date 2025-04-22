@@ -361,7 +361,7 @@ const Products = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`${feature.bgColor} rounded-xl p-8 flex flex-col items-center text-center hover:shadow-md transition duration-300`}
+              className={`${feature.bgColor} rounded-xl p-8 flex flex-col items-center text-center hover:shadow-2xl transition duration-300`}
             >
               <div className="mb-6 p-4 bg-white rounded-full shadow-sm">
                 {feature.icon}
