@@ -1,11 +1,10 @@
 import React from "react";
 import logo from "../image/logo.png";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+
 const Footer = () => {
   const productLinks = [
     { title: "Firewall Devices" },
@@ -55,144 +54,175 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaFacebook className="text-[#1A77F3]" /> },
-    { icon: <FaInstagram className="text-[#EF1488]" /> },
-    { icon: <FaLinkedin className="text-[#1A77F3]" /> },
+    {
+      icon: <FaFacebook className="text-[#1A77F3] text-xl"  />,
+      name: "Facebook",
+    },
+    {
+      icon: <FaInstagram className="text-[#EF1488] text-xl" />,
+      name: "Instagram",
+    },
+    {
+      icon: <FaLinkedin className="text-[#1A77F3] text-xl" />,
+      name: "LinkedIn",
+    },
   ];
 
   return (
-    <div className="bg-gray-100 px-4 py-8 ">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap gap-16">
-          {/* Logo and company name */}
-          <div className="flex flex-col ">
-            <img src={logo} alt="" className="w-12 h-12" />
-            <div className="font-bold">DNS Technology Pvt.Ltd</div>
-          </div>
-
-          {/* Quick Links Section */}
-          <div>
-            <h2 className="font-bold text-lg mb-4">Quick Links</h2>
-
-            <div className="flex gap-20">
-              {/* Product Section */}
-              <div>
-                <h3 className="font-semibold mb-2">Product</h3>
-                <ul>
-                  {productLinks.map((link, index) => (
-                    <li
-                      key={index}
-                      className="text-sm mb-1 hover:text-red-600 cursor-pointer"
-                    >
-                      {link.title}
-                    </li>
-                  ))}
-                </ul>
-                <h3 className="font-semibold mt-4 mb-2">Who Are We</h3>
-                <ul>
-                  <li className="text-sm mb-1 hover:text-red-600 cursor-pointer">
-                    About DNS
-                  </li>
-                </ul>
+    <footer className="bg-gray-800 text-gray-300 px-4 py-12">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-4">
+              <img
+                src={logo}
+                alt="DNS Technology Logo"
+                className="w-12 h-12 mr-3"
+              />
+              <div className="font-bold text-xl text-white">
+                DNS Technology Pvt.Ltd
               </div>
+            </div>
+            <p className="text-sm mb-6">
+              Your trusted partner for comprehensive IT solutions and network
+              infrastructure services.
+            </p>
 
-              {/* Services Section */}
-              <div>
-                <h3 className="font-semibold mb-2">Services</h3>
-                <ul>
-                  {serviceLinks.map((link, index) => (
-                    <li
-                      key={index}
-                      className="text-sm mb-1 hover:text-red-600 cursor-pointer"
-                    >
-                      {link.title}
-                    </li>
-                  ))}
-                </ul>
+            {/* Newsletter */}
+            <div className="mb-6">
+              <h3 className="font-semibold text-lg text-white mb-3">
+                Newsletter
+              </h3>
+              <div className="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="border border-gray-700 bg-gray-800 px-4 py-2 text-sm rounded-l w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm rounded-r transition duration-200">
+                  Subscribe
+                </button>
               </div>
+            </div>
 
-              {/* What to do Section */}
-              <div>
-                <h3 className="font-semibold mb-2">What to do</h3>
-                <ul>
-                  {whatToDoLinks.map((link, index) => (
-                    <li
-                      key={index}
-                      className="text-sm mb-1 hover:text-red-600 cursor-pointer"
-                    >
-                      {link.title}
-                    </li>
-                  ))}
-                </ul>
-
-                <h3 className="font-semibold mt-4 mb-2">Portfolio</h3>
-                <ul>
-                  {portfolioLinks.map((link, index) => (
-                    <li
-                      key={index}
-                      className="text-sm mb-1 hover:text-red-600 cursor-pointer"
-                    >
-                      {link.title}
-                    </li>
-                  ))}
-                </ul>
-
-                <h3 className="font-semibold mt-4 mb-2">Support</h3>
-
-                <h3 className="font-semibold mt-4 mb-2">Location</h3>
-              </div>
-
-              {/* Contact Us Section */}
-              <div>
-                <h3 className="font-semibold mb-4">Contact Us</h3>
-                <ul>
-                  {contactInfo.map((item, index) => (
-                    <li key={index} className="flex items-center mb-2">
-                      <span className="w-4 h-4 mr-2 flex items-center justify-center text-gray-600">
-                        {item.icon}
-                      </span>
-                      <span className="text-sm">{item.info}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Follow Us Section */}
-              <div>
-                <h3 className="font-semibold mb-2">Follow Us On</h3>
-                <div className="flex mb-4">
-                  {socialLinks.map((link, index) => (
-                    <div
-                      key={index}
-                      className="mr-2 w-6 h-6 bg-gray-300 rounded-full flex items-center justify-center cursor-pointer"
-                    >
-                      {link.icon}
-                    </div>
-                  ))}
-                </div>
-
-                <h3 className="font-semibold mb-2">Newsletter</h3>
-                <div className="flex">
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="border border-gray-300 px-2 py-1 text-sm rounded-l w-full focus:outline-gray-400"
-                  />
-                  <button className="bg-gray-400 text-white px-2 py-1 text-sm rounded-r">
-                    Subscribe
-                  </button>
-                </div>
+            {/* Social Media */}
+            <div>
+              <h3 className="font-semibold text-lg text-white mb-3">
+                Follow Us
+              </h3>
+              <div className="flex space-x-3">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href="#"
+                    className="w-8 h-8 bg-white hover:bg-gray-700 rounded-full flex items-center justify-center transition duration-200"
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-lg text-white mb-4">Products</h3>
+            <ul className="space-y-2">
+              {productLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-sm hover:text-white transition duration-200"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-semibold text-lg text-white mb-4">Services</h3>
+            <ul className="space-y-2">
+              {serviceLinks.slice(0, 6).map((link, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-sm hover:text-white transition duration-200"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="font-semibold text-lg text-white mt-6 mb-4">
+              Portfolio
+            </h3>
+            <ul className="space-y-2">
+              {portfolioLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-sm hover:text-white transition duration-200"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & More */}
+          <div>
+            <h3 className="font-semibold text-lg text-white mb-4">Company</h3>
+            <ul className="space-y-2 mb-6">
+              <li>
+                <a
+                  href="#"
+                  className="text-sm hover:text-white transition duration-200"
+                >
+                  About DNS
+                </a>
+              </li>
+              {whatToDoLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-sm hover:text-white transition duration-200"
+                  >
+                    {link.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <h3 className="font-semibold text-lg text-white mb-4">
+              Contact Us
+            </h3>
+            <ul className="space-y-3">
+              {contactInfo.map((item, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="mt-1 mr-3 flex-shrink-0">{item.icon}</span>
+                  <span className="text-sm">{item.info}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* Copyright footer */}
-        <div className="text-center text-sm mt-6 font-bold text-red-700">
-          ©2025 DNS Technology All rights reserved.
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm">
+          <p className="text-gray-500">
+            © {new Date().getFullYear()} DNS Technology Pvt. Ltd. All rights
+            reserved.
+          </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
