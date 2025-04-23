@@ -1,6 +1,12 @@
 import React from "react";
-import img from "../image/img1.png";
 import { Link } from "react-router-dom";
+import Nav from "./nav"
+import Footer from "./footer"
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import {
   Shield,
   Cable,
@@ -22,28 +28,48 @@ import {
 } from "lucide-react";
 
 const Home = () => {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 500,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   const cardData = [
     {
       icon: <Shield />,
-      
+
       title: "Firewalls Devices",
       description:
         "Protect your networks with our advanced firewall solutions.",
-      titleColor: "text-[#891619]",
     },
     {
       icon: <Lock />,
-      
+
       title: "Firewall Configuration",
       description: "Expert setup and management for optimal security.",
-      titleColor: "text-white",
     },
     {
       icon: <Globe />,
-     
+
       title: "Our Mission",
       description: "Empowering businesses with cutting-edge network solutions.",
-      titleColor: "text-white",
     },
   ];
 
@@ -157,52 +183,53 @@ const Home = () => {
 
   return (
     <div className="bg-gray-50">
+      <Nav />
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-red-800 to-red-700 text-white py-24 px-4 md:px-8 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-        </div>
-        <div className="max-w-6xl mx-auto text-center relative z-10 mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+      <div className="relative   py-16 px-4 md:px-8 lg:px-16 ">
+        <div className="absolute inset-0 opacity-20"></div>
+        <div className="max-w-6xl mx-auto text-center relative z-10 mb-16">
+          <h1 className="text-4xl md:text-5xl text-black font-bold  leading-tight">
             WELCOME TO DNS TECHNOLOGY
           </h1>
-          <p className="text-xl md:text-2xl text-red-200 mb-8">
+          <p className="text-lg md:text-xl  font-medium text-black mb-16">
             Innovative Solutions For Your Network Needs
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-red-900 hover:bg-red-100 font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg">
+            <button className="bg-red-800 text-white  font-medium py-3 px-8 rounded-full ">
               Our Services
             </button>
-            <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-red-900 font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
+            <button className="bg-transparent border-2 border-red-900 text-red-800 hover:bg-red-800
+             hover:text-white font-medium py-3 px-8 rounded-full transition-all transform hover:scale-105">
               Contact Us
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto relative z-10">
-          {cardData.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl shadow-xl p-8 text-center border
-               border-white border-opacity-20 hover:bg-opacity-20 transition-all transform hover:-translate-y-1"
-            >
-              <div
-                className={"bg-red-800 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4"}
-              >
-                <span>{card.icon}</span>
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <Slider {...settings}>
+            {cardData.map((card, index) => (
+              <div key={index} className="p-4">
+                <div
+                  className="bg-gradient-to-r from-red-800 to-red-700 bg-opacity-10 backdrop-blur-lg rounded-xl  p-8 text-center border
+              border-white border-opacity-20 hover:bg-opacity-20 transition-all transform hover:-translate-y-1"
+                >
+                  <div className="bg-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-red-700">
+                    {card.icon}
+                  </div>
+                  <h2 className={"text-xl font-semibold mb-4 text-white "}>
+                    {card.title}
+                  </h2>
+                  <p className="text-white">{card.description}</p>
+                </div>
               </div>
-              <h2 className={"text-xl  font-semibold mb-4 text-red-800"}>
-                {card.title}
-              </h2>
-              <p className="text-red-400">{card.description}</p>
-            </div>
-          ))}
+            ))}
+          </Slider>
         </div>
       </div>
 
       {/* Our Products */}
       <div className="container mx-auto px-4 py-16">
         <div className="mb-16 text-center">
-          
           <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4">
             Our Products
           </h2>
@@ -217,7 +244,8 @@ const Home = () => {
           {products.map((product, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 flex flex-col items-center justify-center  shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
+              className="bg-white rounded-xl p-6 flex flex-col items-center justify-center 
+                hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
             >
               <div className="bg-red-50 rounded-full flex items-center p-4 mb-4">
                 {product.icon}
@@ -244,7 +272,6 @@ const Home = () => {
       <div className="bg-gray-100 py-16 px-4">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-            
             <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4">
               Our Services
             </h2>
@@ -263,7 +290,8 @@ const Home = () => {
               {hardwareservice.map((hardware, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
+                  className="bg-white rounded-xl p-6 flex flex-col items-center justify-center 
+                   hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
                 >
                   <div className="bg-red-50 rounded-full p-4 mb-4">
                     {hardware.icon}
@@ -287,7 +315,7 @@ const Home = () => {
               {softwareservice.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 flex flex-col items-center justify-center shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
+                  className="bg-white rounded-xl p-6 flex flex-col items-center justify-center  hover:shadow-xl transition-all transform hover:-translate-y-1 border border-gray-100"
                 >
                   <div className="bg-red-50 rounded-full p-4 mb-4">
                     {service.icon}
@@ -361,10 +389,9 @@ const Home = () => {
       </div>
 
       {/* What We Do */}
-      <div className="bg-gradient-to-r from-red-900 to-red-800 text-white py-16 px-4">
+      <div className="bg-gradient-to-r from-red-700 to-red-800 text-white py-16 px-4">
         <div className="container mx-auto">
           <div className="mb-16 text-center">
-           
             <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4">
               What We Do
             </h2>
@@ -379,7 +406,7 @@ const Home = () => {
             {whatWeDo.map((item, index) => (
               <div
                 key={index}
-                className="bg-white bg-opacity-10 p-8 rounded-xl shadow-lg border border-white border-opacity-20 hover:bg-opacity-20 transition-all transform hover:-translate-y-2"
+                className="bg-white bg-opacity-10 p-8 rounded-xl  border border-white border-opacity-20 hover:bg-opacity-20 transition-all transform hover:-translate-y-2"
               >
                 <div className="flex items-center justify-center mb-6">
                   {item.icon}
@@ -407,7 +434,6 @@ const Home = () => {
       {/* Our Portfolio */}
       <div className="container mx-auto px-4 py-20">
         <div className="mb-16 text-center">
-         
           <h2 className="text-3xl md:text-4xl font-bold mt-4 mb-4">
             Our Portfolio
           </h2>
@@ -478,7 +504,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
+      <Footer/>
     </div>
   );
 };

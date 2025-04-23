@@ -1,5 +1,7 @@
 import React from "react";
 import logo from "../image/logo.png";
+import Nav from "./nav"
+import Footer from "./footer"
 const services = [
   {
     id: 1,
@@ -132,6 +134,7 @@ const testimonials = [
 const Portfolio = () => {
   return (
     <div>
+      <Nav/>
       {/* Hero div */}
       <div className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white">
         <div className="container mx-auto px-6 text-center">
@@ -193,7 +196,7 @@ const Portfolio = () => {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-lg overflow-hidden  hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={project.image}
@@ -262,7 +265,7 @@ const Portfolio = () => {
             {team.map((member) => (
               <div
                 key={member.id}
-                className="bg-white p-6 rounded-lg shadow-md text-center"
+                className="bg-white p-6 rounded-lg  text-center"
               >
                 <img
                   src={member.image}
@@ -359,6 +362,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

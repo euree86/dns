@@ -8,6 +8,8 @@ import {
   BiCodeAlt,
 } from "react-icons/bi";
 import { FaUserTie, FaChartLine, FaLightbulb } from "react-icons/fa";
+import Nav from "./nav"
+import Footer from "./footer"
 
 const stats = [
   {
@@ -118,6 +120,7 @@ const companies = [
 const About = () => {
   return (
     <div className="bg-gray-50">
+      <Nav/>
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-red-800 to-black opacity-80"></div>
@@ -171,7 +174,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+          <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
             <div className="grid grid-cols-2 gap-4">
               {stats.map((item, index) => (
                 <div
@@ -207,7 +210,7 @@ const About = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                className="bg-white rounded-xl  overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
               >
                 <div className="p-6">
                   <div className="flex items-center mb-4">
@@ -332,7 +335,7 @@ const About = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                className="bg-white rounded-xl  overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
               >
                 <div className="relative h-64">
                   <img
@@ -414,7 +417,7 @@ const About = () => {
                 <img
                   src={company.url}
                   alt={company.name}
-                  className="h-12 object-contain grayscale hover:grayscale-0 transition-all"
+                  className="h-12 object-contain transition-all"
                 />
               </div>
             ))}
@@ -439,6 +442,7 @@ const About = () => {
           </div>
         </div>
       </div>
+    <Footer/>
     </div>
   );
 };

@@ -13,6 +13,9 @@ import {
   FaStar,
 } from "react-icons/fa";
 
+import Nav from "./nav";
+import Footer from "./footer";
+
 const statsData = [
   {
     icon: <FaCertificate className="text-red-600 text-2xl" />,
@@ -129,6 +132,7 @@ const testimonials = [
 const WhatWeDo = () => {
   return (
     <section className="bg-gradient-to-b from-white to-gray-50">
+      <Nav />
       {/* Header Section */}
       <div className="container mx-auto px-4 py-16 text-center">
         <div>
@@ -194,7 +198,7 @@ const WhatWeDo = () => {
           <div className="md:w-1/2 relative">
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                src="https://cdn.pixabay.com/photo/2016/11/29/06/18/home-office-1867761_1280.jpg"
                 alt="Professional working on laptop"
                 className="w-full h-auto rounded-xl shadow-2xl"
                 loading="lazy"
@@ -410,6 +414,7 @@ const WhatWeDo = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   );
 };
