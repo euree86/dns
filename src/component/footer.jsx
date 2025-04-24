@@ -57,14 +57,17 @@ const Footer = () => {
     {
       icon: <FaFacebook className="text-[#1A77F3] text-xl"  />,
       name: "Facebook",
+      url:"https://www.facebook.com/dns.tech1",
     },
     {
       icon: <FaInstagram className="text-[#EF1488] text-xl" />,
       name: "Instagram",
+      url:"https://www.instagram.com/dns_tech1/",
     },
     {
       icon: <FaLinkedin className="text-[#1A77F3] text-xl" />,
       name: "LinkedIn",
+      url:"https://www.linkedin.com/company/d-n-s-technolgoy-pvt-ltd/posts/?feedView=all"
     },
   ];
 
@@ -98,7 +101,7 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="border border-gray-700 bg-gray-800 px-4 py-2 text-sm rounded-l w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="border border-gray-700 bg-gray-800 px-4 py-2 text-sm rounded-l w-full focus:outline-none focus:ring-1 focus:ring-blue-400"
                 />
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-sm rounded-r transition duration-200">
                   Subscribe
@@ -115,7 +118,7 @@ const Footer = () => {
                 {socialLinks.map((link, index) => (
                   <a
                     key={index}
-                    href="#"
+                    href={link.url}
                     className="w-8 h-8 bg-white hover:bg-gray-700 rounded-full flex items-center justify-center transition duration-200"
                     aria-label={link.name}
                   >

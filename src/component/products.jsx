@@ -8,7 +8,8 @@ import {
   Zap,
   Search,
 } from "lucide-react";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
+import Nav from "./nav";
+import Footer from "./footer";
 
 const products = [
   {
@@ -246,11 +247,17 @@ const brands = [
 const Products = () => {
   return (
     <div className="bg-gray-50">
+      <Nav />
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-red-600 to-red-800 py-16 px-4 text-white">
+      <div className="py-16 px-4 text-red-700">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">OUR PRODUCTS</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+            OUR PRODUCTS
+          </h1>
+          <div className="flex justify-center">
+            <div className="w-24 h-1 bg-red-600 mb-2"></div>
+          </div>
+          <p className="text-base md:text-lg mb-8 font-semibold max-w-2xl mx-auto">
             High-quality network and security solutions for your business
           </p>
 
@@ -260,7 +267,7 @@ const Products = () => {
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full px-6 py-3 rounded-lg  bg-white   text-gray-800"
+                className="w-full px-6 py-3 rounded-lg  bg-gray-100  text-gray-800 focus:outline-red-100"
               />
               <Search className="absolute right-4 top-3.5 h-5 w-5 text-gray-500" />
             </div>
@@ -270,7 +277,7 @@ const Products = () => {
               <label className="inline-flex items-center cursor-pointer">
                 <input type="checkbox" value="" className="sr-only peer" />
                 <div
-                  className="relative w-12 h-6 bg-white peer-focus:outline-none peer-focus:ring-2
+                  className="relative w-12 h-6 bg-red-100 peer-focus:outline-red-600 peer-focus:ring-2 
                  peer-focus:ring-red-600 rounded-full peer peer-checked:bg-white
                   peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] 
                   after:absolute after:top-[2px] after:start-[2px] after:bg-red-800 after:border-gray-300 
@@ -284,11 +291,11 @@ const Products = () => {
       </div>
 
       {/* Featured Products */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-6">
         <div className="w-full  py-12 px-4 md:px-8 lg:px-16 ">
           <div className="flex flex-col md:flex-row justify-between items-center mb-12">
             <div>
-              <h2 className="text-2xl font-semibold text-gray-700">
+              <h2 className="text-3xl font-semibold text-red-700">
                 Featured Products
               </h2>
               <p className="text-gray-500">
@@ -346,7 +353,7 @@ const Products = () => {
       </div>
 
       {/* Why Choose Us */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Why Choose Our Products
@@ -376,7 +383,7 @@ const Products = () => {
       </div>
 
       {/* Testimonials */}
-      <div className="bg-gradient-to-r from-gray-100 to-blue-50 py-16 px-4">
+      <div className="bg-gradient-to-r from-gray-50 to-blue-50 py-16 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -475,6 +482,7 @@ const Products = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

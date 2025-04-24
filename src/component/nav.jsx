@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <nav className="w-full">
       {/* Logo */}
-      <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-6">
+      <div className="mx-auto  px-4 py-2 sm:px-6 lg:px-36">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-col items-center">
             <img src={logo} alt="" className="w-8" />
@@ -22,7 +22,7 @@ export default function Navbar() {
             <input
               type="text"
               placeholder="Search products..."
-              className="w-full px-8 py-1 rounded-lg bg-gray-100 text-gray-800 focus:outline-none"
+              className="w-full px-8 py-1 rounded-lg bg-gray-200 text-gray-800 focus:outline-none"
             />
             <CiSearch className="absolute right-5 top-2.5 h-4 w-4 text-gray-500" />
           </div>
@@ -49,10 +49,58 @@ export default function Navbar() {
         <div className="hidden lg:flex flex-1 items-center justify-center">
           <ul className="flex space-x-8">
             {/* Home */}
-            <li className="py-6 text-white">Home</li>
+            <Link to="/home">
+              <li className="py-6 text-white">Home</li>
+            </Link>
+
+            {/* About */}
+            <Link to="/about">
+              <li className="group relative perspective-[300px] z-50 py-6">
+                <button className="flex items-center text-white transition-colors hover:text-gray-200">
+                 About Us
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-80 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
+                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
+                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                      <p className="font-medium text-gray-900">
+                        Product Features
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Explore our product features
+                      </p>
+                    </a>
+                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                      <p className="font-medium text-gray-900">Pricing</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        View our pricing plans
+                      </p>
+                    </a>
+                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                      <p className="font-medium text-gray-900">Case Studies</p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        See how others use our product
+                      </p>
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </Link>
 
             {/* Product */}
-            <Link to="/home">
+            <Link to="/products">
               <li className="group relative perspective-[300px] z-50 py-6">
                 <div className="flex items-center text-white transition-colors hover:text-gray-200">
                   Product
@@ -222,51 +270,6 @@ export default function Navbar() {
                   </svg>
                 </button>
                 <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-120 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
-                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">
-                        Product Features
-                      </p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Explore our product features
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Pricing</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        View our pricing plans
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Case Studies</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        See how others use our product
-                      </p>
-                    </a>
-                  </div>
-                </div>
-              </li>
-            </Link>
-            {/* About */}
-            <Link to="/about">
-              <li className="group relative perspective-[300px] z-50 py-6">
-                <button className="flex items-center text-white transition-colors hover:text-gray-200">
-                  What are we
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-156 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
                   <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
                     <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
                       <p className="font-medium text-gray-900">

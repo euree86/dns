@@ -113,42 +113,32 @@ const contactItems = [
 const Services = () => {
   return (
     <div className="bg-gray-50">
-      {/* Hero Header */}
-      <Nav />
-      <div className="relative bg-gradient-to-r from-red-700 to-red-900 py-20 px-4 text-white">
-        <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="container mx-auto relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">OUR SERVICES</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-            Comprehensive IT solutions tailored to your business needs
-          </p>
-        </div>
-      </div>
-
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-              From robust hardware installation to innovative software solutions
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              We provide end-to-end IT services that ensure your business
-              operates smoothly and securely. Our expert team delivers
-              customized solutions that align with your specific requirements
-              and budget.
-            </p>
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-              Get a Free Consultation
-            </button>
+      <Nav />
+      <div className="relative text-black">
+        <img
+          src="https://cdn.pixabay.com/photo/2019/05/16/20/15/online-4208112_1280.jpg"
+          alt=""
+          className="w-full h-[800px]"
+        />
+        <div className="bg-red-50 z-10 absolute inset-0 w-full opacity-70"></div>
+        <div className="absolute top-36 z-50 left-36">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">OUR SERVICES</h1>
+          <div className="flex justify-start">
+            <div className="w-24 h-1 bg-red-600 mb-12"></div>
           </div>
-          <div className="rounded-xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              alt="IT Services"
-              className="w-full h-auto object-cover"
-            />
-          </div>
+          <h2 className="text-2xl md:text-2xl font-bold text-red-700 mb-6 max-w-xl">
+            From robust hardware installation to innovative software solutions
+          </h2>
+
+          <p className="text-lg text-gray-600 mb-12 max-w-xl">
+            We provide end-to-end IT services that ensure your business operates
+            smoothly and securely. Our expert team delivers customized solutions
+            that align with your specific requirements and budget.
+          </p>
+          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Get a Free Consultation
+          </button>
         </div>
       </div>
 
