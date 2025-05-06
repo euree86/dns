@@ -227,7 +227,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* <div className="max-w-7xl mx-auto px-4 relative z-10 py-12">
+         <div className="max-w-7xl mx-auto px-4 relative z-10 py-12">
           <Slider {...settings}>
             {cardData.map((card, index) => (
               <div key={index} className="p-4">
@@ -248,7 +248,7 @@ const Home = () => {
               </div>
             ))}
           </Slider>
-        </div> */}
+        </div> 
       </div>
       {/* About Us */}
       <div className="container mx-auto px-4 py-20">

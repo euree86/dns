@@ -4,13 +4,13 @@ import logo from "../image/logo.png";
 import { IoIosCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
-
+import { IoChevronDown } from "react-icons/io5";
 export default function Navbar() {
   return (
     <nav className="w-full">
       {/* Logo */}
       <div className="mx-auto  px-4 py-2 sm:px-6 lg:px-36">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 h-12">
           <div className="flex flex-col items-center">
             <img src={logo} alt="" className="w-8" />
             <p className="font-medium text-normal text-center md:text-left">
@@ -44,351 +44,293 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="mx-auto flex h-16 items-center   justify-between px-4 sm:px-6 lg:px-24 relative bg-gradient-to-r from-red-800 to-red-700">
+      <div
+        className="mx-auto flex h-12 items-center  justify-between px-4 sm:px-6 lg:px-24 relative 
+        bg-gradient-to-r from-red-900 to-red-800"
+      >
         {/* Desktop Navigation - Centered */}
         <div className="hidden lg:flex flex-1 items-center justify-center">
           <ul className="flex space-x-8">
             {/* Home */}
-            <Link to="/home">
-              <li className="py-6 text-white">Home</li>
-            </Link>
+            <li className="py-6 text-white">
+              <Link to="/home">Home</Link>
+            </li>
 
             {/* About */}
-            <Link to="/about">
-              <li className="group relative perspective-[300px] z-50 py-6">
-                <button className="flex items-center text-white transition-colors hover:text-gray-200">
-                 About Us
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-80 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
-                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">
-                        Product Features
-                      </p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Explore our product features
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Pricing</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        View our pricing plans
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Case Studies</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        See how others use our product
-                      </p>
-                    </a>
-                  </div>
+            <li className="group relative z-50 py-6">
+              <Link
+                to="/about"
+                className="flex items-center text-white transition-colors hover:text-gray-200 gap-1"
+              >
+                About Us
+                <IoChevronDown />
+              </Link>
+              <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-80 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+                <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6 transition-transform transform group-hover:scale-105">
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">
+                      Product Features
+                    </p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      Explore our product features
+                    </p>
+                  </a>
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">Pricing</p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      View our pricing plans
+                    </p>
+                  </a>
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">Case Studies</p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      See how others use our product
+                    </p>
+                  </a>
                 </div>
-              </li>
-            </Link>
+              </div>
+            </li>
 
             {/* Product */}
-            <Link to="/products">
-              <li className="group relative perspective-[300px] z-50 py-6">
-                <div className="flex items-center text-white transition-colors hover:text-gray-200">
-                  Product
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
+            <li className="group relative z-50 py-6">
+              <Link
+                to="/products"
+                className="flex items-center text-white transition-colors gap-1 hover:text-gray-200"
+              >
+                Product
+                <IoChevronDown />
+              </Link>
+              <div className="pointer-events-none absolute top-full w-full opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+                <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6 transition-transform transform group-hover:scale-105">
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">Main Page</p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      Visit our homepage
+                    </p>
+                  </a>
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">About Us</p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      Learn about our company
+                    </p>
+                  </a>
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">Careers</p>
+                    <p className="mt-1 text-sm text-gray-500">Join our team</p>
+                  </a>
                 </div>
-                <div
-                  className="pointer-events-none absolute top-full w-[1200px] -translate-x-64 transform
-               rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out
-                group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50"
-                >
-                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Main Page</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Visit our homepage
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">About Us</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Learn about our company
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Careers</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Join our team
-                      </p>
-                    </a>
-                  </div>
-                </div>
-              </li>
-            </Link>
+              </div>
+            </li>
 
-            {/* Services*/}
-            <Link to="/services">
-              <li className="group relative perspective-[300px] z-50 py-6">
-                <button className="flex items-center text-white transition-colors hover:text-gray-200">
-                  Services
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div className="pointer-events-none absolute left-1/2 top-full w-[1200px] -translate-x-104 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
-                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
-                    <div>
-                      <h3 className="text-base font-medium text-gray-900">
-                        Categories
-                      </h3>
-                      <ul className="mt-4 space-y-2">
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Men
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Women
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Kids
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Accessories
-                          </a>
-                        </li>
-                      </ul>
+            {/* Services */}
+            <li className="group relative z-50 py-6">
+              <Link
+                to="/services"
+                className="flex items-center text-white transition-colors gap-1 hover:text-gray-200"
+              >
+                Services
+                <IoChevronDown />
+              </Link>
+              <div className="pointer-events-none absolute left-1/2 top-full w-[1200px] -translate-x-[416px] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+                <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6 transition-transform transform group-hover:scale-105">
+                  <div>
+                    <h3 className="text-base font-medium text-gray-900">
+                      Categories
+                    </h3>
+                    <ul className="mt-4 space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Men
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Women
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Kids
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Accessories
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-medium text-gray-900">
+                      Collections
+                    </h3>
+                    <ul className="mt-4 space-y-2">
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Summer 2023
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Winter Essentials
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="text-sm text-gray-500 hover:text-gray-900"
+                        >
+                          Bestsellers
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="bg-gray-50 p-4">
+                    <div className="font-medium text-gray-900">Featured</div>
+                    <div className="mt-2 text-sm text-gray-500">
+                      Check out our latest collection
                     </div>
-                    <div>
-                      <h3 className="text-base font-medium text-gray-900">
-                        Collections
-                      </h3>
-                      <ul className="mt-4 space-y-2">
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Summer 2023
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Winter Essentials
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="text-sm text-gray-500 hover:text-gray-900"
-                          >
-                            Bestsellers
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="bg-gray-50 p-4">
-                      <div className="font-medium text-gray-900">Featured</div>
-                      <div className="mt-2 text-sm text-gray-500">
-                        Check out our latest collection
-                      </div>
-                      <div className="mt-4 aspect-video w-full bg-gray-200 rounded-md"></div>
-                    </div>
+                    <div className="mt-4 aspect-video w-full bg-gray-200 rounded-md"></div>
                   </div>
                 </div>
-              </li>
-            </Link>
+              </div>
+            </li>
 
-            {/* What we do */}
-            <Link to="/whatwedo">
-              <li className="group relative perspective-[300px]  z-50 py-6">
-                <button className="flex items-center text-white transition-colors hover:text-gray-200">
-                  What we do
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-120 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
-                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">
-                        Product Features
-                      </p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        Explore our product features
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Pricing</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        View our pricing plans
-                      </p>
-                    </a>
-                    <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
-                      <p className="font-medium text-gray-900">Case Studies</p>
-                      <p className="mt-1 text-sm text-gray-500">
-                        See how others use our product
-                      </p>
-                    </a>
-                  </div>
+            {/* What We Do */}
+            <li className="group relative z-50 py-6">
+              <Link
+                to="/whatwedo"
+                className="flex items-center text-white transition-colors gap-1 hover:text-gray-200"
+              >
+                What we do
+                <IoChevronDown />
+              </Link>
+              <div className="pointer-events-none absolute top-full w-[1200px] -translate-x-[480px] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+                <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6 transition-transform transform group-hover:scale-105">
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">
+                      Product Features
+                    </p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      Explore our product features
+                    </p>
+                  </a>
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">Pricing</p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      View our pricing plans
+                    </p>
+                  </a>
+                  <a href="#" className="rounded-lg p-3 hover:bg-gray-50">
+                    <p className="font-medium text-gray-900">Case Studies</p>
+                    <p className="mt-1 text-sm text-gray-500">
+                      See how others use our product
+                    </p>
+                  </a>
                 </div>
-              </li>
-            </Link>
+              </div>
+            </li>
 
             {/* Portfolio */}
-            <Link to="/portfolio">
-              <li className="group relative perspective-[300px] z-50 py-6">
-                <button className="flex items-center text-white transition-colors hover:text-gray-200">
-                  Portfolio
-                  <svg
-                    className="ml-1 h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
-                <div className="pointer-events-none absolute left-1/2 top-full w-[1200px] -translate-x-6/9 transform rotate-x-[-90deg] origin-top transform-style-preserve-3d opacity-0 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:rotate-x-0 group-hover:pointer-events-auto z-50">
-                  <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6">
-                    <div className="space-y-4">
-                      <h3 className="text-base font-medium text-gray-900">
-                        Recent Posts
-                      </h3>
-                      <a href="#" className="block">
-                        <p className="font-medium text-gray-900">
-                          How to get started
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                          Posted 2 days ago • 5 min read
-                        </p>
+            <li className="group relative z-50 py-6">
+              <Link
+                to="/portfolio"
+                className="flex items-center text-white transition-colors gap-1 hover:text-gray-200"
+              >
+                Portfolio
+                <IoChevronDown />
+              </Link>
+              <div className="pointer-events-none absolute left-1/2 top-full w-[1200px] -translate-x-[416px] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:pointer-events-auto z-50">
+                <div className="overflow-hidden rounded-lg shadow-lg bg-white p-6 grid grid-cols-3 gap-6 transition-transform transform group-hover:scale-105">
+                  <div className="space-y-4">
+                    <h3 className="text-base font-medium text-gray-900">
+                      Recent Posts
+                    </h3>
+                    <a href="#" className="block">
+                      <p className="font-medium text-gray-900">
+                        How to get started
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Posted 2 days ago • 5 min read
+                      </p>
+                    </a>
+                    <a href="#" className="block">
+                      <p className="font-medium text-gray-900">
+                        Tips and tricks
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Posted 1 week ago • 3 min read
+                      </p>
+                    </a>
+                    <a href="#" className="block">
+                      <p className="font-medium text-gray-900">
+                        Latest updates
+                      </p>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Posted 2 weeks ago • 7 min read
+                      </p>
+                    </a>
+                  </div>
+                  <div className="col-span-2 bg-gray-50 p-4 rounded-md">
+                    <h3 className="text-base font-medium text-gray-900">
+                      Blog Categories
+                    </h3>
+                    <div className="mt-4 grid grid-cols-2 gap-4">
+                      <a
+                        href="#"
+                        className="text-sm text-gray-500 hover:text-gray-900"
+                      >
+                        Tutorials
                       </a>
-                      <a href="#" className="block">
-                        <p className="font-medium text-gray-900">
-                          Tips and tricks
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                          Posted 1 week ago • 3 min read
-                        </p>
+                      <a
+                        href="#"
+                        className="text-sm text-gray-500 hover:text-gray-900"
+                      >
+                        News
                       </a>
-                      <a href="#" className="block">
-                        <p className="font-medium text-gray-900">
-                          Latest updates
-                        </p>
-                        <p className="mt-1 text-sm text-gray-500">
-                          Posted 2 weeks ago • 7 min read
-                        </p>
+                      <a
+                        href="#"
+                        className="text-sm text-gray-500 hover:text-gray-900"
+                      >
+                        Guides
+                      </a>
+                      <a
+                        href="#"
+                        className="text-sm text-gray-500 hover:text-gray-900"
+                      >
+                        Case Studies
                       </a>
                     </div>
-                    <div className="col-span-2 bg-gray-50 p-4 rounded-md">
-                      <h3 className="text-base font-medium text-gray-900">
-                        Blog Categories
-                      </h3>
-                      <div className="mt-4 grid grid-cols-2 gap-4">
-                        <a
-                          href="#"
-                          className="text-sm text-gray-500 hover:text-gray-900"
-                        >
-                          Tutorials
-                        </a>
-                        <a
-                          href="#"
-                          className="text-sm text-gray-500 hover:text-gray-900"
-                        >
-                          News
-                        </a>
-                        <a
-                          href="#"
-                          className="text-sm text-gray-500 hover:text-gray-900"
-                        >
-                          Guides
-                        </a>
-                        <a
-                          href="#"
-                          className="text-sm text-gray-500 hover:text-gray-900"
-                        >
-                          Case Studies
-                        </a>
-                      </div>
-                      <div className="mt-4">
-                        <a
-                          href="/blog"
-                          className="text-sm font-medium text-gray-900 hover:underline"
-                        >
-                          View all posts →
-                        </a>
-                      </div>
+                    <div className="mt-4">
+                      <a
+                        href="/blog"
+                        className="text-sm font-medium text-gray-900 hover:underline"
+                      >
+                        View all posts →
+                      </a>
                     </div>
                   </div>
                 </div>
-              </li>
-            </Link>
+              </div>
+            </li>
 
             {/* Contact */}
             <li className="py-6">
