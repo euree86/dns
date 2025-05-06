@@ -8,6 +8,7 @@ import Portfolio from "./component/portfolio";
 import Nav from "./component/nav";
 import Footer from "./component/footer";
 import Login from "./component/login";
+import Homehero from "./component/homehero";
 function App() {
   return (
     <Router>
@@ -21,6 +22,8 @@ function App() {
         <Route path="/nav" element={<Nav />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/homehero" element={<Homehero/>} />
+
       </Routes>
     </Router>
   );

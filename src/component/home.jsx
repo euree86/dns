@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Nav from "./nav";
 import Footer from "./footer";
-import Slider from "react-slick";
+
 import Products from "./products";
 import Services from "./services";
 import Portfolio from "./portfolio";
 import Whatwedo from "./whatwedo";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Homehero from "./homehero";
 
 import {
   Shield,
@@ -31,51 +32,6 @@ import {
 } from "lucide-react";
 
 const Home = () => {
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
-  const cardData = [
-    {
-      icon: <Shield />,
-
-      title: "Firewalls Devices",
-      description:
-        "Protect your networks with our advanced firewall solutions.",
-    },
-    {
-      icon: <Lock />,
-
-      title: "Firewall Configuration",
-      description: "Expert setup and management for optimal security.",
-    },
-    {
-      icon: <Globe />,
-
-      title: "Our Mission",
-      description: "Empowering businesses with cutting-edge network solutions.",
-    },
-  ];
-
   const products = [
     {
       title: "FireWalls Devices and Licences",
@@ -189,67 +145,8 @@ const Home = () => {
       <Nav />
 
       {/* Hero Section */}
-      <div className="relative  py-24 px-4 md:px-8 lg:px-16 overflow-hidden">
-        <div className="absolute inset-0 "></div>
-        <div className="mx-auto grid md:grid-cols-2 gap-8 items-center relative z-10 my-16">
-          <div className="text-left ps-24">
-            <span className="bg-red-100 text-red-800 text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-              Network Solutions
-            </span>
-            <h1 className="text-4xl md:text-7xl font-extrabold text-gray-900 mt-4 mb-4 leading-tight">
-              WELCOME TO <span className="text-red-700">DNS TECHNOLOGY</span>
-            </h1>
-            <p className="text-lg md:text-xl font-medium text-gray-700 mb-8">
-              Innovative Solutions For Your Network Needs
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link to="/services">
-                <button className="bg-red-800 hover:bg-red-900 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 flex items-center">
-                  Our Services
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </button>
-              </Link>
+      <Homehero />
 
-              <button className="bg-transparent border-2 border-red-800 text-red-800 hover:bg-red-800 hover:text-white font-medium py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105">
-                Contact Us
-              </button>
-            </div>
-          </div>
-          <div className="relative hidden md:block">
-            <div className="absolute -top-10 right-16 w-64 h-64 bg-red-50  rounded-xl "></div>
-
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-red-50 rounded-xl   "></div>
-            <img
-              src="https://img.freepik.com/premium-photo/person-using-laptop-with-dns-domain-name-system-icons-symbols-displayed-screen_973183-53181.jpg?w=900"
-              alt="DNS Technology"
-              className="relative rounded-xl  max-w-xl mx-auto transform rotate-0"
-            />
-          </div>
-        </div>
-
-         <div className="max-w-7xl mx-auto px-4 relative z-10 py-12">
-          <Slider {...settings}>
-            {cardData.map((card, index) => (
-              <div key={index} className="p-4">
-                <div
-                  className="bg-gradient-to-r from-red-800 to-red-700 rounded-xl p-8 text-center border
-                  border-white border-opacity-20 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-                >
-                  <div className="bg-white rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4 text-red-700 shadow-lg">
-                    {card.icon}
-                  </div>
-                  <h2 className="text-xl font-semibold mb-4 text-white">
-                    {card.title}
-                  </h2>
-                  <p className="text-white text-opacity-90">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div> 
-      </div>
       {/* About Us */}
       <div className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-36 items-center">
