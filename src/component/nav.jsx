@@ -5,69 +5,91 @@ import { IoIosCall } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { IoChevronDown } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+
 export default function Navbar() {
   return (
-    <nav className="w-full">
-      {/* Logo */}
-      <div className="mx-auto  px-4 py-2 sm:px-6 lg:px-36">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 h-12">
-          <div className="flex flex-col items-center">
-            <img src={logo} alt="" className="w-8" />
-            <p className="font-medium text-normal text-center md:text-left">
-              DNS Technology Pvt Ltd.
-            </p>
+    <nav className=" top-0 left-0 w-full z-50 fixed">
+      {/* Top info bar */}
+      <div className=" text-gray-700   text-sm bg-white border-b border-gray-200 py-1">
+        <div className="w-[80%] mx-auto flex justify-between items-center ">
+          {/* number email */}
+          <div className="flex items-center space-x-4 ">
+            <div className="flex items-center space-x-1">
+              <IoIosCall className="text-white   " />
+              <span>+977 1-4782849</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <MdEmail className="text-black " />
+              <span>dnstechnology@gmail.com</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <CiLocationOn className="text-black " />
+              <span>New Baneshwor, Kathmandu</span>
+            </div>
           </div>
 
-          <div className="w-full md:w-[300px] relative">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full px-8 py-1 rounded-lg bg-gray-200 text-gray-800 focus:outline-none"
-            />
-            <CiSearch className="absolute right-5 top-2.5 h-4 w-4 text-gray-500" />
-          </div>
-
-          <div className="flex flex-row gap-24 sm:gap-8">
-            <div className="flex items-center gap-1">
-              <IoIosCall />
-              <span className="text-normal font-medium">9851155538</span>
-            </div>
-
-            <div className="flex items-center gap-1">
-              <MdEmail />
-              <span className="text-normal font-medium hidden sm:inline">
-                info@dnstech.com.np
-              </span>
-              <span className="text-normal font-medium sm:hidden">Email</span>
-            </div>
+          {/* social media */}
+          <div className="flex space-x-1">
+            <a
+              href="#"
+              className="text-gray-700 hover:text-white hover:bg-red-800 rounded-full w-8 h-8
+                 flex items-center justify-center transition-colors"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href="#"
+              className="text-gray-700  hover:text-white hover:bg-red-800 rounded-full w-8 h-8
+                 flex items-center justify-center transition-colors"
+            >
+              <FiInstagram />
+            </a>
+            <a
+              href="#"
+              className="text-gray-700 hover:text-white hover:bg-red-800 rounded-full w-8 h-8
+                 flex items-center justify-center transition-colors"
+            >
+              <FaLinkedinIn />
+            </a>
           </div>
         </div>
       </div>
 
-      <div className=" bg-red-800 h-12 flex items-center justify-center ">
-        <div className="w-[60%] px-12 relative">
+      {/* Main navigation */}
+
+      <div className="bg-white text-gray-700 border-b border-gray-200 py-1">
+        <div className="  w-[80%] mx-auto flex justify-between items-center h-14 ">
+          <div className="flex items-center space-x-4">
+            <img src={logo} alt="DNS Technology Logo" className="w-10" />
+            <span className="text-base font-semibold text-gray-700">
+              DNS Technology Pvt Ltd.
+            </span>
+          </div>
           <div className="flex justify-between items-center gap-12 ">
             <div>
-              <h1 className="text-white  ">Home</h1>
+              <h1 className=" font-semibold  ">Home</h1>
             </div>
 
             {/* about us */}
             <div className=" group">
               <div className="flex gap-1 items-center cursor-pointer">
-                <h1 className="text-white  ">About Us</h1>
-                <IoChevronDown className="text-white " />
+                <h1 className="  font-semibold   ">About Us</h1>
+                <IoChevronDown className="  font-semibold  " />
               </div>
 
               {/* about us mega menu */}
               <div
-                className="absolute top-full left-0 bg-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-6 
-  z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
-  transition-all duration-300 ease-in-out"
+                className="absolute top-full left-0 bg-[#101828] text-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-6 
+                  z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
+                  transition-all duration-300 ease-in-out"
               >
                 {/* Company Section */}
                 <div>
                   <h2 className="font-semibold mb-2">Company</h2>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-sm text-white">
                     <li>
                       <a
                         href="/about/our-story"
@@ -97,7 +119,7 @@ export default function Navbar() {
                 {/* What We Do Section */}
                 <div>
                   <h2 className="font-semibold mb-2">What We Do</h2>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-sm text-white">
                     <li>
                       <a href="/about/services" className="hover:text-blue-600">
                         Our Services
@@ -122,7 +144,7 @@ export default function Navbar() {
                 {/* IT Solutions Section */}
                 <div>
                   <h2 className="font-semibold mb-2">IT Solutions</h2>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-sm text-white">
                     <li>
                       <a
                         href="/about/software-development"
@@ -153,7 +175,7 @@ export default function Navbar() {
                 {/* Hardware Solutions Section */}
                 <div>
                   <h2 className="font-semibold mb-2">Hardware Solutions</h2>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-sm text-white">
                     <li>
                       <a
                         href="/about/hardware-sales"
@@ -186,24 +208,24 @@ export default function Navbar() {
             {/* product */}
             <div className=" group">
               <div className="flex gap-1 items-center ">
-                <h1 className="text-white f "> Product</h1>
-                <IoChevronDown  className="text-white  " />
+                <h1 className=" font-semibold    "> Product</h1>
+                <IoChevronDown className=" font-semibold    " />
               </div>
 
               {/* product mega menu */}
               <div
-                className="absolute top-full left-0 bg-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
                 {/* Hardware Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Hardware
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li>
-                      <p className="font-medium text-gray-900">Networking</p>
+                      <p className="font-medium text-white">Networking</p>
                       <ul className="ml-4 list-disc space-y-1 ">
                         <li className="hover:underline">Switch (Brand)</li>
                         <li className="hover:underline">POE / Non-POE</li>
@@ -212,7 +234,7 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li>
-                      <p className="font-medium mt-3 text-gray-900">Security</p>
+                      <p className="font-medium mt-3 text-white">Security</p>
                       <ul className="ml-4 list-disc space-y-1">
                         <li className="hover:underline">
                           CCTV & Surveillance (2MP, 4MP, 5MP, 8MP)
@@ -230,14 +252,12 @@ export default function Navbar() {
 
                 {/* Servers & Racks */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Servers & Racks
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li>
-                      <p className="font-medium text-gray-900">
-                        Servers (Brand)
-                      </p>
+                      <p className="font-medium text-white">Servers (Brand)</p>
                       <ul className="ml-4 list-disc space-y-1">
                         <li className="hover:underline">Rack Server</li>
                         <li className="hover:underline">Tower Server</li>
@@ -245,7 +265,7 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li>
-                      <p className="font-medium mt-3 text-gray-900">
+                      <p className="font-medium mt-3 text-white">
                         Racks (Brand)
                       </p>
                       <ul className="ml-4 list-disc space-y-1">
@@ -258,12 +278,12 @@ export default function Navbar() {
 
                 {/* Computing & Accessories */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Computing & Accessories
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li>
-                      <p className="font-medium text-gray-900">
+                      <p className="font-medium text-white">
                         Computer / Laptop / Monitor (Brand)
                       </p>
                       <ul className="ml-4 list-disc space-y-1">
@@ -273,9 +293,7 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li>
-                      <p className="font-medium mt-3 text-gray-900">
-                        Accessories
-                      </p>
+                      <p className="font-medium mt-3 text-white">Accessories</p>
                       <ul className="ml-4 list-disc space-y-1">
                         <li className="hover:underline">Keyboard</li>
                         <li className="hover:underline">Mouse</li>
@@ -290,12 +308,12 @@ export default function Navbar() {
 
                 {/* Software & Licensing */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Software & Licensing
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li>
-                      <p className="font-medium text-gray-900">Software</p>
+                      <p className="font-medium text-white">Software</p>
                       <ul className="ml-4 list-disc space-y-1">
                         <li className="hover:underline">ERP</li>
                         <li className="hover:underline">Courier</li>
@@ -303,34 +321,35 @@ export default function Navbar() {
                       </ul>
                     </li>
                     <li className="mt-3">
-                      <p className="font-medium text-gray-900">License</p>
+                      <p className="font-medium text-white">License</p>
                     </li>
                     <li>
-                      <p className="font-medium text-gray-900">SMS Services</p>
+                      <p className="font-medium text-white">SMS Services</p>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
+            {/* service */}
             <div className=" group">
               <div className="flex gap-1 items-center ">
-                <h1 className="text-white "> Services</h1>
-                <IoChevronDown  className="text-white  " />
+                <h1 className="  font-semibold  "> Services</h1>
+                <IoChevronDown className="  font-semibold   " />
               </div>
 
               {/* service detail page */}
               <div
-                className="absolute top-full left-0 bg-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
                 {/* IT Services Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     IT Services
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Network Setup & Configuration
                     </li>
@@ -344,10 +363,10 @@ export default function Navbar() {
 
                 {/* Hardware Services Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Hardware Services
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Server Installation & Setup
                     </li>
@@ -365,10 +384,10 @@ export default function Navbar() {
 
                 {/* Software Services Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Software Solutions
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Custom Software Development
                     </li>
@@ -386,10 +405,10 @@ export default function Navbar() {
 
                 {/* Consulting Services Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Consulting Services
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">IT Strategy & Planning</li>
                     <li className="hover:underline">
                       Cybersecurity Consulting
@@ -403,10 +422,10 @@ export default function Navbar() {
 
                 {/* Cloud Services Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Cloud Services
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Cloud Infrastructure Management
                     </li>
@@ -418,10 +437,10 @@ export default function Navbar() {
 
                 {/* Managed IT Services Section */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Managed IT Services
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">24/7 Monitoring</li>
                     <li className="hover:underline">
                       Managed Network Security
@@ -438,21 +457,21 @@ export default function Navbar() {
             {/* what we do */}
             <div className=" group">
               <div className="flex gap-1 items-center ">
-                <h1 className="text-white  "> What we do</h1>
-                <IoChevronDown  className="text-white  " />
+                <h1 className=" font-semibold    "> What we do</h1>
+                <IoChevronDown className=" font-semibold    " />
               </div>
 
               {/* what we do mega mneu */}
               <div
-                className="absolute top-full left-0 bg-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 ">
                     Core Expertise
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm ">
                     <li className="hover:underline">
                       IT Infrastructure Management
                     </li>
@@ -466,10 +485,10 @@ export default function Navbar() {
 
                 {/* Solutions We Deliver */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Solutions We Deliver
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">End-to-End IT Solutions</li>
                     <li className="hover:underline">
                       Custom Enterprise Software
@@ -485,10 +504,10 @@ export default function Navbar() {
 
                 {/* Technologies We Use */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Technologies We Use
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Microsoft & Linux Platforms
                     </li>
@@ -504,10 +523,10 @@ export default function Navbar() {
 
                 {/* How We Help */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     How We Help
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Consulting & Roadmapping
                     </li>
@@ -521,10 +540,10 @@ export default function Navbar() {
 
                 {/* Specialized Services */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Specialized Services
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">Firewall & VPN Setup</li>
                     <li className="hover:underline">Data Center Design</li>
                     <li className="hover:underline">
@@ -538,10 +557,10 @@ export default function Navbar() {
 
                 {/* Industries We Serve */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Industries We Serve
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">Corporate & Enterprise</li>
                     <li className="hover:underline">
                       Government & Public Sector
@@ -555,23 +574,24 @@ export default function Navbar() {
               </div>
             </div>
 
+            {/* portfolio */}
             <div className="group">
               <div className="flex gap-1 items-center ">
-                <h1 className="text-white  "> Portfolio</h1>
-                <IoChevronDown  className="text-white  " />
+                <h1 className="  font-semibold    "> Portfolio</h1>
+                <IoChevronDown className="  font-semibold    " />
               </div>
 
               <div
-                className="absolute top-full left-0 bg-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
                 {/* Networking Projects */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Networking Projects
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Enterprise Network Setup
                     </li>
@@ -583,10 +603,10 @@ export default function Navbar() {
 
                 {/* Surveillance Projects */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Surveillance Projects
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       City-Wide CCTV Installation
                     </li>
@@ -604,10 +624,10 @@ export default function Navbar() {
 
                 {/* Software Development */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Software Development
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">Custom ERP Systems</li>
                     <li className="hover:underline">Courier Management Apps</li>
                     <li className="hover:underline">Inventory Systems</li>
@@ -619,10 +639,10 @@ export default function Navbar() {
 
                 {/* Server & Cloud Projects */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Server & Cloud Projects
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">
                       Server Infrastructure Deployment
                     </li>
@@ -636,10 +656,10 @@ export default function Navbar() {
 
                 {/* Access Control Systems */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Access Control Systems
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">Biometric Integration</li>
                     <li className="hover:underline">RFID Entry Systems</li>
                     <li className="hover:underline">
@@ -653,10 +673,10 @@ export default function Navbar() {
 
                 {/* Web & Mobile Apps */}
                 <div>
-                  <h2 className="font-semibold text-base mb-3 text-gray-800">
+                  <h2 className="font-semibold text-base mb-3 text-white">
                     Web & Mobile Apps
                   </h2>
-                  <ul className="space-y-2 text-sm text-gray-700">
+                  <ul className="space-y-2 text-sm text-white">
                     <li className="hover:underline">E-Commerce Platforms</li>
                     <li className="hover:underline">Educational Portals</li>
                     <li className="hover:underline">Mobile CRM Solutions</li>
@@ -667,82 +687,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex gap-1 items-center ">
-              <h1 className="text-white  "> Contact</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu (hidden by default) */}
-      <div className="lg:hidden hidden">
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
-              <span className="text-xl font-bold">Logo</span>
-            </a>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-            >
-              <span className="sr-only">Close menu</span>
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <a
-                  href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Home
-                </a>
-                <a
-                  href="/shop"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Shop
-                </a>
-                <a
-                  href="/product"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Product
-                </a>
-                <a
-                  href="/contact"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Contact
-                </a>
-                <a
-                  href="/blog"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Blog
-                </a>
-              </div>
-              <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Sign In
-                </a>
-              </div>
+              <h1 className=" font-semibold    "> Contact</h1>
             </div>
           </div>
         </div>
