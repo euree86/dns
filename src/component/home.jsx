@@ -13,13 +13,6 @@ import Homehero from "./homehero";
 import Producthome from "./producthome";
 import {
   Shield,
-  Cable,
-  Cctv,
-  Server,
-  Monitor,
-  Wifi,
-  Network,
-  ChevronRight,
   ArrowRight,
   Globe,
   Code,
@@ -28,7 +21,6 @@ import {
   HardDrive,
   Database,
   Cpu,
-  Lock,
 } from "lucide-react";
 
 const Home = () => {
@@ -390,7 +382,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-      
+
       {/* Our Portfolio */}
 
       <div className="bg-gray-50">
@@ -459,9 +451,9 @@ const Home = () => {
           </div>
 
           <div className="flex justify-center mt-12">
-            <Link to="/portfolio">
-              <button className="group bg-red-700 hover:bg-red-800 text-white font-medium py-3 px-8 rounded-full transition-all flex items-center">
-                View All Projects
+            <Link to="/services">
+              <button className="group bg- hover:bg-red-800 hover:text-white outline-1 outline-gray-400 text-red-900 font-medium py-3 px-8 rounded-full transition-all flex items-center">
+                Learn More
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>

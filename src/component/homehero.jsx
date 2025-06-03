@@ -31,7 +31,7 @@ const HomeHero = () => {
     <div className="mt-20 bg-gray-50">
       <Nav />
       {/* Hero Section with Animation */}
-      <section className="h-[790px] overflow-hidden relative w-[80%] mx-auto flex justify-between items-center  ">
+      <section className="h-[790px] container overflow-hidden relative w-[80%] mx-auto flex justify-between items-center  ">
         <div className=" px-4 md:px-6 relative z-10">
           <div className="grid gap-24 grid-cols-2  ">
             <div className="flex flex-col justify-center space-y-4 w-full animate-fade-in-left animation-delay-800">
@@ -68,7 +68,7 @@ const HomeHero = () => {
                       className="inline-block h-8 w-8 rounded-full ring-2 ring-white overflow-hidden"
                     >
                       <img
-                        src={`https://via.placeholder.com/50x50?text=${i}`}
+                        src={`https://cdn.pixabay.com/photo/2021/09/12/08/49/headset-6617715_1280.png`}
                         alt={`Client ${i}`}
                         className="h-full w-full object-cover"
                       />

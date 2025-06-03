@@ -136,7 +136,7 @@ const Portfolio = () => {
     <div>
       <Nav/>
       {/* Hero div */}
-      <div className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white">
+      <div className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white mt-24">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">OUR PORTFOLIO</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">

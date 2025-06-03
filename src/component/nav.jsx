@@ -8,12 +8,17 @@ import { IoChevronDown } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiInstagram } from "react-icons/fi";
+import Home from "./home";
+import About from "./about";
+import Products from "./products";
+import Services from "./services";
+import Portfolio from "./portfolio";
 
 export default function Navbar() {
   return (
     <nav className=" top-0 left-0 w-full z-50 fixed">
       {/* Top info bar */}
-      <div className=" text-gray-700   text-sm bg-white border-b border-gray-200 py-1">
+      <div className=" text-gray-700    text-sm bg-white border-b border-gray-200 py-1">
         <div className="w-[80%] mx-auto flex justify-between items-center ">
           {/* number email */}
           <div className="flex items-center space-x-4 ">
@@ -70,19 +75,28 @@ export default function Navbar() {
           </div>
           <div className="flex justify-between items-center gap-12 ">
             <div>
-              <h1 className=" font-semibold  ">Home</h1>
+              {/* <Home/> */}
+
+              <Link to="/home">
+                <h1 className=" font-semibold  ">Home</h1>
+              </Link>
             </div>
 
             {/* about us */}
             <div className=" group">
-              <div className="flex gap-1 items-center cursor-pointer">
-                <h1 className="  font-semibold   ">About Us</h1>
-                <IoChevronDown className="  font-semibold  " />
+              <div>
+                <Link
+                  to="/about"
+                  className="flex gap-1 items-center cursor-pointer"
+                >
+                  <h1 className="  font-semibold   ">About Us</h1>
+                  <IoChevronDown className="  font-semibold  " />
+                </Link>
               </div>
 
               {/* about us mega menu */}
               <div
-                className="absolute top-full left-0 bg-[#101828] text-white shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-6 
+                className="absolute top-full left-0 bg-[#101828] text-white shadow-lg p-6 w-full grid grid-cols-4 gap-6 
                   z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                   transition-all duration-300 ease-in-out"
               >
@@ -207,14 +221,19 @@ export default function Navbar() {
 
             {/* product */}
             <div className=" group">
-              <div className="flex gap-1 items-center ">
-                <h1 className=" font-semibold    "> Product</h1>
-                <IoChevronDown className=" font-semibold    " />
+              <div>
+                <Link
+                  to="/products"
+                  className="flex gap-1 items-center cursor-pointer"
+                >
+                  <h1 className=" font-semibold    "> Product</h1>
+                  <IoChevronDown className=" font-semibold    " />
+                </Link>
               </div>
 
               {/* product mega menu */}
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
@@ -333,14 +352,19 @@ export default function Navbar() {
 
             {/* service */}
             <div className=" group">
-              <div className="flex gap-1 items-center ">
-                <h1 className="  font-semibold  "> Services</h1>
-                <IoChevronDown className="  font-semibold   " />
+              <div>
+                <Link
+                  to="/services"
+                  className="flex gap-1 items-center cursor-pointer"
+                >
+                  <h1 className="  font-semibold  "> Services</h1>
+                  <IoChevronDown className="  font-semibold   " />
+                </Link>
               </div>
 
               {/* service detail page */}
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
@@ -456,14 +480,20 @@ export default function Navbar() {
 
             {/* what we do */}
             <div className=" group">
-              <div className="flex gap-1 items-center ">
-                <h1 className=" font-semibold    "> What we do</h1>
-                <IoChevronDown className=" font-semibold    " />
+              <div>
+                <Link
+                  to="/whatwedo"
+                  className="flex gap-1 items-center cursor-pointer"
+                >
+                  {" "}
+                  <h1 className=" font-semibold    "> What we do</h1>
+                  <IoChevronDown className=" font-semibold    " />
+                </Link>
               </div>
 
               {/* what we do mega mneu */}
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
@@ -576,13 +606,18 @@ export default function Navbar() {
 
             {/* portfolio */}
             <div className="group">
-              <div className="flex gap-1 items-center ">
-                <h1 className="  font-semibold    "> Portfolio</h1>
-                <IoChevronDown className="  font-semibold    " />
+              <div>
+                <Link
+                  to="/portfolio"
+                  className="flex gap-1 items-center cursor-pointer"
+                >
+                  <h1 className="  font-semibold    "> Portfolio</h1>
+                  <IoChevronDown className="  font-semibold    " />
+                </Link>
               </div>
 
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6 mt-4 w-full grid grid-cols-4 gap-8 
+                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >

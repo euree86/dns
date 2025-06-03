@@ -112,7 +112,7 @@ const contactItems = [
 
 const Services = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 mt-20">
       {/* Hero Section */}
       <Nav />
       <div className="relative text-black">

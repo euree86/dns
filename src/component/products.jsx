@@ -246,7 +246,7 @@ const brands = [
 
 const Products = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 mt-24">
       <Nav />
       {/* Hero Section */}
       <div className="py-16 px-4 text-red-700">

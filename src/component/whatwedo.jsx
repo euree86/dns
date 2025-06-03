@@ -131,7 +131,7 @@ const testimonials = [
 
 const WhatWeDo = () => {
   return (
-    <section className="bg-gradient-to-b from-white to-gray-50">
+    <section className="bg-gradient-to-b from-white to-gray-50 mt-24">
       <Nav />
       {/* Header Section */}
       <div className="container mx-auto px-4 py-16 text-center">
