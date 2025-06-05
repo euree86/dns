@@ -16,9 +16,9 @@ import Portfolio from "./portfolio";
 
 export default function Navbar() {
   return (
-    <nav className=" top-0 left-0 w-full z-50 fixed">
+    <nav className=" top-0 left-0 w-full z-50 fixed bg-gray-100">
       {/* Top info bar */}
-      <div className=" text-gray-700    text-sm bg-white border-b border-gray-200 py-1">
+      <div className=" text-gray-700    text-sm  border-b border-gray-200 py-1">
         <div className="w-[80%] mx-auto flex justify-between items-center ">
           {/* number email */}
           <div className="flex items-center space-x-4 ">
@@ -65,7 +65,7 @@ export default function Navbar() {
 
       {/* Main navigation */}
 
-      <div className="bg-white text-gray-700 border-b border-gray-200 py-1">
+      <div className=" text-gray-700 border-b border-gray-200 py-1">
         <div className="  w-[80%] mx-auto flex justify-between items-center h-14 ">
           <div className="flex items-center space-x-4">
             <img src={logo} alt="DNS Technology Logo" className="w-10" />

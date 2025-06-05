@@ -8,8 +8,8 @@ import {
   BiCodeAlt,
 } from "react-icons/bi";
 import { FaUserTie, FaChartLine, FaLightbulb } from "react-icons/fa";
-import Nav from "./nav"
-import Footer from "./footer"
+import Nav from "./nav";
+import Footer from "./footer";
 
 const stats = [
   {
@@ -120,7 +120,7 @@ const companies = [
 const About = () => {
   return (
     <div className="bg-gray-50">
-      <Nav/>
+      <Nav />
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-r from-red-800 to-black opacity-80"></div>
@@ -431,7 +431,7 @@ const About = () => {
               Discover how DNS Technology can help your organization achieve its
               technology goals with our innovative solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row ga p-4 justify-center">
               <button className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium py-3 px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-colors shadow-lg">
                 Contact Us
               </button>
@@ -442,7 +442,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };

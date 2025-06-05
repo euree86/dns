@@ -28,7 +28,7 @@ const HomeHero = () => {
     };
   }, []);
   return (
-    <div className="mt-20 bg-gray-50">
+    <div className="mt-20 bg-gray-100">
       <Nav />
       {/* Hero Section with Animation */}
       <section className="h-[790px] container overflow-hidden relative w-[80%] mx-auto flex justify-between items-center  ">

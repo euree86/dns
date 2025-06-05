@@ -9,6 +9,7 @@ import Nav from "./component/nav";
 import Footer from "./component/footer";
 import Login from "./component/login";
 import Homehero from "./component/homehero";
+import Eg from "./component/eg";
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
         <Route path="/footer" element={<Footer />} />
         <Route path="/login" element={<Login />} />
         <Route path="/homehero" element={<Homehero />} />
+        <Route path="/eg" element={<Eg />} />
+
       </Routes>
     </Router>
   );
