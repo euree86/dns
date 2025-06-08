@@ -73,7 +73,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-800 text-gray-300 px-4 py-12">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Company Info */}
           <div className="lg:col-span-2">

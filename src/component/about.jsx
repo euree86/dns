@@ -1,4 +1,4 @@
-import React from "react";
+import { Clock, Mail, Zap } from "lucide-react";
 import {
   BiSolidCctv,
   BiNetworkChart,
@@ -8,8 +8,13 @@ import {
   BiCodeAlt,
 } from "react-icons/bi";
 import { FaUserTie, FaChartLine, FaLightbulb } from "react-icons/fa";
+import vector from "../image/1.png";
+import about from "../image/aboutus.jpg";
 import Nav from "./nav";
 import Footer from "./footer";
+import { FaFacebook } from "react-icons/fa";
+
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const stats = [
   {
@@ -43,186 +48,280 @@ const services = [
     title: "CCTV Installations",
     description:
       "Protect your property with our expert CCTV installation services. We provide tailored surveillance solutions for homes, offices, and commercial premises.",
-    icon: <BiSolidCctv className="text-red-600 text-2xl" />,
+    icon: <BiSolidCctv className="text-red-600 text-3xl" />,
     bgColor: "bg-red-100",
   },
   {
     title: "Network Solutions",
     description:
       "From design to implementation, we provide robust network infrastructure that ensures seamless connectivity and optimal performance.",
-    icon: <BiNetworkChart className="text-red-700 text-2xl" />,
+    icon: <BiNetworkChart className="text-red-700 text-3xl" />,
     bgColor: "bg-red-200",
   },
   {
     title: "Cybersecurity",
     description:
       "Comprehensive security solutions to protect your digital assets from evolving threats in today's complex cyber landscape.",
-    icon: <BiShieldAlt className="text-red-600 text-2xl" />,
+    icon: <BiShieldAlt className="text-red-600 text-3xl" />,
     bgColor: "bg-red-100",
   },
   {
     title: "Cloud Services",
     description:
       "Scalable cloud solutions that enhance flexibility, reduce costs, and improve collaboration across your organization.",
-    icon: <BiCloud className="text-red-700 text-2xl" />,
-    bgColor: "bg-red-200",
-  },
-  {
-    title: "IT Infrastructure",
-    description:
-      "End-to-end IT infrastructure solutions designed to support your business operations and drive digital transformation.",
-    icon: <BiServer className="text-red-600 text-2xl" />,
-    bgColor: "bg-red-100",
-  },
-  {
-    title: "Custom Software",
-    description:
-      "Bespoke software development tailored to your specific business requirements and operational workflows.",
-    icon: <BiCodeAlt className="text-red-700 text-2xl" />,
+    icon: <BiCloud className="text-red-700 text-3xl" />,
     bgColor: "bg-red-200",
   },
 ];
 
 const teamMembers = [
   {
-    name: "Sarad Bhatta",
-    title: " Developer",
+    id: 1,
+    name: "Sophia Lee",
+    position: "CEO & Co-Founder",
     image:
-      "https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419_1280.jpg",
-    description:
-      "Full-stack developer with expertise in modern JavaScript frameworks and cloud architecture.",
+      "https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419_960_720.jpg",
+    bio: "Visionary leader with 12+ years in tech innovation and strategic business development.",
+    skills: ["Leadership", "Strategy", "Innovation"],
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "sophia@company.com",
+    },
   },
   {
-    name: "Ranjit dai",
-    title: "Dot Net Developer",
+    id: 2,
+    name: "Olivia Kim",
+    position: "Co-Founder & CTO",
     image:
-      "https://cdn.pixabay.com/photo/2022/08/05/07/31/employee-7366214_1280.jpg",
-    description:
-      "Creating intuitive user experiences with a focus on accessibility and human-centered design principles.",
+      "https://cdn.pixabay.com/photo/2024/11/22/13/20/man-9216455_1280.jpg",
+    bio: "Technical architect specializing in scalable solutions and emerging technologies.",
+    skills: ["Full-Stack", "Cloud", "AI/ML"],
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "olivia@company.com",
+    },
   },
   {
-    name: "Sailesh Kandel",
-    title: "Next JS",
+    id: 3,
+    name: "Mark Martin",
+    position: "Business Developer",
     image:
-      "https://cdn.pixabay.com/photo/2021/04/26/09/30/man-6208470_1280.jpg",
-    description:
-      "Strategic marketer with expertise in digital campaigns, brand development, and customer engagement.",
+      "https://cdn.pixabay.com/photo/2022/09/02/18/35/man-7428188_1280.jpg",
+    bio: "Growth expert focused on partnerships and market expansion strategies.",
+    skills: ["Sales", "Partnerships", "Growth"],
+    social: {
+      linkedin: "#",
+      twitter: "#",
+      email: "mark@company.com",
+    },
+  },
+  {
+    id: 4,
+    name: "Sarah Chen",
+    position: "Head of Design",
+    image:
+      "https://img.freepik.com/free-photo/business-owner-working-their-strategy_23-2149241318.jpg?semt=ais_hybrid&w=740",
+    bio: "Creative designer passionate about user experience and visual storytelling.",
+    skills: ["UI/UX", "Branding", "Product"],
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "sarah@company.com",
+    },
   },
 ];
+
+const getSocialIcon = (platform) => {
+  switch (platform) {
+    case "linkedin":
+      return <FaLinkedin />;
+    case "github":
+      return <FaGithub />;
+    case "twitter":
+      return <FaTwitter />;
+    case "email":
+      return <FaEnvelope />;
+    default:
+      return null;
+  }
+};
 
 const companies = [
   { name: "Microsoft", url: "https://logo.clearbit.com/microsoft.com" },
-  { name: "Google", url: "https://logo.clearbit.com/google.com" },
+  {
+    name: "Google",
+    url: "https://images.squarespace-cdn.com/content/v1/5efac47c974baf191ceaead9/1cc21c90-d2fb-4258-ad3f-6922401bb6a0/Jeremy-DV-Boyd-Logo-Designs-1500px-Enerbee.png",
+  },
   { name: "IBM", url: "https://logo.clearbit.com/ibm.com" },
+  {
+    name: "Amazon",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1iqUDZOrXHaod5rHaRvBl1JwwfMs1uBjq1g&s",
+  },
+  {
+    name: "Cisco",
+    url: "https://www.shutterstock.com/image-vector/customer-care-icon-social-help-600nw-1921058849.jpg",
+  },
+  {
+    name: "Microsoft",
+    url: "https://www.shutterstock.com/image-vector/star-logo-person-shape-yellow-600nw-2234037961.jpg",
+  },
+  {
+    name: "Google",
+    url: "https://pbs.twimg.com/media/CoO0h-NWAAAZO5a.jpg:large",
+  },
+  {
+    name: "IBM",
+    url: "https://www.identity-international.com/wp-content/uploads/2019/11/ID-International-Blog3-Logos-1.jpg",
+  },
   { name: "Amazon", url: "https://logo.clearbit.com/amazon.com" },
-  { name: "Cisco", url: "https://logo.clearbit.com/cisco.com" },
+  {
+    name: "Cisco",
+    url: "https://cdn.dribbble.com/userupload/17111767/file/original-629644334639d45ceadb2bc823c7af3e.jpg?resize=400x0",
+  },
 ];
-const About = () => {
+
+export default function ITSolutionsSection() {
   return (
-    <div className="bg-gray-50">
+    <div>
       <Nav />
-      {/* Hero Section */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-800 to-black opacity-80"></div>
-        <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80"
-          alt="Technology background"
-          className="w-full h-[500px] object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About <span className="text-red-300">DNS Technology</span>
-          </h1>
-          <p className="text-xl text-red-100 max-w-2xl">
-            Innovating the future of network solutions and IT services
-          </p>
+      <div className="pt-24 bg-gray-100">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left Content */}
+            <div className="text-black space-y-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Perfect IT and Network Solution For Your Business
+              </h1>
+
+              <p className="text-md text-black leading-relaxed max-w-2xl italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore temporibus corporis laboriosam illo voluptas quisquam
+                quo eum.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <button className="px-6 bg-red-700 hover:bg-red-700 text-white font-semibold transition-all group rounded-md flex items-center py-2">
+                  Read More
+                </button>
+                <button
+                  className="px-8 hover:outline-red-600 hover:bg-gray-100 hover:text-red-600 transition-all outline-1
+                 outline-red-800 rounded-md font-semibold"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
+
+            {/* Right Content - Device Mockups */}
+            <div className="relative flex justify-center ">
+              <div className="relative w-full max-w-lg">
+                <img
+                  src={about}
+                  alt="School Management System on multiple devices"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Introduction */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Our Story & Mission
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-red-700 to-red-500 mx-auto mb-6" />
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-            Founded with a vision to transform the technology landscape, DNS
-            Technology has grown from a small startup to a trusted industry
-            leader.
-          </p>
-        </div>
+      {/* Curved SVG Divider */}
+      <div className="w-full">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill" fill="#F2F2F2"
+          ></path>
+        </svg>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Who We Are
-            </h3>
-            <p className="text-gray-600 mb-4">
-              DNS Technology is a premier provider of network solutions and IT
-              services, dedicated to empowering businesses with innovative and
-              reliable technology. With decades of expertise and a team of
-              seasoned professionals, we specialize in delivering end-to-end
-              solutions tailored to meet the unique needs of businesses across
-              diverse industries.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Our comprehensive offerings include network design,
-              implementation, optimization, and managed services, ensuring
-              seamless connectivity and peak performance for organizations of
-              all sizes.
-            </p>
+      {/* Introduction */}
+      <div className="container mx-auto py-16 mb-16 px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Image Section */}
+          <div className="relative">
+            <div className="rounded-lg overflow-hidden max-w-2xl h-full">
+              <img
+                src="https://cdn.pixabay.com/photo/2020/10/14/07/18/woman-5653501_1280.jpg"
+                alt="Business team collaboration"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${item.bgColor} p-4 rounded-lg flex items-center`}
-                >
-                  {item.icon}
-                  <div>
-                    <p className="font-bold text-gray-800">{item.value}</p>
-                    <p className="text-sm text-gray-600">{item.label}</p>
-                  </div>
-                </div>
-              ))}
+          {/* Content Section */}
+          <div className="space-y-8">
+            <div className="shadow-4xl bg-gray-100 px-4 py-2 w-fit rounded-lg font-medium">
+              About DNS
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 ">
+              Provide the most{" "}
+              <span className="text-red-800">Impressive Solutions</span>
+            </h1>
+
+            <div className="space-y-4 text-gray-600 text-justify ">
+              <p>
+                DNS Technology is a premier provider of network solutions and IT
+                services, dedicated to empowering businesses with innovative and
+                reliable technology. With decades of expertise and a team of
+                seasoned professionals, we specialize in delivering end-to-end
+                solutions tailored to meet the unique needs of businesses across
+                diverse industries. Our comprehensive offerings include network
+                design, implementation, optimization, and managed services,
+                ensuring seamless connectivity and peak performance for
+                organizations of all sizes.
+              </p>
+            </div>
+
+            <div>
+              <button className="bg-[#1E2939] text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                Read More...
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       {/* Services */}
-      <div className="bg-red-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Our Core Services
+      <div className="bg-[#F2F2F2]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 ">
+          <div className="text-center pb-24 flex flex-col items-center gap-2 ">
+            <div className="shadow-4xl bg-white px-4 py-2 w-fit rounded-lg font-medium text-red-800">
+              About DNS
+            </div>
+            <h2 className="text-5xl font-bold text-[#1E2939] ">
+              Our Core Services and Expertise
+              <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mt-2"></div>
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive solutions designed to meet your technology needs
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="bg-white rounded-xl  overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
               >
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    <div className={`${service.bgColor} p-3 rounded-full mr-4`}>
+                <div className="p-12">
+                  <div className="flex items-center ">
+                    <div className={`${service.bgColor} p-4 rounded-full `}>
                       {service.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-800">
-                      {service.title}
-                    </h3>
                   </div>
-                  <p className="text-gray-600 mb-6">{service.description}</p>
-                  <button className="text-red-600 font-medium flex items-center hover:text-red-800 transition-colors">
+                  <h3 className="text-2xl font-bold text-gray-800 py-4 ">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 text-justify">
+                    {service.description}
+                  </p>
+                  <button className="text-red-800 font-medium flex items-center hover:text-red-800 transition-colors">
                     Learn more
                     <svg
                       className="w-4 h-4 ml-2"
@@ -246,205 +345,187 @@ const About = () => {
       </div>
 
       {/* CEO Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-24">
-            <div className="lg:w-1/2">
-              <div className="relative group">
-                <div
-                  className="absolute -inset-2 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-75
-                 blur-md group-hover:opacity-100 transition duration-200"
-                ></div>
-                <img
-                  src="https://cdn.pixabay.com/photo/2023/12/21/06/23/middle-age-8461306_1280.jpg"
-                  alt="Dipesh Silwal"
-                  className="relative rounded-2xl w-full h-auto shadow-xl"
-                />
-              </div>
+      <div className="container mx-auto py-24 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between px-16 py-16">
+          <div className="lg:w-1/2">
+            <h2 className="text-5xl font-bold text-[#1E2939] mb-2">
+              Message from Our CEO
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-6"></div>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-1">
+              Dipesh Silwal
+            </h3>
+            <p className="text-red-600 font-medium mb-6">
+              Founder and Chief Executive Officer
+            </p>
+            <p className="text-gray-600 mb-4">
+              "At DNS Technology, we believe that technology should empower
+              businesses, not complicate them. Our mission is to deliver
+              innovative solutions that drive growth, enhance security, and
+              simplify operations."
+            </p>
+            <p className="text-gray-600 mb-6">
+              With over a decade of experience in the tech industry, I've seen
+              firsthand how the right technology can transform businesses.
+              That's why we've assembled a team of passionate experts dedicated
+              to helping our clients navigate the digital landscape with
+              confidence.
+            </p>
+            <div className="flex space-x-3">
+              <a
+                href="#"
+                className="text-[#1E2939] hover:text-red-600 transition-colors text-2xl"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="#"
+                className="text-[#1E2939] hover:text-red-600 transition-colors text-2xl"
+              >
+                <FaFacebook />
+              </a>
             </div>
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                Message from Our CEO
-              </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-6"></div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-1">
-                Dipesh Silwal
-              </h3>
-              <p className="text-red-600 font-medium mb-6">
-                Founder and Chief Executive Officer
-              </p>
-              <p className="text-gray-600 mb-4">
-                "At DNS Technology, we believe that technology should empower
-                businesses, not complicate them. Our mission is to deliver
-                innovative solutions that drive growth, enhance security, and
-                simplify operations."
-              </p>
-              <p className="text-gray-600 mb-6">
-                With over a decade of experience in the tech industry, I've seen
-                firsthand how the right technology can transform businesses.
-                That's why we've assembled a team of passionate experts
-                dedicated to helping our clients navigate the digital landscape
-                with confidence.
-              </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-gray-500 hover:text-red-600 transition-colors"
-                >
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-500 hover:text-red-600 transition-colors"
-                >
-                  <svg
-                    className="h-6 w-6"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                </a>
-              </div>
+          </div>
+
+          {/* image section */}
+          <div className="lg:w-1/3">
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-75 blur-md group-hover:opacity-100 transition duration-200"></div>
+              <img
+                src="https://cdn.pixabay.com/photo/2023/12/21/06/23/middle-age-8461306_1280.jpg"
+                alt="Dipesh Silwal"
+                className="relative rounded-2xl w-full h-auto shadow-xl"
+              />
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Team Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Meet Our Team
+      <div className="bg-[#F2F2F2] py-16 ">
+        <div className=" container mx-auto  px-4  text-center py-6 ">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-[#1E2939] mb-2">
+              Meet Our Amazing Team
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6" />
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              A diverse group of passionate professionals dedicated to
-              excellence
+            <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
+            <p className="text-lg text-gray-600  mx-auto">
+              Our diverse team of experts brings together years of experience,
+              creativity, and passion to deliver exceptional results for our
+              clients.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
+          {/* Team Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {teamMembers.map((member) => (
               <div
-                key={index}
-                className="bg-white rounded-xl  overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+                key={member.id}
+                className="bg-white  shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group"
               >
-                <div className="relative h-64">
+                {/* Image Container */}
+                <div className="overflow-hidden ">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <h3 className="text-xl font-bold text-white">
-                      {member.name}
-                    </h3>
-                    <p className="text-red-200">{member.title}</p>
-                  </div>
                 </div>
-                <div className="p-6">
-                  <p className="text-gray-600 mb-4">{member.description}</p>
-                  <div className="flex space-x-4">
-                    {/* Twitter */}
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-red-600 transition-colors"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
+
+                {/* Content */}
+                <div className="p-2 flex items-start flex-col">
+                  <h3 className="text-xl font-bold text-gray-900 ">
+                    {member.name}
+                  </h3>
+                  <p className="text-red-600 font-semibold mb-3">
+                    {member.position}
+                  </p>
+                  <p className="text-gray-600 text-sm mb-4 text-start ">
+                    {member.bio}
+                  </p>
+
+                  {/* Social Media Links */}
+                  <div className="flex justify-center space-x-4 ">
+                    {Object.entries(member.social).map(([platform, url]) => (
+                      <a
+                        key={platform}
+                        href={url}
+                        className="p-1 rounded-full bg-[#1E2939] text-white hover:bg-red-600 hover:text-white transition-all duration-200 transform hover:scale-110"
                       >
-                        <path d="M8.29 20.251c7.547 0 11.675-6.253..."></path>
-                      </svg>
-                    </a>
-                    {/* LinkedIn */}
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-red-600 transition-colors"
-                    >
-                      <svg
-                        className="h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M19 0h-14c-2.761 0-5 2.239..."></path>
-                      </svg>
-                    </a>
+                        {getSocialIcon(platform)}
+                      </a>
+                    ))}
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium py-3 px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-colors shadow-lg">
-              View All Team Members
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Clients Section */}
-      <div className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Trusted By Industry Leaders
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We're proud to partner with organizations across various
-              industries
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-center">
-            {companies.map((company, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex justify-center"
-              >
-                <img
-                  src={company.url}
-                  alt={company.name}
-                  className="h-12 object-contain transition-all"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-8 md:p-12 text-center">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
-              Ready to transform your business?
-            </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Discover how DNS Technology can help your organization achieve its
-              technology goals with our innovative solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row ga p-4 justify-center">
-              <button className="bg-gradient-to-r from-red-600 to-red-700 text-white font-medium py-3 px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-colors shadow-lg">
-                Contact Us
-              </button>
-              <button className="bg-white text-gray-800 font-medium py-3 px-8 rounded-full hover:bg-gray-100 transition-colors border border-gray-200 shadow-sm">
-                Learn More
+          {/* Call to Action */}
+          <div className="text-center mt-24 ">
+            <div className="bg-[#1E2939] rounded-xl shadow-lg p-6 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-white ">
+                Want to Join Our Team?
+              </h3>
+              <p className="text-white mb-6">
+                We're always looking for talented individuals who share our
+                passion for innovation and excellence.
+              </p>
+              <button className="bg-white text-red-800 px-6 py-2 rounded-full font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                View Open Positions
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      <div className="py-16 max-w-7xl mx-auto my-12 px-4  text-center">
+        <div className="pb-12 ">
+          <h2 className="text-5xl font-bold text-[#1E2939] mb-2">
+            Trusted By Industry Leaders
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-4"></div>
+          <p className="text-md text-gray-600  mx-auto">
+            We're proud to partner with organizations across various industries
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12  items-center ">
+          {companies.map((company, index) => (
+            <div
+              key={index}
+              className="bg-gray-100 rounded-full w-36 h-36 p-6 hover:shadow-md transition-shadow flex justify-center items-center"
+            >
+              <img
+                src={company.url}
+                alt={company.name}
+                className="h-20 object-contain transition-all"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
-};
-
-export default About;
+}
+{
+  /* <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+            <div className="grid grid-cols-1 gap-4">
+              {stats.map((item, index) => (
+                <div
+                  key={index}
+                  className={`${item.bgColor} p-4 rounded-lg flex items-center`}
+                >
+                  {item.icon}
+                  <div>
+                    <p className="font-bold text-gray-800">{item.value}</p>
+                    <p className="text-sm text-gray-600">{item.label}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div> */
+}

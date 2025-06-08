@@ -31,7 +31,7 @@ const HomeHero = () => {
     <div className="mt-20 bg-gray-100">
       <Nav />
       {/* Hero Section with Animation */}
-      <section className="h-[790px] container overflow-hidden relative w-[80%] mx-auto flex justify-between items-center  ">
+      <section className="h-[800px] container overflow-hidden relative w-[80%] mx-auto flex justify-between items-center  ">
         <div className=" px-4 md:px-6 relative z-10">
           <div className="grid gap-24 grid-cols-2  ">
             <div className="flex flex-col justify-center space-y-4 w-full animate-fade-in-left animation-delay-800">

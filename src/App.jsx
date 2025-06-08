@@ -9,7 +9,7 @@ import Nav from "./component/nav";
 import Footer from "./component/footer";
 import Login from "./component/login";
 import Homehero from "./component/homehero";
-import Eg from "./component/eg";
+import Eg from "./component/eg.jsx"
 
 function App() {
   return (
@@ -26,7 +26,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/homehero" element={<Homehero />} />
         <Route path="/eg" element={<Eg />} />
-
       </Routes>
     </Router>
   );
