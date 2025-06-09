@@ -111,11 +111,11 @@ const TechStackSection = () => {
         </div>
 
         {/* Technology Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 ">
           {techCategories[activeTab]?.map((tech, index) => (
             <div
               key={index}
-              className="flex flex-col items-center p-4 md:p-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-all duration-300 hover:shadow-lg cursor-pointer group"
+              className="flex flex-col items-center   cursor-pointer group"
             >
               <div className="text-2xl md:text-4xl mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-200">
                 {tech.logo}

@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../image/logo.png";
-import Nav from "./nav"
-import Footer from "./footer"
+import Nav from "./nav";
+import Footer from "./footer";
+import product from "../image/product.png";
 const services = [
   {
     id: 1,
@@ -134,7 +135,55 @@ const testimonials = [
 const Portfolio = () => {
   return (
     <div>
-      <Nav/>
+      <Nav />
+
+      {/* Hero Section */}
+      <div className="pt-8 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="relative flex justify-center">
+              <div className="relative w-full max-w-4xl">
+                <img
+                  src={product}
+                  alt="IT Solutions on multiple devices"
+                  className="w-full h-full object-contain rounded-lg"
+                />
+              </div>
+            </div>
+            <div className="text-black space-y-8">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Complete IT & Network Hardware Solutions for Modern Businesses
+              </h1>
+              <p className="text-md text-black leading-relaxed max-w-2xl italic">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore temporibus corporis laboriosam illo voluptas quisquam
+                quo eum.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <button className="px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all group rounded-md flex items-center py-2">
+                  Contact Us
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Wave Separator */}
+      <div className="w-full">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            className="shape-fill"
+            fill="#F2F2F2"
+          ></path>
+        </svg>
+      </div>
       {/* Hero div */}
       <div className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white mt-24">
         <div className="container mx-auto px-6 text-center">
@@ -362,7 +411,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* number email */}
           <div className="flex items-center space-x-4 ">
             <div className="flex items-center space-x-1">
-              <IoIosCall className="text-white   " />
+              <IoIosCall className="text-black   " />
               <span>+977 1-4782849</span>
             </div>
             <div className="flex items-center space-x-1">
@@ -96,7 +96,7 @@ export default function Navbar() {
 
               {/* about us mega menu */}
               <div
-                className="absolute top-full left-0 bg-[#101828] text-white shadow-lg p-6 w-full grid grid-cols-4 gap-6 
+                className=" absolute top-full left-1/10 bg-[#101828] text-white shadow-lg p-6 w-[80%] grid grid-cols-4 gap-6 
                   z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                   transition-all duration-300 ease-in-out"
               >
@@ -233,7 +233,7 @@ export default function Navbar() {
 
               {/* product mega menu */}
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
+                className="absolute top-full  bg-[#101828] shadow-lg p-6 left-1/10 w-[80%] grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
@@ -364,7 +364,7 @@ export default function Navbar() {
 
               {/* service detail page */}
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
+                className="absolute top-full  bg-[#101828] shadow-lg p-6 left-1/10 w-[80%] grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
@@ -493,7 +493,7 @@ export default function Navbar() {
 
               {/* what we do mega mneu */}
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
+                className="absolute top-full  bg-[#101828] shadow-lg p-6  left-1/10 w-[80%] grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
@@ -617,7 +617,7 @@ export default function Navbar() {
               </div>
 
               <div
-                className="absolute top-full left-0 bg-[#101828] shadow-lg p-6  w-full grid grid-cols-4 gap-8 
+                className="absolute top-full bg-[#101828] shadow-lg p-6 left-1/10 w-[80%] grid grid-cols-4 gap-8 
                 z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:visible 
                 transition-all duration-300 ease-in-out"
               >
