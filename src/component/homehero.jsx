@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { Link } from "react-router-dom";
 import { Server, Shield, ArrowRight } from "lucide-react";
 import Nav from "./nav";
 import { useEffect, useState, useRef } from "react";
@@ -7,6 +7,7 @@ import { useEffect, useState, useRef } from "react";
 const HomeHero = () => {
   const statsRef = useRef(null);
   const [animatedStats, setAnimatedStats] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,45 +28,55 @@ const HomeHero = () => {
       }
     };
   }, []);
+
   return (
-    <div className="mt-20 bg-gray-100">
+    <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100">
       <Nav />
+
       {/* Hero Section with Animation */}
-      <section className="h-[800px] container overflow-hidden relative w-[80%] mx-auto flex justify-between items-center  ">
-        <div className=" px-4 md:px-6 relative z-10">
-          <div className="grid gap-24 grid-cols-2  ">
-            <div className="flex flex-col justify-center space-y-4 w-full animate-fade-in-left animation-delay-800">
-              <div className="space-y-6">
-                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+      <section className="min-h-[600px] sm:min-h-[700px] md:min-h-[800px] overflow-hidden relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-24 items-center">
+            {/* Left Content */}
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 animate-fade-in-left animation-delay-800 order-2 lg:order-1">
+              <div className="space-y-4 sm:space-y-6">
+                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-xs sm:text-sm text-red-700 mb-2 sm:mb-4">
                   Innovative Technology Solutions
                 </div>
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none animate-fade-in-up">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter animate-fade-in-up leading-tight">
                   Transforming Your{" "}
                   <span className="text-red-700">Digital Presence</span>
                 </h1>
-                <p className="max-w-[600px] text-slate-500 md:text-xl animate-fade-in-up animation-delay-300">
+                <p className="max-w-[600px] text-slate-500 text-sm sm:text-base md:text-lg lg:text-xl animate-fade-in-up animation-delay-300">
                   We build cutting-edge software and network solutions that help
                   businesses thrive in the digital era.
                 </p>
               </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row animate-fade-in-up animation-delay-600">
-                <button className="px-6 bg-red-700 hover:bg-red-700 text-white font-semibold transition-all group rounded-md flex items-center py-2">
-                  Our Solutions
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
-                <button
-                  className="px-8 hover:outline-red-600 hover:bg-gray-100 hover:text-red-600 transition-all outline-1
-                 outline-gray-200 rounded-md font-semibold"
-                >
-                  Contact Us
-                </button>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up animation-delay-600">
+                <Link to="/services">
+                  <button className="px-4 sm:px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all group rounded-md flex items-center justify-center text-sm sm:text-base">
+                    Our Solutions
+                    <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+                </Link>
+
+                <Link to="/contact">
+                  {" "}
+                  <button className="px-4 sm:px-6 py-2 sm:py-3 hover:outline-red-600 hover:bg-gray-100 hover:text-red-600 transition-all outline-1 outline-gray-200 rounded-md font-semibold text-sm sm:text-base">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
-              <div className="flex items-center gap-4 mt-8 animate-fade-in-up animation-delay-900">
+
+              {/* Client Info */}
+              <div className="flex items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in-up animation-delay-900">
                 <div className="flex -space-x-2">
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className="inline-block h-8 w-8 rounded-full ring-2 ring-white overflow-hidden"
+                      className="inline-block h-6 w-6 sm:h-8 sm:w-8 rounded-full ring-2 ring-white overflow-hidden"
                     >
                       <img
                         src={`https://cdn.pixabay.com/photo/2021/09/12/08/49/headset-6617715_1280.png`}
@@ -75,42 +86,46 @@ const HomeHero = () => {
                     </div>
                   ))}
                 </div>
-                <p className="text-sm text-slate-500">
+                <p className="text-xs sm:text-sm text-slate-500">
                   <span className="font-medium text-slate-900">500+</span>{" "}
                   satisfied clients worldwide
                 </p>
               </div>
             </div>
 
-            <div className="relative">
+            {/* Right Content - Image */}
+            <div className="relative order-1 lg:order-2">
               <div className="relative bg-white rounded-xl overflow-hidden animate-move-up-slow">
                 <img
                   src="https://img.freepik.com/free-photo/wi-fi-router-with-blue-optical-fiber_23-2148779307.jpg?t=st=1746773496~exp=1746777096~hmac=d43be4068193056dceb6cd4ef724a8fdea4a4559f022e39f3e0eccb203279ed5&w=740"
                   alt="Hero Image"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last animate-fade-in  h-[600px]"
+                  className="w-full h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[500px] object-cover animate-fade-in rounded-xl"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-xl p-4 animate-float ">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-                    <Shield className="h-5 w-5 text-red-600" />
+
+              {/* Floating Cards */}
+              <div className="absolute -bottom-3 sm:-bottom-6 -left-3 sm:-left-6 bg-white rounded-lg shadow-xl p-2 sm:p-4 animate-float">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-6 w-6 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-red-100">
+                    <Shield className="h-3 w-3 sm:h-5 sm:w-5 text-red-600" />
                   </div>
                   <div>
                     <p className="text-xs font-medium">Security First</p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-500 hidden sm:block">
                       Enterprise-grade protection
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="absolute -top-6 -right-6 bg-white rounded-lg shadow-xl p-4 animate-float animation-delay-1000">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-red-100">
-                    <Server className="h-5 w-5 text-red-600" />
+
+              <div className="absolute -top-3 sm:-top-6 -right-3 sm:-right-6 bg-white rounded-lg shadow-xl p-2 sm:p-4 animate-float animation-delay-1000">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-6 w-6 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-red-100">
+                    <Server className="h-3 w-3 sm:h-5 sm:w-5 text-red-600" />
                   </div>
                   <div>
                     <p className="text-xs font-medium">99.9% Uptime</p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-500 hidden sm:block">
                       Reliable infrastructure
                     </p>
                   </div>
@@ -121,34 +136,41 @@ const HomeHero = () => {
         </div>
       </section>
 
-      <section className="w-full py-8 bg-gradient-to-r from-red-800 to-red-700 text-white  ">
-        <div className=" mx-auto flex justify-between items-center w-[80%]">
-          <div className="container px-4 md:px-6" ref={statsRef}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div className="space-y-2">
-                <h3 className="text-4xl font-bold">
-                  {animatedStats ? <CountUp end={500} duration={2} /> : "0"}+
-                </h3>
-                <p className="text-red-100">Clients Worldwide</p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-4xl font-bold">
-                  {animatedStats ? <CountUp end={1000} duration={2} /> : "0"}+
-                </h3>
-                <p className="text-red-100">Projects Completed</p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-4xl font-bold">
-                  {animatedStats ? <CountUp end={50} duration={2} /> : "0"}+
-                </h3>
-                <p className="text-red-100">Team Members</p>
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-4xl font-bold">
-                  {animatedStats ? <CountUp end={10} duration={2} /> : "0"}+
-                </h3>
-                <p className="text-red-100">Years of Experience</p>
-              </div>
+      {/* Stats Section */}
+      <section className="w-full py-6 sm:py-8 bg-gradient-to-r from-red-800 to-red-700 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8" ref={statsRef}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
+            <div className="space-y-1 sm:space-y-2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+                {animatedStats ? <CountUp end={500} duration={2} /> : "0"}+
+              </h3>
+              <p className="text-red-100 text-xs sm:text-sm md:text-base">
+                Clients Worldwide
+              </p>
+            </div>
+            <div className="space-y-1 sm:space-y-2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+                {animatedStats ? <CountUp end={1000} duration={2} /> : "0"}+
+              </h3>
+              <p className="text-red-100 text-xs sm:text-sm md:text-base">
+                Projects Completed
+              </p>
+            </div>
+            <div className="space-y-1 sm:space-y-2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+                {animatedStats ? <CountUp end={50} duration={2} /> : "0"}+
+              </h3>
+              <p className="text-red-100 text-xs sm:text-sm md:text-base">
+                Team Members
+              </p>
+            </div>
+            <div className="space-y-1 sm:space-y-2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">
+                {animatedStats ? <CountUp end={10} duration={2} /> : "0"}+
+              </h3>
+              <p className="text-red-100 text-xs sm:text-sm md:text-base">
+                Years of Experience
+              </p>
             </div>
           </div>
         </div>

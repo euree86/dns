@@ -7,7 +7,6 @@ import Contact from "./component/contact";
 import Portfolio from "./component/portfolio";
 import Nav from "./component/nav";
 import Footer from "./component/footer";
-import Login from "./component/login";
 import Homehero from "./component/homehero";
 import Eg from "./component/services.jsx";
 import Servicedetailed from "./component/servicedetailed";
@@ -22,8 +21,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/nav" element={<Nav />} />
-        <Route path="/footer" element={<Footer />} />
-        <Route path="/login" element={<Login />} />
+
         <Route path="/homehero" element={<Homehero />} />
         <Route path="/eg" element={<Eg />} />
         <Route path="/svc" element={<Servicedetailed />} />
