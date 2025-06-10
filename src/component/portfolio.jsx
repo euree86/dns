@@ -1,44 +1,21 @@
 import React from "react";
-import logo from "../image/logo.png";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Nav from "./nav";
 import Footer from "./footer";
 import product from "../image/product.png";
-const services = [
-  {
-    id: 1,
-    title: "Custom Software Development",
-    description:
-      "Tailored business solutions built with modern technologies to streamline your operations.",
-    icon: "💻",
-  },
-  {
-    id: 2,
-    title: "Hardware Solutions",
-    description:
-      "Enterprise-grade hardware infrastructure with optimal performance and scalability.",
-    icon: "🖥️",
-  },
-  {
-    id: 3,
-    title: "Network Services",
-    description:
-      "Secure, high-speed network architecture design, implementation, and maintenance.",
-    icon: "🌐",
-  },
-  {
-    id: 4,
-    title: "Cloud Solutions",
-    description:
-      "Migration, management, and optimization of cloud infrastructure.",
-    icon: "☁️",
-  },
-];
-
+import {
+  FaCertificate,
+  FaLink,
+  FaUserShield,
+  FaArrowRight,
+} from "react-icons/fa";
 // Projects data
 const projects = [
   {
     id: 1,
-    title: "Banking System Modernization",
+    title: "ERP Software",
     client: "First National Bank",
     services: ["Software", "Security"],
     image:
@@ -46,7 +23,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Hospital Network Infrastructure",
+    title: "Nex Courier System",
     client: "City Medical Center",
     services: ["Hardware", "Network"],
     image:
@@ -70,6 +47,27 @@ const projects = [
   },
 ];
 
+const statsData = [
+  {
+    icon: <FaCertificate className="text-red-600 text-2xl" />,
+    value: "100+",
+    title: "Reputations Restored",
+    description: "With permanent solutions",
+  },
+  {
+    icon: <FaLink className="text-red-600 text-2xl" />,
+    value: "98 +",
+    title: "Client Satisfaction",
+    description: "From search results",
+  },
+  {
+    icon: <FaUserShield className="text-red-600 text-2xl" />,
+    value: "100%",
+    title: "Custom Approach",
+    description: "Tailored to each client",
+  },
+];
+
 // Clients data
 const clients = [
   { name: "First National Bank", logo: "🏦" },
@@ -77,60 +75,37 @@ const clients = [
   { name: "Urban Retail Chain", logo: "🛒" },
   { name: "State University", logo: "🎓" },
   { name: "Metro Transportation", logo: "🚆" },
+  { name: "Global Logistics", logo: "🚚" },
+  { name: "Tech Innovations", logo: "💻" },
+  { name: "Green Energy Solutions", logo: "🌱" },
+  { name: "Smart Home Systems", logo: "🏠" },
+  { name: "Digital Marketing Agency", logo: "📈" },
 ];
 
-// Team members
-const team = [
-  {
-    id: 1,
-    name: "Ranjit Dai",
-    role: "Developer",
-    expertise: "Dot Net Developer",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    id: 2,
-    name: "Sarad Bhatta",
-    role: "Developer",
-    expertise: "Java Script Developer",
-    image:
-      "https://media.istockphoto.com/id/2172166252/photo/a-software-developer-is-thinking-on-improving-the-efficiency-of-the-ai-system.jpg?s=2048x2048&w=is&k=20&c=tbPbWNyMrcx2Vk5DEng5ZBTW6xFEv-omJFWfrg43kUI=",
-  },
-  {
-    id: 3,
-    name: "Sailesh Kandel",
-    role: "Developer",
-    expertise: "Next Js Developer",
-    image: "https://randomuser.me/api/portraits/men/67.jpg",
-  },
-];
-
-// Skills data
-const skills = [
-  { name: "React", level: 90 },
-  { name: "JavaScript", level: 85 },
-  { name: "Tailwind CSS", level: 80 },
-  { name: "Node.js", level: 75 },
-  { name: "UI/UX Design", level: 70 },
-];
-
-// Testimonials data
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    role: "CEO, TechCorp",
-    quote: "Exceptional work delivered on time with great attention to detail.",
-    avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Product Manager, InnovateCo",
-    quote: "Transformed our web presence with a stunning redesign.",
-    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
-  },
-];
+const settings = {
+  dots: false,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 500,
+  pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: { slidesToShow: 1 },
+    },
+    {
+      breakpoint: 768,
+      settings: { slidesToShow: 1 },
+    },
+    {
+      breakpoint: 480,
+      settings: { slidesToShow: 1 },
+    },
+  ],
+};
 
 const Portfolio = () => {
   return (
@@ -138,8 +113,8 @@ const Portfolio = () => {
       <Nav />
 
       {/* Hero Section */}
-      <div className="pt-8 bg-gray-100">
-        <div className="container mx-auto px-4">
+      <div className="pt-8 bg-gray-100 ">
+        <div className="container mx-auto px-4 py-12">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div className="relative flex justify-center">
               <div className="relative w-full max-w-4xl">
@@ -152,7 +127,8 @@ const Portfolio = () => {
             </div>
             <div className="text-black space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Complete IT & Network Hardware Solutions for Modern Businesses
+                Enterprise-grade software, hardware, and network services for
+                businesses of all sizes
               </h1>
               <p className="text-md text-black leading-relaxed max-w-2xl italic">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -184,79 +160,83 @@ const Portfolio = () => {
           ></path>
         </svg>
       </div>
-      {/* Hero div */}
-      <div className="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white mt-24">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">OUR PORTFOLIO</h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Enterprise-grade software, hardware, and network services for
-            businesses of all sizes
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <button className="bg-white text-red-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">
-              Our Services
-            </button>
-            <button className="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-red-700 transition duration-300">
-              Contact Sales
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* Services div */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Our Services
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              End-to-end technology solutions tailored to your business
-              requirements
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
+
+      {/* Statistics Section */}
+      <div className="container mx-auto px-4 py-20">
+        <div className="flex flex-col md:flex-row items-center gap-16">
+          {/* Stats Boxes */}
+          <div className="flex flex-col md:flex-row md:w-1/2 gap-8">
+            {statsData.map((stat, index) => (
               <div
-                key={service.id}
-                className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border-t-4 border-red-600"
+                key={index}
+                className="bg-white shadow-lg rounded-xl p-8 flex flex-col items-start gap-4 hover:shadow-xl 
+                transition-shadow duration-300 border-l-4 border-red-600 hover:-translate-y-1"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <div className="bg-red-100 p-3 rounded-full">{stat.icon}</div>
+                <p className="text-3xl font-bold text-gray-900">{stat.value}</p>
+                <p className="text-gray-700 text-lg">{stat.title}</p>
+                <p className="text-gray-500 text-sm">{stat.description}</p>
               </div>
             ))}
           </div>
+
+          {/* Text Content */}
+          <div className="md:w-1/2 text-left">
+            <p className="text-red-600 font-semibold mb-2">OUR NETWORK</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Largest Network Of <br />
+              <span className="text-red-600">Anti-Defamation</span> Experts.
+            </h2>
+            <p className="text-gray-600 mb-8 text-lg">
+              We've tapped experts from around the globe to create an
+              unparalleled network of reputation experts with an unwavering
+              passion to succeed. Our team includes former legal professionals,
+              cybersecurity experts, and digital marketing specialists.
+            </p>
+            <button className="group relative border-2 border-red-600 text-red-600 px-8 py-3 rounded-lg font-semibold overflow-hidden hover:text-white transition duration-300">
+              <span className="relative z-10 flex items-center">
+                LEARN MORE
+                <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-5" />
+              </span>
+              <span className="absolute inset-0 bg-red-600 w-0 group-hover:w-full transition-all duration-300"></span>
+            </button>
+          </div>
         </div>
       </div>
+
       {/* Projects div */}
-      <div className="py-16 bg-gray-100">
-        <div className="container mx-auto px-6">
+      <div className="bg-[#F2F2F2] py-16">
+        <div className="container mx-auto px-4 text-center ">
+          {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-5xl font-bold text-[#1E2939] mb-2">
               Recent Projects
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Successful implementations across various industries
-            </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="bg-white rounded-lg overflow-hidden  hover:shadow-xl transition-shadow duration-300"
+                className="bg-white shadow-lg  transition-all duration-300 transform  group  overflow-hidden"
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
+                {/* Image */}
+                <div className="overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="p-4 flex items-start flex-col text-start">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 font-medium mb-3">
+                  <p className="text-red-600 font-medium mb-2">
                     Client: {project.client}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -270,7 +250,7 @@ const Portfolio = () => {
                     ))}
                   </div>
                   <button className="text-red-600 font-semibold hover:text-red-800 transition duration-300">
-                    View Case Study →
+                    View details →
                   </button>
                 </div>
               </div>
@@ -278,139 +258,47 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+
       {/* Clients div */}
       <div className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            <h2 className="text-5xl font-bold text-gray-800 mb-2">
               Trusted By
             </h2>
+               <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-2"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Leading organizations across multiple sectors
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+          <Slider {...settings}>
             {clients.map((client, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="text-4xl mb-2">{client.logo}</div>
-                <p className="text-gray-700 font-medium">{client.name}</p>
+              <div key={index} className="px-4">
+                <div className="flex flex-col items-center text-center">
+                  <div className="text-4xl mb-2">{client.logo}</div>
+                  <p className="text-gray-700 font-medium">{client.name}</p>
+                </div>
               </div>
             ))}
-          </div>
+          </Slider>
         </div>
       </div>
-      {/* Team div */}
-      <div className="py-16 bg-gray-100">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">
-              Our Experts
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Dedicated professionals with deep technical expertise
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white p-6 rounded-lg  text-center"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
-                />
-                <h3 className="text-xl font-semibold text-gray-800 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-red-600 font-medium mb-2">{member.role}</p>
-                <p className="text-gray-600">{member.expertise}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+
+      {/* CTA Section */}
+      <div className=" bg-red-800 rounded-xl p-8 text-center container mx-auto my-12 ">
+        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+          Ready to Transform Your IT Infrastructure?
+        </h3>
+        <p className="text-red-100 mb-6 max-w-2xl mx-auto">
+          Our team of experts is ready to assess your needs and provide
+          customized software and hardware solutions.
+        </p>
+        <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center mx-auto">
+          GET STARTED TODAY
+          <FaArrowRight className="ml-2" />
+        </button>
       </div>
-      {/* Contact div */}
-      <div className="py-16 bg-red-700 text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">
-                Ready to Transform Your Technology?
-              </h2>
-              <p className="text-red-100 max-w-2xl mx-auto">
-                Contact our solutions team for a free consultation
-              </p>
-            </div>
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label htmlFor="name" className="block mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 rounded bg-red-800 border border-red-600 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-red-300"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  className="w-full px-4 py-3 rounded bg-red-800 border border-red-600 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-red-300"
-                  placeholder="Company name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 rounded bg-red-800 border border-red-600 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-red-300"
-                  placeholder="Your email"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 rounded bg-red-800 border border-red-600 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-red-300"
-                  placeholder="Phone number"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label htmlFor="message" className="block mb-2">
-                  How can we help?
-                </label>
-                <textarea
-                  id="message"
-                  rows="4"
-                  className="w-full px-4 py-3 rounded bg-red-800 border border-red-600 focus:outline-none focus:ring-2 focus:ring-white text-white placeholder-red-300"
-                  placeholder="Describe your technology needs"
-                ></textarea>
-              </div>
-              <div className="md:col-span-2 text-center">
-                <button
-                  type="submit"
-                  className="bg-white text-red-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300"
-                >
-                  Request Consultation
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+
       <Footer />
     </div>
   );

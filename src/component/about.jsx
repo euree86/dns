@@ -238,7 +238,8 @@ export default function ITSolutionsSection() {
         >
           <path
             d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            class="shape-fill" fill="#F2F2F2"
+            class="shape-fill"
+            fill="#F2F2F2"
           ></path>
         </svg>
       </div>
@@ -259,7 +260,7 @@ export default function ITSolutionsSection() {
 
           {/* Content Section */}
           <div className="space-y-8">
-            <div className="shadow-4xl bg-gray-100 px-4 py-2 w-fit rounded-lg font-medium">
+            <div className=" font-bold text-2xl">
               About DNS
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 ">
@@ -294,9 +295,7 @@ export default function ITSolutionsSection() {
       <div className="bg-[#F2F2F2]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 ">
           <div className="text-center pb-24 flex flex-col items-center gap-2 ">
-            <div className="shadow-4xl bg-white px-4 py-2 w-fit rounded-lg font-medium text-red-800">
-              About DNS
-            </div>
+            
             <h2 className="text-5xl font-bold text-[#1E2939] ">
               Our Core Services and Expertise
               <div className="w-20 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mt-2"></div>
@@ -510,22 +509,4 @@ export default function ITSolutionsSection() {
       <Footer />
     </div>
   );
-}
-{
-  /* <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-            <div className="grid grid-cols-1 gap-4">
-              {stats.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${item.bgColor} p-4 rounded-lg flex items-center`}
-                >
-                  {item.icon}
-                  <div>
-                    <p className="font-bold text-gray-800">{item.value}</p>
-                    <p className="text-sm text-gray-600">{item.label}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div> */
 }

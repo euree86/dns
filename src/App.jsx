@@ -3,13 +3,13 @@ import Home from "./component/home";
 import About from "./component/about";
 import Products from "./component/products";
 import Services from "./component/services";
-import Whatwedo from "./component/whatwedo";
+import Contact from "./component/contact";
 import Portfolio from "./component/portfolio";
 import Nav from "./component/nav";
 import Footer from "./component/footer";
 import Login from "./component/login";
 import Homehero from "./component/homehero";
-import Eg from "./component/eg.jsx"
+import Eg from "./component/services.jsx";
 import Servicedetailed from "./component/servicedetailed";
 
 function App() {
@@ -20,7 +20,6 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/whatwedo" element={<Whatwedo />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/nav" element={<Nav />} />
         <Route path="/footer" element={<Footer />} />
@@ -28,7 +27,7 @@ function App() {
         <Route path="/homehero" element={<Homehero />} />
         <Route path="/eg" element={<Eg />} />
         <Route path="/svc" element={<Servicedetailed />} />
-
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

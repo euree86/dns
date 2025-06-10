@@ -69,7 +69,7 @@ const ProductHome = () => {
     <div className="bg-[#F3F4F6] py-12 ">
       <div className="container mx-auto ">
         <div>
-          <h2 className="text-3xl md:text-5xl font-medium mt-4 ">
+          <h2 className="text-5xl md:text-5xl font-bold mt-4 ">
             Our Products
             <div className="w-28 h-1 bg-red-800 mb-4   mt-2"></div>
           </h2>
