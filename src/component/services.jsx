@@ -313,11 +313,11 @@ const OptimizedITServices = () => {
 
             {/* Right Content - Hero Image */}
             <div className="flex justify-center order-1 lg:order-2">
-              <div className="w-full max-w-lg">
+              <div className="w-2/3 max-w-lg">
                 <img
                   src="https://cdn.pixabay.com/photo/2024/04/25/02/23/ai-generated-8718795_640.png"
                   alt="IT Solutions"
-                  className="w-full h-auto object-contain"
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>

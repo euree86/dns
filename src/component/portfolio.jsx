@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Nav from "./nav"
 import Footer from "./footer"
-import product from "../image/product.png"
+import portfolio from "../image/portfolio.png"
 import { FaCertificate, FaLink, FaUserShield, FaArrowRight } from "react-icons/fa"
 
 // Projects data
@@ -110,11 +110,11 @@ const Portfolio = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative flex justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-4xl">
+              <div className="relative w-2/3 max-w-lg">
                 <img
-                  src={product || "/placeholder.svg"}
+                  src={portfolio }
                   alt="IT Solutions on multiple devices"
-                  className="w-full h-auto object-contain rounded-lg"
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>

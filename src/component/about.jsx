@@ -211,11 +211,11 @@ export default function ITSolutionsSection() {
 
             {/* Right Content - Image */}
             <div className="relative flex justify-center order-1 lg:order-2">
-              <div className="relative w-full max-w-lg">
+              <div className="relative w-2/3 max-w-lg">
                 <img
-                  src={about || "/placeholder.svg"}
+                  src={about }
                   alt="School Management System on multiple devices"
-                  className="w-full h-auto object-contain rounded-lg"
+                  className="w-full h-auto object-cover "
                 />
               </div>
             </div>

@@ -346,11 +346,11 @@ const ProductShowcase = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="relative flex justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-lg">
+              <div className="relative  w-2/3 max-w-lg">
                 <img
-                  src={product || "/placeholder.svg"}
+                  src={product }
                   alt="IT Solutions on multiple devices"
-                  className="w-full h-auto object-contain rounded-lg"
+                  className="w-full h-auto object-cover "
                 />
               </div>
             </div>
