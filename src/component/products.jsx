@@ -1,8 +1,19 @@
-"use client"
-import { Monitor, Building2, Smartphone, Check, ArrowRight, ShieldCheck, DollarSign, ThumbsUp, Zap } from "lucide-react"
-import product from "../image/product.png"
-import Nav from "./nav"
-import Footer from "./footer"
+"use client";
+import { Link } from "react-router-dom";
+import {
+  Monitor,
+  Building2,
+  Smartphone,
+  Check,
+  ArrowRight,
+  ShieldCheck,
+  DollarSign,
+  ThumbsUp,
+  Zap,
+} from "lucide-react";
+import product from "../image/product.png";
+import Nav from "./nav";
+import Footer from "./footer";
 
 const services = [
   {
@@ -38,58 +49,66 @@ const services = [
       "Pellentesque et ante vel tortor dignissim.",
     ],
   },
-]
+];
 
 const products = [
   {
     title: "Firewall Devices",
     price: "25,000",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "Network Cables",
     price: "1,200",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "CCTV and Surveillance",
     price: "15,000",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "Wireless Device",
     price: "8,500",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "Network Switches",
     price: "12,000",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "AP Devices",
     price: "9,800",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "Server & Network Rack",
     price: "35,000",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
   },
   {
     title: "Servers and Computers",
     price: "65,000",
     inStock: true,
-    imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+    imageUrl:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
   },
-]
+];
 
 const features = [
   {
@@ -120,7 +139,7 @@ const features = [
     icon: <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-yellow-500" />,
     bgColor: "bg-yellow-50",
   },
-]
+];
 
 const productCategories = [
   {
@@ -141,7 +160,8 @@ const productCategories = [
         name: "Network Cables",
         category: "Networking",
         price: "Rs 1,200",
-        image: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
         description: "High-quality networking cables",
       },
       {
@@ -149,7 +169,8 @@ const productCategories = [
         name: "Full Gig Switch",
         category: "Networking",
         price: "Rs 15,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Enterprise grade switches",
       },
       {
@@ -157,7 +178,8 @@ const productCategories = [
         name: "POE Switch",
         category: "Networking",
         price: "Rs 8,500",
-        image: "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
         description: "Power over Ethernet solutions",
       },
     ],
@@ -171,7 +193,8 @@ const productCategories = [
         name: "Rack Server",
         category: "Servers",
         price: "Rs 85,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Enterprise rack servers",
       },
       {
@@ -179,7 +202,8 @@ const productCategories = [
         name: "Tower Server",
         category: "Servers",
         price: "Rs 65,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Powerful tower servers",
       },
       {
@@ -187,7 +211,8 @@ const productCategories = [
         name: "NAS Server",
         category: "Storage",
         price: "Rs 45,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Network attached storage",
       },
       {
@@ -195,7 +220,8 @@ const productCategories = [
         name: "Server Rack",
         category: "Infrastructure",
         price: "Rs 25,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Professional server racks",
       },
     ],
@@ -209,7 +235,8 @@ const productCategories = [
         name: "Core i3 Computer",
         category: "Desktop",
         price: "Rs 35,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Entry level desktop systems",
       },
       {
@@ -217,7 +244,8 @@ const productCategories = [
         name: "Core i5 Computer",
         category: "Desktop",
         price: "Rs 55,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Mid-range desktop systems",
       },
       {
@@ -225,7 +253,8 @@ const productCategories = [
         name: "Core i7 Computer",
         category: "Desktop",
         price: "Rs 85,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "High-performance systems",
       },
       {
@@ -233,7 +262,8 @@ const productCategories = [
         name: "Accessories Bundle",
         category: "Accessories",
         price: "Rs 5,500",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Keyboard, mouse & cables",
       },
     ],
@@ -247,7 +277,8 @@ const productCategories = [
         name: "ERP Software",
         category: "Business",
         price: "Rs 125,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Complete ERP solutions",
       },
       {
@@ -255,7 +286,8 @@ const productCategories = [
         name: "Courier Software",
         category: "Logistics",
         price: "Rs 45,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Delivery management system",
       },
       {
@@ -263,7 +295,8 @@ const productCategories = [
         name: "Cheque Recorder",
         category: "Finance",
         price: "Rs 25,000",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Financial record keeping",
       },
       {
@@ -271,12 +304,13 @@ const productCategories = [
         name: "SMS Services",
         category: "Communication",
         price: "Rs 2,500",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+        image:
+          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
         description: "Bulk SMS solutions",
       },
     ],
   },
-]
+];
 
 const brands = [
   {
@@ -295,7 +329,7 @@ const brands = [
     name: "TP-Link",
     logo: "https://static-01.daraz.com.np/p/bc29781ba7033c694ac7765ce7048956.jpg",
   },
-]
+];
 
 const ProductShowcase = () => {
   const ProductCard = ({ product }) => (
@@ -307,26 +341,36 @@ const ProductShowcase = () => {
           className="w-full h-40 sm:h-48 object-cover bg-gray-200"
         />
         <div className="absolute top-2 right-2">
-          <span className="bg-[#1E2939] text-white px-2 py-1 rounded text-xs font-medium">{product.category}</span>
+          <span className="bg-[#1E2939] text-white px-2 py-1 rounded text-xs font-medium">
+            {product.category}
+          </span>
         </div>
       </div>
       <div className="p-3 sm:p-4">
-        <h3 className="text-gray-800 font-bold text-base sm:text-lg">{product.name}</h3>
-        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">{product.description}</p>
+        <h3 className="text-gray-800 font-bold text-base sm:text-lg">
+          {product.name}
+        </h3>
+        <p className="text-gray-600 text-xs sm:text-sm mb-2 sm:mb-3">
+          {product.description}
+        </p>
         <div>
-          <div className="text-base sm:text-lg font-bold text-[#1E2939] mb-2">{product.price}</div>
+          <div className="text-base sm:text-lg font-bold text-[#1E2939] mb-2">
+            {product.price}
+          </div>
           <button className="bg-red-800 hover:bg-red-700 text-white px-3 sm:px-4 py-1 rounded text-xs sm:text-sm font-medium transition-colors">
             View Details
           </button>
         </div>
       </div>
     </div>
-  )
+  );
 
   const CategorySection = ({ category }) => (
     <div className="my-6 sm:my-8 md:my-12">
       <div>
-        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">{category.title}</h2>
+        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">
+          {category.title}
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12">
@@ -335,7 +379,7 @@ const ProductShowcase = () => {
         ))}
       </div>
     </div>
-  )
+  );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -348,7 +392,7 @@ const ProductShowcase = () => {
             <div className="relative flex justify-center order-2 lg:order-1">
               <div className="relative  w-2/3 max-w-lg">
                 <img
-                  src={product }
+                  src={product}
                   alt="IT Solutions on multiple devices"
                   className="w-full h-auto object-cover "
                 />
@@ -359,13 +403,17 @@ const ProductShowcase = () => {
                 Complete IT & Network Hardware Solutions for Modern Businesses
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus corporis laboriosam illo
-                voluptas quisquam quo eum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore temporibus corporis laboriosam illo voluptas quisquam
+                quo eum.
               </p>
               <div className="pt-4">
-                <button className="px-4 sm:px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md flex items-center py-2 sm:py-3 text-sm sm:text-base">
-                  Contact Us
-                </button>
+                <Link to="/contact">
+                  {" "}
+                  <button className="px-4 sm:px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md flex items-center py-2 sm:py-3 text-sm sm:text-base">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -395,7 +443,8 @@ const ProductShowcase = () => {
             Why Choose Our Products
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
-            We provide the best networking solutions with unmatched quality and service
+            We provide the best networking solutions with unmatched quality and
+            service
           </p>
         </div>
 
@@ -411,7 +460,9 @@ const ProductShowcase = () => {
               <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm md:text-base">{feature.description}</p>
+              <p className="text-gray-600 text-xs sm:text-sm md:text-base">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
@@ -438,7 +489,9 @@ const ProductShowcase = () => {
               Featured Products
             </h2>
             <div className="w-20 sm:w-24 md:w-32 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-3 md:mb-4"></div>
-            <p className="text-gray-500 text-sm sm:text-base">Browse our most popular networking solutions</p>
+            <p className="text-gray-500 text-sm sm:text-base">
+              Browse our most popular networking solutions
+            </p>
           </div>
         </div>
 
@@ -456,10 +509,16 @@ const ProductShowcase = () => {
                 />
               </div>
               <div className="p-3 md:p-4">
-                <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800">{product.title}</h3>
+                <h3 className="font-bold text-sm sm:text-base md:text-lg text-gray-800">
+                  {product.title}
+                </h3>
                 <div className="mt-auto">
-                  <p className="text-gray-600 text-xs sm:text-sm">Starting at</p>
-                  <p className="text-sm sm:text-base md:text-lg font-medium">Rs {product.price}</p>
+                  <p className="text-gray-600 text-xs sm:text-sm">
+                    Starting at
+                  </p>
+                  <p className="text-sm sm:text-base md:text-lg font-medium">
+                    Rs {product.price}
+                  </p>
                 </div>
                 <button className="mt-1 md:mt-2">
                   <ArrowRight className="w-4 h-4 text-red-800" />
@@ -468,11 +527,11 @@ const ProductShowcase = () => {
             </div>
           ))}
         </div>
-        <div className="py-6 sm:py-8 md:py-12">
+        {/* <div className="py-6 sm:py-8 md:py-12">
           <button className="px-4 md:px-6 py-2 md:py-3 bg-red-800 text-white rounded-lg flex items-center text-xs sm:text-sm md:text-base">
             View All Products <ArrowRight className="ml-2 h-4 w-4" />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Services Section */}
@@ -480,15 +539,18 @@ const ProductShowcase = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8 md:space-y-12">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 md:gap-8 pb-6 sm:pb-8 md:pb-16">
             <div className="lg:w-1/2 w-full">
-              <h1 className="text-red-800 text-xs md:text-sm font-semibold uppercase"># OUR PRODUCTS</h1>
+              <h1 className="text-red-800 text-xs md:text-sm font-semibold uppercase">
+                # OUR PRODUCTS
+              </h1>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#101828] mt-1 md:mt-2">
                 We Deal With High Quality Network and IT Products
               </h2>
             </div>
             <div className="lg:w-1/2 w-full">
               <p className="text-[#101828] text-sm md:text-base leading-relaxed">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s.
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s.
               </p>
             </div>
           </div>
@@ -509,9 +571,14 @@ const ProductShowcase = () => {
                   </h3>
                   <ul className="space-y-2 md:space-y-3">
                     {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-start space-x-2 md:space-x-3">
+                      <li
+                        key={index}
+                        className="flex items-start space-x-2 md:space-x-3"
+                      >
                         <Check className="w-3 h-3 md:w-4 md:h-4 text-red-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600 text-xs md:text-sm leading-relaxed">{feature}</span>
+                        <span className="text-gray-600 text-xs md:text-sm leading-relaxed">
+                          {feature}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -551,7 +618,7 @@ const ProductShowcase = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default ProductShowcase
+export default ProductShowcase;

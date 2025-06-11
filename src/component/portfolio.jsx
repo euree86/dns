@@ -1,10 +1,16 @@
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
-import Nav from "./nav"
-import Footer from "./footer"
-import portfolio from "../image/portfolio.png"
-import { FaCertificate, FaLink, FaUserShield, FaArrowRight } from "react-icons/fa"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Nav from "./nav";
+import Footer from "./footer";
+import portfolio from "../image/portfolio.png";
+import { Link } from "react-router-dom";
+import {
+  FaCertificate,
+  FaLink,
+  FaUserShield,
+  FaArrowRight,
+} from "react-icons/fa";
 
 // Projects data
 const projects = [
@@ -13,14 +19,16 @@ const projects = [
     title: "ERP Software",
     client: "First National Bank",
     services: ["Software", "Security"],
-    image: "https://cdn.pixabay.com/photo/2019/06/20/17/59/online-banking-4287719_1280.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2019/06/20/17/59/online-banking-4287719_1280.jpg",
   },
   {
     id: 2,
     title: "Nex Courier System",
     client: "City Medical Center",
     services: ["Hardware", "Network"],
-    image: "https://cdn.pixabay.com/photo/2015/07/10/20/54/labor-840131_960_720.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2015/07/10/20/54/labor-840131_960_720.jpg",
   },
   {
     id: 3,
@@ -38,7 +46,7 @@ const projects = [
     image:
       "https://media.istockphoto.com/id/2166444497/photo/cloud-computing-infrastructure-technology-data-system-storage-service-concept-modern-white.jpg?s=2048x2048&w=is&k=20&c=C-G4cvlxdcwXJngrTntVuOx31vQyKzKYiB4jVGdpb58=",
   },
-]
+];
 
 const statsData = [
   {
@@ -59,7 +67,7 @@ const statsData = [
     title: "Custom Approach",
     description: "Tailored to each client",
   },
-]
+];
 
 // Clients data
 const clients = [
@@ -73,7 +81,7 @@ const clients = [
   { name: "Green Energy Solutions", logo: "🌱" },
   { name: "Smart Home Systems", logo: "🏠" },
   { name: "Digital Marketing Agency", logo: "📈" },
-]
+];
 
 const settings = {
   dots: false,
@@ -98,7 +106,7 @@ const settings = {
       settings: { slidesToShow: 1 },
     },
   ],
-}
+};
 
 const Portfolio = () => {
   return (
@@ -112,7 +120,7 @@ const Portfolio = () => {
             <div className="relative flex justify-center order-2 lg:order-1">
               <div className="relative w-2/3 max-w-lg">
                 <img
-                  src={portfolio }
+                  src={portfolio}
                   alt="IT Solutions on multiple devices"
                   className="w-full h-auto object-cover"
                 />
@@ -120,16 +128,20 @@ const Portfolio = () => {
             </div>
             <div className="text-black space-y-6 sm:space-y-8 order-1 lg:order-2">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                Enterprise-grade software, hardware, and network services for businesses of all sizes
+                Enterprise-grade software, hardware, and network services for
+                businesses of all sizes
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus corporis laboriosam illo
-                voluptas quisquam quo eum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore temporibus corporis laboriosam illo voluptas quisquam
+                quo eum.
               </p>
               <div className="pt-4">
-                <button className="px-4 sm:px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md flex items-center py-2 sm:py-3 text-sm sm:text-base">
+                <Link to="/contact"> <button className="px-4 sm:px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md flex items-center py-2 sm:py-3 text-sm sm:text-base">
                   Contact Us
                 </button>
+                </Link>
+               
               </div>
             </div>
           </div>
@@ -164,8 +176,12 @@ const Portfolio = () => {
                 transition-shadow duration-300 border-l-4 border-red-600 hover:-translate-y-1 flex-1"
               >
                 <div className="bg-red-100 p-3 rounded-full">{stat.icon}</div>
-                <p className="text-2xl sm:text-3xl font-bold text-gray-900">{stat.value}</p>
-                <p className="text-gray-700 text-base sm:text-lg">{stat.title}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-gray-900">
+                  {stat.value}
+                </p>
+                <p className="text-gray-700 text-base sm:text-lg">
+                  {stat.title}
+                </p>
                 <p className="text-gray-500 text-sm">{stat.description}</p>
               </div>
             ))}
@@ -173,15 +189,18 @@ const Portfolio = () => {
 
           {/* Text Content */}
           <div className="lg:w-1/2 text-left">
-            <p className="text-red-600 font-semibold mb-2 text-sm sm:text-base">OUR NETWORK</p>
+            <p className="text-red-600 font-semibold mb-2 text-sm sm:text-base">
+              OUR NETWORK
+            </p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
               Largest Network Of <br />
               <span className="text-red-600">Anti-Defamation</span> Experts.
             </h2>
             <p className="text-gray-600 mb-6 sm:mb-8 text-base sm:text-lg">
-              We've tapped experts from around the globe to create an unparalleled network of reputation experts with an
-              unwavering passion to succeed. Our team includes former legal professionals, cybersecurity experts, and
-              digital marketing specialists.
+              We've tapped experts from around the globe to create an
+              unparalleled network of reputation experts with an unwavering
+              passion to succeed. Our team includes former legal professionals,
+              cybersecurity experts, and digital marketing specialists.
             </p>
             <button className="group relative border-2 border-red-600 text-red-600 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold overflow-hidden hover:text-white transition duration-300 text-sm sm:text-base">
               <span className="relative z-10 flex items-center">
@@ -199,7 +218,9 @@ const Portfolio = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Section Header */}
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E2939] mb-2">Recent Projects</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1E2939] mb-2">
+              Recent Projects
+            </h2>
             <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-6"></div>
           </div>
 
@@ -221,8 +242,12 @@ const Portfolio = () => {
 
                 {/* Content */}
                 <div className="p-4 sm:p-6 flex items-start flex-col text-start">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
-                  <p className="text-red-600 font-medium mb-2 text-sm sm:text-base">Client: {project.client}</p>
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-red-600 font-medium mb-2 text-sm sm:text-base">
+                    Client: {project.client}
+                  </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.services.map((service, index) => (
                       <span
@@ -247,7 +272,9 @@ const Portfolio = () => {
       <div className="py-12 sm:py-16 lg:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-2">Trusted By</h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-2">
+              Trusted By
+            </h2>
             <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto mb-2"></div>
             <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
               Leading organizations across multiple sectors
@@ -258,7 +285,9 @@ const Portfolio = () => {
               <div key={index} className="px-2 sm:px-4">
                 <div className="flex flex-col items-center text-center">
                   <div className="text-3xl sm:text-4xl mb-2">{client.logo}</div>
-                  <p className="text-gray-700 font-medium text-sm sm:text-base">{client.name}</p>
+                  <p className="text-gray-700 font-medium text-sm sm:text-base">
+                    {client.name}
+                  </p>
                 </div>
               </div>
             ))}
@@ -282,7 +311,7 @@ const Portfolio = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

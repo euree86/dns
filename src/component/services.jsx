@@ -1,6 +1,6 @@
-"use client"
-
-import { useState } from "react"
+"use client";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import {
   Blocks,
   Brain,
@@ -15,14 +15,14 @@ import {
   Palette,
   TestTube,
   Star,
-} from "lucide-react"
-import Nav from "./nav"
-import Footer from "./footer"
-import ServiceDetailed from "./servicedetailed"
+} from "lucide-react";
+import Nav from "./nav";
+import Footer from "./footer";
+import ServiceDetailed from "./servicedetailed";
 
 // Tech Stack Component
 const TechStackSection = () => {
-  const [activeTab, setActiveTab] = useState("Databases")
+  const [activeTab, setActiveTab] = useState("Databases");
 
   const techCategories = {
     Frontend: [
@@ -83,7 +83,7 @@ const TechStackSection = () => {
       { name: "DevOps", logo: "⚙️", color: "text-gray-600" },
       { name: "Microservices", logo: "🔧", color: "text-indigo-600" },
     ],
-  }
+  };
 
   return (
     <section className="bg-white py-12 sm:py-16 px-4">
@@ -103,7 +103,9 @@ const TechStackSection = () => {
               key={category}
               onClick={() => setActiveTab(category)}
               className={`pb-3 sm:pb-4 px-2 text-xs sm:text-sm md:text-lg font-medium transition-colors duration-200 whitespace-nowrap ${
-                activeTab === category ? "text-red-500 border-b-2 border-red-500" : "text-gray-500 hover:text-gray-700"
+                activeTab === category
+                  ? "text-red-500 border-b-2 border-red-500"
+                  : "text-gray-500 hover:text-gray-700"
               }`}
             >
               {category}
@@ -114,7 +116,10 @@ const TechStackSection = () => {
         {/* Technology Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
           {techCategories[activeTab]?.map((tech, index) => (
-            <div key={index} className="flex flex-col items-center cursor-pointer group">
+            <div
+              key={index}
+              className="flex flex-col items-center cursor-pointer group"
+            >
               <div className="text-xl sm:text-2xl md:text-4xl mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-200">
                 {tech.logo}
               </div>
@@ -128,8 +133,8 @@ const TechStackSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 // Main Component
 const OptimizedITServices = () => {
@@ -182,7 +187,7 @@ const OptimizedITServices = () => {
       icon: Smartphone,
       gradient: "from-pink-500 to-rose-500",
     },
-  ]
+  ];
 
   const processSteps = [
     {
@@ -225,37 +230,41 @@ const OptimizedITServices = () => {
         "Quality assurance is paramount in the testing phase. Bugs and issues are identified, addressed, and retested before moving to the deployment phase. Continuous monitoring during and after deployment allows for prompt identification and resolution of any unforeseen issues.",
       position: "bottom",
     },
-  ]
+  ];
 
   const features = [
     {
       number: "01",
       title: "Fast Service Delivery",
-      description: "We guarantee quick response times and efficient service completion to minimize your downtime.",
+      description:
+        "We guarantee quick response times and efficient service completion to minimize your downtime.",
     },
     {
       number: "02",
       title: "Certified Professionals",
-      description: "Our team consists of highly trained and certified IT experts with years of industry experience.",
+      description:
+        "Our team consists of highly trained and certified IT experts with years of industry experience.",
     },
     {
       number: "03",
       title: "24/7 Customer Support",
-      description: "Round-the-clock assistance to address your IT emergencies whenever they occur.",
+      description:
+        "Round-the-clock assistance to address your IT emergencies whenever they occur.",
     },
     {
       number: "04",
       title: "Trusted Partner",
-      description: "We build long-term relationships based on reliability, transparency, and exceptional service.",
+      description:
+        "We build long-term relationships based on reliability, transparency, and exceptional service.",
     },
-  ]
+  ];
 
   const images = [
     "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  ]
+  ];
 
   const testimonials = [
     {
@@ -279,10 +288,10 @@ const OptimizedITServices = () => {
       content:
         "The comprehensive reporting and transparency throughout the process gave us complete confidence in their work. Exceptional service!",
     },
-  ]
+  ];
 
-  const topSteps = processSteps.filter((step) => step.position === "top")
-  const bottomSteps = processSteps.filter((step) => step.position === "bottom")
+  const topSteps = processSteps.filter((step) => step.position === "top");
+  const bottomSteps = processSteps.filter((step) => step.position === "bottom");
 
   return (
     <div className="min-h-screen">
@@ -300,14 +309,18 @@ const OptimizedITServices = () => {
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore temporibus corporis laboriosam illo
-                voluptas quisquam quo eum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore temporibus corporis laboriosam illo voluptas quisquam
+                quo eum.
               </p>
 
               <div className="pt-4">
-                <button className="px-4 sm:px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md text-sm sm:text-base">
-                  Contact Us
-                </button>
+                <Link to="/contact">
+                  {" "}
+                  <button className="px-4 sm:px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md text-sm sm:text-base">
+                    Contact Us
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -351,8 +364,9 @@ const OptimizedITServices = () => {
                 Why Choose Our IT Services
               </h2>
               <p className="text-sm sm:text-base text-gray-600 mb-6 md:mb-8 italic">
-                We combine technical expertise with business understanding to deliver solutions that drive your success.
-                Our commitment to excellence ensures you get the best service every time.
+                We combine technical expertise with business understanding to
+                deliver solutions that drive your success. Our commitment to
+                excellence ensures you get the best service every time.
               </p>
 
               <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
@@ -386,7 +400,9 @@ const OptimizedITServices = () => {
                       <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-1 sm:mb-2">
                         {feature.title}
                       </h3>
-                      <p className="text-xs sm:text-sm md:text-base text-gray-600">{feature.description}</p>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600">
+                        {feature.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -397,7 +413,10 @@ const OptimizedITServices = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="bg-gray-100 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
+      <section
+        id="services"
+        className="bg-gray-100 py-12 sm:py-16 px-4 sm:px-6 lg:px-8"
+      >
         <div className="container mx-auto">
           {/* Header */}
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
@@ -410,7 +429,7 @@ const OptimizedITServices = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {services.map((service) => {
-              const IconComponent = service.icon
+              const IconComponent = service.icon;
               return (
                 <div
                   key={service.id}
@@ -444,17 +463,17 @@ const OptimizedITServices = () => {
                   />
                   <div className="absolute inset-0.5 rounded-2xl bg-slate-900/90 backdrop-blur-md -z-10" />
                 </div>
-              )
+              );
             })}
           </div>
 
           {/* Call to Action */}
-          <div className="flex justify-center mt-8 sm:mt-12 md:mt-16">
+          {/* <div className="flex justify-center mt-8 sm:mt-12 md:mt-16">
             <button className="group bg-red-600 hover:bg-red-700 text-white font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-full transition-all flex items-center text-sm sm:text-base">
               Explore More
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -468,9 +487,12 @@ const OptimizedITServices = () => {
       <section className="bg-gray-100 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
           <div className="text-center mb-8 sm:mb-12 md:mb-16">
-            <p className="text-red-800 font-semibold mb-2 text-sm sm:text-base">CLIENT TESTIMONIALS</p>
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Trusted By <span className="text-red-800">Businesses</span> Worldwide
+            <p className="text-red-800 font-semibold mb-2 text-sm sm:text-base">
+              CLIENT TESTIMONIALS
+            </p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Trusted By <span className="text-red-800">Businesses</span>{" "}
+              Worldwide
             </h2>
             <div className="w-20 sm:w-24 h-1 bg-red-600 mx-auto"></div>
           </div>
@@ -483,7 +505,10 @@ const OptimizedITServices = () => {
               >
                 <div className="flex items-center mb-3 sm:mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-yellow-400 fill-current" />
+                    <Star
+                      key={i}
+                      className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-yellow-400 fill-current"
+                    />
                   ))}
                 </div>
                 <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4 sm:mb-6 italic">
@@ -494,8 +519,12 @@ const OptimizedITServices = () => {
                     {testimonial.initials}
                   </div>
                   <div>
-                    <p className="text-white font-medium text-xs sm:text-sm md:text-base">{testimonial.name}</p>
-                    <p className="text-gray-400 text-xs md:text-sm">{testimonial.role}</p>
+                    <p className="text-white font-medium text-xs sm:text-sm md:text-base">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-gray-400 text-xs md:text-sm">
+                      {testimonial.role}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -518,7 +547,7 @@ const OptimizedITServices = () => {
           {/* Top Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
             {topSteps.map((step) => {
-              const IconComponent = step.icon
+              const IconComponent = step.icon;
               return (
                 <div
                   key={step.id}
@@ -531,10 +560,12 @@ const OptimizedITServices = () => {
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{step.description}</p>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
 
@@ -552,7 +583,7 @@ const OptimizedITServices = () => {
           {/* Bottom Row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
             {bottomSteps.map((step) => {
-              const IconComponent = step.icon
+              const IconComponent = step.icon;
               return (
                 <div
                   key={step.id}
@@ -565,10 +596,12 @@ const OptimizedITServices = () => {
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{step.description}</p>
+                    <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
@@ -576,7 +609,7 @@ const OptimizedITServices = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default OptimizedITServices
+export default OptimizedITServices;

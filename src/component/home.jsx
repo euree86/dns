@@ -10,7 +10,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Homehero from "./homehero";
 import Producthome from "./producthome";
-import { Shield, ArrowRight, Globe, Code, Smartphone, Palette, HardDrive, Database, Cpu } from 'lucide-react';
+import {
+  Shield,
+  ArrowRight,
+  Globe,
+  Code,
+  Smartphone,
+  Palette,
+  HardDrive,
+  Database,
+  Cpu,
+} from "lucide-react";
 
 const Home = () => {
   // Data arrays
@@ -129,10 +139,14 @@ const Home = () => {
   // Reusable components
   const SectionHeader = ({ title, subtitle, className = "" }) => (
     <div className={`mb-12 sm:mb-16 ${className}`}>
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">{title}</h2>
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
+        {title}
+      </h2>
       <div className="w-20 sm:w-28 h-1 bg-red-800 mb-2"></div>
       {subtitle && (
-        <p className="text-base sm:text-lg text-gray-600 max-w-2xl">{subtitle}</p>
+        <p className="text-base sm:text-lg text-gray-600 max-w-2xl">
+          {subtitle}
+        </p>
       )}
     </div>
   );
@@ -163,7 +177,9 @@ const Home = () => {
       </div>
       <div>
         <h3 className="text-lg sm:text-xl font-bold">{step.title}</h3>
-        <p className="text-slate-500 mt-2 text-sm sm:text-base">{step.description}</p>
+        <p className="text-slate-500 mt-2 text-sm sm:text-base">
+          {step.description}
+        </p>
       </div>
     </div>
   );
@@ -180,8 +196,12 @@ const Home = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-red-900 to-transparent opacity-0 group-hover:opacity-80 transition-opacity flex items-end p-4 sm:p-6">
         <div>
-          <h3 className="text-white font-bold text-lg sm:text-xl mb-2">{item.title}</h3>
-          <p className="text-gray-200 text-sm sm:text-base">{item.description}</p>
+          <h3 className="text-white font-bold text-lg sm:text-xl mb-2">
+            {item.title}
+          </h3>
+          <p className="text-gray-200 text-sm sm:text-base">
+            {item.description}
+          </p>
         </div>
       </div>
     </div>
@@ -241,9 +261,12 @@ const Home = () => {
                   efficiency.
                 </p>
               </div>
-              <button className="group text-base sm:text-lg outline-1 outline-gray-400 hover:bg-red-800 hover:text-white text-red-700 font-semibold py-2 px-4 sm:px-6 rounded-full transition-all flex items-center mt-6 sm:mt-8">
-                Learn More
-              </button>
+              <Link to="/about">
+                {" "}
+                <button className="group text-base sm:text-lg outline-1 outline-gray-400 hover:bg-red-800 hover:text-white text-red-700 font-semibold py-2 px-4 sm:px-6 rounded-full transition-all flex items-center mt-6 sm:mt-8">
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -329,7 +352,10 @@ const Home = () => {
             </div>
           </div>
 
-          <LearnMoreButton />
+          <Link to="/services">
+            {" "}
+            <LearnMoreButton />
+          </Link>
         </div>
       </section>
 
@@ -346,8 +372,10 @@ const Home = () => {
               <PortfolioCard key={index} item={item} index={index} />
             ))}
           </div>
-
-          <LearnMoreButton />
+          <Link to="/portfolio">
+            {" "}
+            <LearnMoreButton />
+          </Link>
         </div>
       </section>
 

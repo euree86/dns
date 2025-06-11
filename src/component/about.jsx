@@ -1,4 +1,5 @@
-import { Clock, Mail, Zap } from 'lucide-react';
+import { Clock, Mail, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 import {
   BiSolidCctv,
   BiNetworkChart,
@@ -185,7 +186,7 @@ export default function ITSolutionsSection() {
   return (
     <div className="min-h-screen">
       <Nav />
-      
+
       {/* Hero Section */}
       <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
@@ -203,9 +204,12 @@ export default function ITSolutionsSection() {
               </p>
 
               <div className="pt-4">
-                <button className="px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md text-sm sm:text-base">
-                  Contact us
-                </button>
+                <Link to="/contact">
+                  {" "}
+                  <button className="px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md text-sm sm:text-base">
+                    Contact us
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -213,7 +217,7 @@ export default function ITSolutionsSection() {
             <div className="relative flex justify-center order-1 lg:order-2">
               <div className="relative w-2/3 max-w-lg">
                 <img
-                  src={about }
+                  src={about}
                   alt="School Management System on multiple devices"
                   className="w-full h-auto object-cover "
                 />
@@ -302,7 +306,9 @@ export default function ITSolutionsSection() {
               >
                 <div className="p-6 sm:p-8 lg:p-12">
                   <div className="flex items-center">
-                    <div className={`${service.bgColor} p-3 sm:p-4 rounded-full`}>
+                    <div
+                      className={`${service.bgColor} p-3 sm:p-4 rounded-full`}
+                    >
                       {service.icon}
                     </div>
                   </div>

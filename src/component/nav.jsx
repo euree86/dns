@@ -229,9 +229,9 @@ const MegaMenuSection = ({ title, items, isProductSection = false }) => (
 const MegaMenu = ({ type, data, isMobile = false }) => {
   const baseClasses = isMobile
     ? `bg-gray-50 p-4 border-t border-gray-200`
-    : `absolute top-full bg-gray-100 shadow-lg p-6 left-1/10  container mx-auto mx-4 sm:mx-4 lg:mx-6
-       z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 
-       group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out bg-gray-100`
+    : `absolute top-full left-0 right-0 bg-gray-100 shadow-lg p-6 
+ z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 
+ group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out`
 
   const getGridClasses = () => {
     if (isMobile) return "grid grid-cols-1 gap-4"
@@ -242,30 +242,42 @@ const MegaMenu = ({ type, data, isMobile = false }) => {
 
   if (type === "about") {
     return (
-      <div className={`${baseClasses} ${getGridClasses()}`}>
-        {Object.entries(data).map(([title, items]) => (
-          <MegaMenuSection key={title} title={title} items={items} />
-        ))}
+      <div className={baseClasses}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={getGridClasses()}>
+            {Object.entries(data).map(([title, items]) => (
+              <MegaMenuSection key={title} title={title} items={items} />
+            ))}
+          </div>
+        </div>
       </div>
     )
   }
 
   if (type === "products") {
     return (
-      <div className={`${baseClasses} ${getGridClasses()}`}>
-        {Object.entries(data).map(([title, items]) => (
-          <MegaMenuSection key={title} title={title} items={items} isProductSection={true} />
-        ))}
+      <div className={baseClasses}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={getGridClasses()}>
+            {Object.entries(data).map(([title, items]) => (
+              <MegaMenuSection key={title} title={title} items={items} isProductSection={true} />
+            ))}
+          </div>
+        </div>
       </div>
     )
   }
 
   // For services and portfolio (array-based data)
   return (
-    <div className={`${baseClasses} ${getGridClasses()}`}>
-      {data.map((section, idx) => (
-        <MegaMenuSection key={idx} title={section.title} items={section.items} />
-      ))}
+    <div className={baseClasses}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className={getGridClasses()}>
+          {data.map((section, idx) => (
+            <MegaMenuSection key={idx} title={section.title} items={section.items} />
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
@@ -385,7 +397,7 @@ export default function Navbar() {
 
       {/* Main navigation */}
       <div className="text-gray-700 border-b border-gray-200 py-1">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-14 relative">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-4">
             <img src={logo || "/placeholder.svg"} alt="DNS Technology Logo" className="w-8 sm:w-10" />
