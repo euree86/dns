@@ -1,26 +1,21 @@
-import React from "react";
+"use client";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Footer from "./footer";
-import Nav from "./nav";
-import Products from "./products";
-import Services from "./services";
-import Portfolio from "./portfolio";
-import Whatwedo from "./whatwedo";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Homehero from "./homehero";
 import Producthome from "./producthome";
+import { ArrowRight, Globe, Code, Smartphone, Palette } from "lucide-react";
 import {
-  Shield,
-  ArrowRight,
-  Globe,
-  Code,
-  Smartphone,
-  Palette,
-  HardDrive,
-  Database,
-  Cpu,
-} from "lucide-react";
+  fadeIn,
+  slideIn,
+  fadeUp,
+  zoomIn,
+  staggerContainer,
+  scaleIn,
+  bounceIn,
+} from "../variants";
 
 const Home = () => {
   // Data arrays
@@ -138,7 +133,13 @@ const Home = () => {
 
   // Reusable components
   const SectionHeader = ({ title, subtitle, className = "" }) => (
-    <div className={`mb-12 sm:mb-16 ${className}`}>
+    <motion.div
+      className={`mb-12 sm:mb-16 ${className}`}
+      variants={fadeUp(0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
         {title}
       </h2>
@@ -148,11 +149,18 @@ const Home = () => {
           {subtitle}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 
   const ServiceCard = ({ service, index }) => (
-    <div key={index} className="group">
+    <motion.div
+      key={index}
+      className="group"
+      variants={fadeUp(index * 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <img
         src={service.image || "/placeholder.svg"}
         alt={service.title}
@@ -164,11 +172,18 @@ const Home = () => {
       <p className="text-gray-500 text-center text-xs sm:text-sm font-medium">
         {service.description}
       </p>
-    </div>
+    </motion.div>
   );
 
   const ProcessStep = ({ step, index, isLast }) => (
-    <div key={index} className="flex gap-3 sm:gap-4">
+    <motion.div
+      key={index}
+      className="flex gap-3 sm:gap-4"
+      variants={slideIn("left", index * 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <div className="flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600 relative">
         <span className="font-bold text-sm sm:text-base">{step.number}</span>
         {!isLast && (
@@ -181,13 +196,17 @@ const Home = () => {
           {step.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 
   const PortfolioCard = ({ item, index }) => (
-    <div
+    <motion.div
       key={index}
       className="group relative overflow-hidden rounded-xl shadow-xl"
+      variants={zoomIn(index * 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
     >
       <img
         src={item.image || "/placeholder.svg"}
@@ -204,18 +223,24 @@ const Home = () => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
   const LearnMoreButton = ({ to = "/services" }) => (
-    <div className="flex justify-center mt-8 sm:mt-12">
+    <motion.div
+      className="flex justify-center mt-8 sm:mt-12"
+      variants={fadeUp(0.3)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <Link to={to}>
         <button className="group hover:bg-red-800 hover:text-white outline-1 outline-gray-400 text-red-900 font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-full transition-all flex items-center text-sm sm:text-base">
           Learn More
           <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
       </Link>
-    </div>
+    </motion.div>
   );
 
   return (
@@ -227,7 +252,13 @@ const Home = () => {
       <section className="bg-white py-20 sm:py-28 lg:py-36">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 xl:gap-36">
-            <div className="relative w-full lg:w-1/2 order-2 lg:order-1">
+            <motion.div
+              className="relative w-full lg:w-1/2 order-2 lg:order-1"
+              variants={slideIn("left", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false }}
+            >
               <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-full h-full bg-gray-100 rounded-lg transform -rotate-3"></div>
               <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-full h-full bg-gray-100 rounded-lg transform rotate-3"></div>
               <img
@@ -235,39 +266,68 @@ const Home = () => {
                 alt="DNS Technology"
                 className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-xl relative z-10 animate-fade-in-left"
               />
-            </div>
+            </motion.div>
 
-            <div className="w-full lg:w-1/2 animate-fade-in-right order-1 lg:order-2">
+            <motion.div
+              className="w-full lg:w-1/2 animate-fade-in-right order-1 lg:order-2"
+              variants={slideIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               <SectionHeader title="About DNS" />
               <div className="space-y-4 sm:space-y-6">
-                <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                <motion.p
+                  className="text-gray-700 leading-relaxed text-sm sm:text-base"
+                  variants={fadeUp(0.3)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
                   DNS Technology is a premier provider of network solutions and
                   IT services, dedicated to empowering businesses with
                   innovative and reliable technology. With decades of expertise
                   and a team of seasoned professionals, we specialize in
                   delivering end-to-end solutions tailored to meet the unique
                   needs of businesses across diverse industries.
-                </p>
-                <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                </motion.p>
+                <motion.p
+                  className="text-gray-700 leading-relaxed text-sm sm:text-base"
+                  variants={fadeUp(0.4)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
                   Our comprehensive offerings include network design,
                   implementation, optimization, and managed services, ensuring
                   seamless connectivity and peak performance for organizations
                   of all sizes.
-                </p>
-                <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                </motion.p>
+                <motion.p
+                  className="text-gray-700 leading-relaxed text-sm sm:text-base"
+                  variants={fadeUp(0.5)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
                   At DNS Technology, we pride ourselves on staying ahead of the
                   curve, leveraging the latest advancements in technology to
                   provide cutting-edge solutions that drive growth and
                   efficiency.
-                </p>
+                </motion.p>
               </div>
               <Link to="/about">
-                {" "}
-                <button className="group text-base sm:text-lg outline-1 outline-gray-400 hover:bg-red-800 hover:text-white text-red-700 font-semibold py-2 px-4 sm:px-6 rounded-full transition-all flex items-center mt-6 sm:mt-8">
+                <motion.button
+                  className="group text-base sm:text-lg outline-1 outline-gray-400 hover:bg-red-800 hover:text-white text-red-700 font-semibold py-2 px-4 sm:px-6 rounded-full transition-all flex items-center mt-6 sm:mt-8"
+                  variants={slideIn("right", 0.2)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
                   Learn More
-                </button>
+                </motion.button>
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -279,7 +339,13 @@ const Home = () => {
       <section className="w-full py-12 sm:py-16 md:py-24 lg:py-32 bg-white flex justify-center">
         <div className="container px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:gap-16 xl:gap-24 lg:grid-cols-2 items-center">
-            <div className="relative order-2 lg:order-1">
+            <motion.div
+              className="relative order-2 lg:order-1"
+              variants={slideIn("left", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               <img
                 src="https://cdn.pixabay.com/photo/2017/07/20/09/25/businessman-2521703_1280.jpg"
                 alt="What We Do"
@@ -296,16 +362,28 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="order-1 lg:order-2">
+            <motion.div
+              className="order-1 lg:order-2"
+              variants={slideIn("right", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
                 Our Process
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mb-6">
                 What We Do
               </h2>
-              <div className="space-y-4 sm:space-y-6">
+              <motion.div
+                className="space-y-4 sm:space-y-6"
+                variants={staggerContainer(0.1, 0.3)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+              >
                 {processSteps.map((step, index) => (
                   <ProcessStep
                     key={index}
@@ -314,8 +392,8 @@ const Home = () => {
                     isLast={index === processSteps.length - 1}
                   />
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -330,30 +408,53 @@ const Home = () => {
 
           {/* Hardware Services */}
           <div className="mb-12 sm:mb-16">
-            <h3 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-black">
+            <motion.h3
+              className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-black"
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               Hardware Level Services
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
+            </motion.h3>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16"
+              variants={staggerContainer(0.1, 0.3)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               {hardwareServices.map((service, index) => (
                 <ServiceCard key={index} service={service} index={index} />
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Software Services */}
           <div className="mb-8 sm:mb-12">
-            <h3 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-black">
+            <motion.h3
+              className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-black"
+              variants={fadeIn("up", 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               Software Level Services
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16">
+            </motion.h3>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16"
+              variants={staggerContainer(0.1, 0.3)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+            >
               {softwareServices.map((service, index) => (
                 <ServiceCard key={index} service={service} index={index} />
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <Link to="/services">
-            {" "}
             <LearnMoreButton />
           </Link>
         </div>
@@ -367,13 +468,18 @@ const Home = () => {
             subtitle="Explore our successful projects and implementations across various industries."
           />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            variants={staggerContainer(0.1, 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
             {portfolioItems.map((item, index) => (
               <PortfolioCard key={index} item={item} index={index} />
             ))}
-          </div>
+          </motion.div>
           <Link to="/portfolio">
-            {" "}
             <LearnMoreButton />
           </Link>
         </div>

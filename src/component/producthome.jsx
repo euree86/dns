@@ -1,7 +1,9 @@
 "use client"
 
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import { slideIn, fadeUp, zoomIn, staggerContainer, bounceIn } from "../variants"
 
 const ProductHome = () => {
   const products = [
@@ -40,7 +42,7 @@ const ProductHome = () => {
   return (
     <div className="bg-[#F3F4F6] py-8 sm:py-12 md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div>
+        <motion.div variants={fadeUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: false }}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
             Our Products
             <div className="w-20 sm:w-24 md:w-28 h-1 bg-red-800 mb-4 mt-2"></div>
@@ -48,13 +50,20 @@ const ProductHome = () => {
           <h2 className="text-base sm:text-lg font-medium text-black mb-4">
             Specialized networking solutions for every industry
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
+        <motion.div
+          className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-12 lg:gap-16"
+          variants={staggerContainer(0.1, 0.3)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           {products.map((product, index) => (
-            <div
+            <motion.div
               key={index}
               className="group hover:shadow-lg transition-shadow duration-300 rounded-lg overflow-hidden bg-white"
+              variants={zoomIn(index * 0.1)}
             >
               {/* Image */}
               <div className="overflow-hidden">
@@ -66,7 +75,7 @@ const ProductHome = () => {
               </div>
 
               {/* Text Content */}
-              <div className="p-4 sm:p-6">
+              <motion.div className="p-4 sm:p-6" variants={fadeUp(0.2)}>
                 <h3 className="text-lg sm:text-xl text-black font-medium mb-2">{product.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-700 mb-3">{product.description}</p>
                 <Link
@@ -76,29 +85,38 @@ const ProductHome = () => {
                   Learn More
                   <ArrowRight className="ml-1 w-3 h-3 sm:w-4 sm:h-4" />
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="pt-8 sm:pt-12 md:pt-16 text-center">
-          <p className="text-black text-sm sm:text-base md:text-lg mb-4">
+        <motion.div
+          className="pt-8 sm:pt-12 md:pt-16 text-center"
+          variants={fadeUp(0.4)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.p className="text-black text-sm sm:text-base md:text-lg mb-4" variants={slideIn("up", 0.2)}>
             Professional networking solutions for every need.
             <Link to="/contact" className="font-bold ml-2 hover:underline hover:text-red-800">
               Contact Us Today!
             </Link>
-          </p>
+          </motion.p>
 
           <Link to="/products">
-            <button
+            <motion.button
               className="group bg-transparent hover:bg-red-800 text-black hover:text-white font-medium py-2 sm:py-3 px-6 sm:px-8
              rounded-full transition-all border-2 border-red-800 flex items-center mx-auto text-sm sm:text-base"
+              variants={bounceIn(0.3)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Explore More
               <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

@@ -231,7 +231,7 @@ const MegaMenu = ({ type, data, isMobile = false }) => {
     ? `bg-gray-50 p-4 border-t border-gray-200`
     : `absolute top-full left-0 right-0 bg-gray-100 shadow-lg p-6 
  z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 
- group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out`
+ group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out mx-8`
 
   const getGridClasses = () => {
     if (isMobile) return "grid grid-cols-1 gap-4"

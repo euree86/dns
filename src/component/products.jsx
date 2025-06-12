@@ -11,6 +11,19 @@ import {
   ThumbsUp,
   Zap,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  zoomIn,
+  slideIn,
+  fadeIn,
+  staggerContainer,
+  scaleIn,
+  rotateIn,
+  bounceIn,
+  slideUp,
+  flip,
+} from "../variants";
 import product from "../image/product.png";
 import Nav from "./nav";
 import Footer from "./footer";
@@ -333,18 +346,29 @@ const brands = [
 
 const ProductShowcase = () => {
   const ProductCard = ({ product }) => (
-    <div className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 rounded-lg">
+    <motion.div
+      variants={zoomIn(0.1, 0.6)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.3 }}
+      whileHover={{ scale: 1.05, y: -5 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-white shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 rounded-lg"
+    >
       <div className="relative">
         <img
           src={product.image || "/placeholder.svg"}
           alt={product.name}
           className="w-full h-40 sm:h-48 object-cover bg-gray-200"
         />
-        <div className="absolute top-2 right-2">
+        <motion.div
+          variants={slideIn("right", 0.2, 0.4)}
+          className="absolute top-2 right-2"
+        >
           <span className="bg-[#1E2939] text-white px-2 py-1 rounded text-xs font-medium">
             {product.category}
           </span>
-        </div>
+        </motion.div>
       </div>
       <div className="p-3 sm:p-4">
         <h3 className="text-gray-800 font-bold text-base sm:text-lg">
@@ -357,28 +381,41 @@ const ProductShowcase = () => {
           <div className="text-base sm:text-lg font-bold text-[#1E2939] mb-2">
             {product.price}
           </div>
-          <button className="bg-red-800 hover:bg-red-700 text-white px-3 sm:px-4 py-1 rounded text-xs sm:text-sm font-medium transition-colors">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-red-800 hover:bg-red-700 text-white px-3 sm:px-4 py-1 rounded text-xs sm:text-sm font-medium transition-colors"
+          >
             View Details
-          </button>
+          </motion.button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
   const CategorySection = ({ category }) => (
-    <div className="my-6 sm:my-8 md:my-12">
-      <div>
+    <motion.div
+      variants={fadeIn("up", 0.2, 0.8)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
+      className="my-6 sm:my-8 md:my-12"
+    >
+      <motion.div variants={slideIn("left", 0.2, 0.6)}>
         <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2">
           {category.title}
         </h2>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12">
+      <motion.div
+        variants={staggerContainer(0.1, 0.3)}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12"
+      >
         {category.products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 
   return (
@@ -389,33 +426,55 @@ const ProductShowcase = () => {
       <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="relative flex justify-center order-2 lg:order-1">
-              <div className="relative  w-2/3 max-w-lg">
+            <motion.div
+              variants={zoomIn(0.2, 0.8)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.3 }}
+              className="relative flex justify-center order-2 lg:order-1"
+            >
+              <div className="relative  w-full max-w-xl">
                 <img
                   src={product}
                   alt="IT Solutions on multiple devices"
                   className="w-full h-auto object-cover "
                 />
               </div>
-            </div>
-            <div className="text-black space-y-6 sm:space-y-8 order-1 lg:order-2">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+            </motion.div>
+            <motion.div
+              variants={fadeIn("left", 0.3, 0.8)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-black space-y-6 sm:space-y-8 order-1 lg:order-2"
+            >
+              <motion.h1
+                variants={slideUp(0.4, 0.8)}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+              >
                 Complete IT & Network Hardware Solutions for Modern Businesses
-              </h1>
-              <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic">
+              </motion.h1>
+              <motion.p
+                variants={fadeUp(0.6, 0.6)}
+                className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic"
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Inventore temporibus corporis laboriosam illo voluptas quisquam
                 quo eum.
-              </p>
-              <div className="pt-4">
+              </motion.p>
+              <motion.div variants={fadeUp(0.6, 0.6)} className="pt-4">
                 <Link to="/contact">
                   {" "}
-                  <button className="px-4 sm:px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md flex items-center py-2 sm:py-3 text-sm sm:text-base">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-4 sm:px-6 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md flex items-center py-2 sm:py-3 text-sm sm:text-base"
+                  >
                     Contact Us
-                  </button>
+                  </motion.button>
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -438,7 +497,13 @@ const ProductShowcase = () => {
 
       {/* Why Choose Us Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+        <motion.div
+          variants={fadeIn("up", 0.2, 0.8)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="text-center mb-8 sm:mb-12 md:mb-16"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2">
             Why Choose Our Products
           </h2>
@@ -446,35 +511,56 @@ const ProductShowcase = () => {
             We provide the best networking solutions with unmatched quality and
             service
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+        <motion.div
+          variants={staggerContainer(0.2, 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+        >
           {features.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={zoomIn(index * 0.1, 0.6)}
+              whileHover={{ scale: 1.05, y: -10 }}
               className={`${feature.bgColor} rounded-xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center hover:shadow-2xl transition duration-300`}
             >
-              <div className="mb-3 sm:mb-4 md:mb-6 p-2 sm:p-3 md:p-4 bg-white rounded-full shadow-sm">
+              <motion.div
+                variants={rotateIn(0.2, 0.6)}
+                className="mb-3 sm:mb-4 md:mb-6 p-2 sm:p-3 md:p-4 bg-white rounded-full shadow-sm"
+              >
                 {feature.icon}
-              </div>
+              </motion.div>
               <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-3">
                 {feature.title}
               </h3>
               <p className="text-gray-600 text-xs sm:text-sm md:text-base">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Product Categories Section */}
       <div className="bg-gray-100">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#101828] mb-2">
-            Our Product Categories
-          </h2>
-          <div className="w-20 sm:w-24 md:w-32 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-3 md:mb-4"></div>
+          <motion.div
+            variants={fadeIn("up", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#101828] mb-2">
+              Our Product Categories
+            </h2>
+            <motion.div
+              variants={scaleIn(0.3, 0.6)}
+              className="w-20 sm:w-24 md:w-32 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-3 md:mb-4"
+            ></motion.div>
+          </motion.div>
           {productCategories.map((category, index) => (
             <CategorySection key={index} category={category} />
           ))}
@@ -483,22 +569,39 @@ const ProductShowcase = () => {
 
       {/* Featured Products Section */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 mb-6 sm:mb-8 md:mb-12">
+        <motion.div
+          variants={fadeIn("up", 0.2, 0.8)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-0 mb-6 sm:mb-8 md:mb-12"
+        >
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#101828] mb-2">
               Featured Products
             </h2>
-            <div className="w-20 sm:w-24 md:w-32 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-3 md:mb-4"></div>
+            <motion.div
+              variants={scaleIn(0.3, 0.6)}
+              className="w-20 sm:w-24 md:w-32 h-1 bg-gradient-to-r from-red-600 to-red-700 mb-3 md:mb-4"
+            ></motion.div>
             <p className="text-gray-500 text-sm sm:text-base">
               Browse our most popular networking solutions
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <motion.div
+          variants={staggerContainer(0.1, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
+        >
           {products.map((product, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={zoomIn(index * 0.1, 0.6)}
+              whileHover={{ scale: 1.05, y: -10 }}
               className="bg-gray-50 flex flex-col gap-2 relative shadow-md hover:shadow-lg transition duration-300 hover:-translate-y-1 rounded-lg overflow-hidden"
             >
               <div className="w-full h-32 sm:h-40 lg:h-48 overflow-hidden">
@@ -520,45 +623,64 @@ const ProductShowcase = () => {
                     Rs {product.price}
                   </p>
                 </div>
-                <button className="mt-1 md:mt-2">
+                <motion.button
+                  whileHover={{ x: 5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="mt-1 md:mt-2"
+                >
                   <ArrowRight className="w-4 h-4 text-red-800" />
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        {/* <div className="py-6 sm:py-8 md:py-12">
-          <button className="px-4 md:px-6 py-2 md:py-3 bg-red-800 text-white rounded-lg flex items-center text-xs sm:text-sm md:text-base">
-            View All Products <ArrowRight className="ml-2 h-4 w-4" />
-          </button>
-        </div> */}
+        </motion.div>
       </div>
 
       {/* Services Section */}
       <section className="bg-gray-100 py-8 sm:py-12 md:py-16 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8 md:space-y-12">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 md:gap-8 pb-6 sm:pb-8 md:pb-16">
-            <div className="lg:w-1/2 w-full">
+          <motion.div
+            variants={fadeIn("up", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 md:gap-8 pb-6 sm:pb-8 md:pb-16"
+          >
+            <motion.div
+              variants={slideIn("left", 0.3, 0.8)}
+              className="lg:w-1/2 w-full"
+            >
               <h1 className="text-red-800 text-xs md:text-sm font-semibold uppercase">
                 # OUR PRODUCTS
               </h1>
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#101828] mt-1 md:mt-2">
                 We Deal With High Quality Network and IT Products
               </h2>
-            </div>
-            <div className="lg:w-1/2 w-full">
+            </motion.div>
+            <motion.div
+              variants={slideIn("right", 0.4, 0.8)}
+              className="lg:w-1/2 w-full"
+            >
               <p className="text-[#101828] text-sm md:text-base leading-relaxed">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-            {services.map((service) => (
-              <div
+          <motion.div
+            variants={staggerContainer(0.2, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+          >
+            {services.map((service, index) => (
+              <motion.div
                 key={service.id}
+                variants={flip(index * 0.1, 0.8)}
+                whileHover={{ scale: 1.05, rotateY: 5 }}
                 className="bg-white rounded-lg p-4 md:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 relative group"
               >
                 <div className="absolute top-3 md:top-4 right-4 md:right-6 text-3xl sm:text-4xl md:text-6xl font-bold text-gray-100 group-hover:text-gray-50 transition-colors duration-300">
@@ -570,40 +692,56 @@ const ProductShowcase = () => {
                     {service.title}
                   </h3>
                   <ul className="space-y-2 md:space-y-3">
-                    {service.features.map((feature, index) => (
-                      <li
-                        key={index}
+                    {service.features.map((feature, featureIndex) => (
+                      <motion.li
+                        key={featureIndex}
+                        variants={fadeIn("left", featureIndex * 0.1, 0.4)}
                         className="flex items-start space-x-2 md:space-x-3"
                       >
                         <Check className="w-3 h-3 md:w-4 md:h-4 text-red-500 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-600 text-xs md:text-sm leading-relaxed">
                           {feature}
                         </span>
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Trusted Brands */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
-        <div className="text-center mb-6 sm:mb-8 md:mb-12">
+        <motion.div
+          variants={fadeIn("up", 0.2, 0.8)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="text-center mb-6 sm:mb-8 md:mb-12"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1E2939] mb-2">
             Trusted By Industry Leaders
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
             We partner with the best brands to bring you top-quality products
           </p>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-16">
+        <motion.div
+          variants={staggerContainer(0.1, 0.3)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-16"
+        >
           {brands.map((brand, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={rotateIn(index * 0.1, 0.6)}
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
               className="bg-white p-2 md:p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300"
             >
               <img
@@ -611,9 +749,9 @@ const ProductShowcase = () => {
                 alt={brand.name}
                 className="h-6 sm:h-8 md:h-12 object-contain"
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <Footer />

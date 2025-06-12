@@ -1,9 +1,18 @@
-import React from "react";
+"use client";
 import { Cloud, Shield, ArrowUpDown, Layers } from "lucide-react";
 import { Monitor, HardDrive, Headphones } from "lucide-react";
 import { Network, Settings } from "lucide-react";
 import { Server, Camera, Router, Wrench } from "lucide-react";
 import { Code, Database, Download } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  zoomIn,
+  slideIn,
+  staggerContainer,
+  scaleIn,
+  rotateIn,
+} from "../variants";
 
 const ServiceDetailed = () => {
   const cloudservices = [
@@ -174,15 +183,30 @@ const ServiceDetailed = () => {
       <div className="container mx-auto p-8 ">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Section - Services Grid */}
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-6">
+          <motion.div
+            variants={slideIn("left", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1"
+          >
+            <motion.h1
+              variants={fadeUp(0.3, 0.6)}
+              className="text-4xl font-bold mb-6"
+            >
               <span className="text-gray-900">Cloud Services</span>
-            </h1>
+            </motion.h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <motion.div
+              variants={staggerContainer(0.1, 0.4)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
               {cloudservices.map((service, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={zoomIn(index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
                   <div className="flex items-center gap-4">
@@ -193,31 +217,44 @@ const ServiceDetailed = () => {
                       {service.title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Section - Cloud Infrastructure Management */}
-          <div className="lg:w-80">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <motion.div
+            variants={slideIn("right", 0.4, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:w-80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+            >
               <h2 className="text-lg font-bold text-gray-900">
                 Cloud Infrastructure Management
               </h2>
-              <div className="w-12 h-0.5 bg-red-800 mb-4"></div>
+              <motion.div
+                variants={scaleIn(0.5, 0.6)}
+                className="w-12 h-0.5 bg-red-800 mb-4"
+              ></motion.div>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Optimize your cloud infrastructure with our comprehensive
                 management services. We ensure scalability, security, and
                 cost-effectiveness while maintaining peak performance across all
                 your cloud resources and applications.
               </p>
-              <img
+              <motion.img
+                variants={zoomIn(0.6, 0.8)}
                 src="https://cdn.pixabay.com/photo/2024/08/22/09/07/ai-generated-8988761_640.jpg"
                 alt=""
                 className="object-cover w-full h-full"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -225,12 +262,24 @@ const ServiceDetailed = () => {
       <div className=" bg-gray-100">
         <div className="flex flex-col lg:flex-row gap-8 container mx-auto p-8">
           {/* left Section - 24/7 Monitoring */}
-          <div className="lg:w-80">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <motion.div
+            variants={slideIn("left", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:w-80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+            >
               <h2 className="text-lg font-bold text-gray-900">
                 24/7 Monitoring
               </h2>
-              <div className="w-12 h-0.5 bg-red-800 mb-4"></div>
+              <motion.div
+                variants={scaleIn(0.3, 0.6)}
+                className="w-12 h-0.5 bg-red-800 mb-4"
+              ></motion.div>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Keep your IT infrastructure running smoothly with our
                 round-the-clock monitoring services. We proactively identify and
@@ -238,23 +287,39 @@ const ServiceDetailed = () => {
                 ensuring maximum uptime and performance.
               </p>
 
-              <img
+              <motion.img
+                variants={zoomIn(0.4, 0.8)}
                 src="https://cdn.pixabay.com/photo/2024/08/22/09/07/ai-generated-8988761_640.jpg"
                 alt=""
                 className="object-cover w-full h-full"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           {/* right Section - Services Grid */}
-          <div className="flex-1">
-            <h1 className="text-3xl font-bold mb-8">
+          <motion.div
+            variants={slideIn("right", 0.4, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1"
+          >
+            <motion.h1
+              variants={fadeUp(0.5, 0.6)}
+              className="text-3xl font-bold mb-8"
+            >
               <span className="text-gray-900">Managed IT Services</span>
-            </h1>
+            </motion.h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <motion.div
+              variants={staggerContainer(0.1, 0.6)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
               {ITservices.map((service, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={zoomIn(index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
                   <div className="flex items-center gap-4">
@@ -265,10 +330,10 @@ const ServiceDetailed = () => {
                       {service.title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -276,15 +341,30 @@ const ServiceDetailed = () => {
       <div className="container mx-auto p-8 ">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Section - Services Grid */}
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-8">
+          <motion.div
+            variants={slideIn("left", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1"
+          >
+            <motion.h1
+              variants={fadeUp(0.3, 0.6)}
+              className="text-4xl font-bold mb-8"
+            >
               <span className="text-gray-900">IT Services</span>
-            </h1>
+            </motion.h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <motion.div
+              variants={staggerContainer(0.1, 0.4)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
               {interactiveservices.map((service, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={zoomIn(index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
                   <div className="flex items-center gap-4">
@@ -295,18 +375,30 @@ const ServiceDetailed = () => {
                       {service.title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Section - Network Setup & Configuration */}
-          <div className="lg:w-80">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <motion.div
+            variants={slideIn("right", 0.4, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:w-80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+            >
               <h2 className="text-lg font-bold text-gray-900 ">
                 Network Setup & Configuration
               </h2>
-              <div className="w-12 h-0.5 bg-red-800 mb-4"></div>
+              <motion.div
+                variants={scaleIn(0.5, 0.6)}
+                className="w-12 h-0.5 bg-red-800 mb-4"
+              ></motion.div>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Design and implement robust network infrastructure tailored to
                 your business needs. Our expert team ensures secure, scalable,
@@ -314,13 +406,14 @@ const ServiceDetailed = () => {
                 technology requirements.
               </p>
 
-              <img
+              <motion.img
+                variants={zoomIn(0.6, 0.8)}
                 src="https://cdn.pixabay.com/photo/2024/08/22/09/07/ai-generated-8988761_640.jpg"
                 alt=""
                 className="object-cover w-full h-full"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -328,12 +421,24 @@ const ServiceDetailed = () => {
       <div className="bg-gray-100 ">
         <div className="flex flex-col lg:flex-row gap-8 container mx-auto p-8">
           {/* left Section - Server Installation & Setup */}
-          <div className="lg:w-80">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <motion.div
+            variants={slideIn("left", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:w-80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+            >
               <h2 className="text-lg font-bold text-gray-900 ">
                 Server Installation & Setup
               </h2>
-              <div className="w-12 h-0.5 bg-red-800 mb-4"></div>
+              <motion.div
+                variants={scaleIn(0.3, 0.6)}
+                className="w-12 h-0.5 bg-red-800 mb-4"
+              ></motion.div>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Professional server installation and configuration services to
                 power your business operations. We ensure optimal performance,
@@ -341,22 +446,38 @@ const ServiceDetailed = () => {
                 infrastructure and data management needs.
               </p>
 
-              <img
+              <motion.img
+                variants={zoomIn(0.4, 0.8)}
                 src="https://cdn.pixabay.com/photo/2024/08/22/09/07/ai-generated-8988761_640.jpg"
                 alt=""
                 className="object-cover w-full h-full"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           {/* right Section - Services Grid */}
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-6">
+          <motion.div
+            variants={slideIn("right", 0.4, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1"
+          >
+            <motion.h1
+              variants={fadeUp(0.5, 0.6)}
+              className="text-4xl font-bold mb-6"
+            >
               <span className="text-gray-900">Hardware Services</span>
-            </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            </motion.h1>
+            <motion.div
+              variants={staggerContainer(0.1, 0.6)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
               {hardwareservices.map((service, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={zoomIn(index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
                   <div className="flex items-center gap-4">
@@ -367,10 +488,10 @@ const ServiceDetailed = () => {
                       {service.title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -378,15 +499,30 @@ const ServiceDetailed = () => {
       <div className="container mx-auto p-8 ">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Section - Services Grid */}
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-6">
+          <motion.div
+            variants={slideIn("left", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1"
+          >
+            <motion.h1
+              variants={fadeUp(0.3, 0.6)}
+              className="text-4xl font-bold mb-6"
+            >
               <span className="text-gray-900">Software Solutions</span>
-            </h1>
+            </motion.h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <motion.div
+              variants={staggerContainer(0.1, 0.4)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
               {softwareservices.map((service, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={zoomIn(index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
                   <div className="flex items-center gap-4">
@@ -397,18 +533,30 @@ const ServiceDetailed = () => {
                       {service.title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right Section - Custom Software Development */}
-          <div className="lg:w-80">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <motion.div
+            variants={slideIn("right", 0.4, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:w-80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+            >
               <h2 className="text-lg font-bold text-gray-900">
                 Custom Software Development
               </h2>
-              <div className="w-12 h-0.5 bg-red-800 mb-4"></div>
+              <motion.div
+                variants={scaleIn(0.5, 0.6)}
+                className="w-12 h-0.5 bg-red-800 mb-4"
+              ></motion.div>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Transform your business with tailor-made software solutions
                 designed specifically for your unique requirements. Our
@@ -416,13 +564,14 @@ const ServiceDetailed = () => {
                 applications that drive efficiency and growth.
               </p>
 
-              <img
+              <motion.img
+                variants={zoomIn(0.6, 0.8)}
                 src="https://cdn.pixabay.com/photo/2024/08/22/09/07/ai-generated-8988761_640.jpg"
                 alt=""
                 className="object-cover w-full h-full"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -430,12 +579,24 @@ const ServiceDetailed = () => {
       <div className="bg-gray-100 ">
         <div className="flex flex-col lg:flex-row gap-8 container mx-auto p-8">
           {/* left Section - Server Installation & Setup */}
-          <div className="lg:w-80">
-            <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+          <motion.div
+            variants={slideIn("left", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="lg:w-80"
+          >
+            <motion.div
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="bg-white rounded-lg shadow-sm p-6 border border-gray-200"
+            >
               <h2 className="text-lg font-bold text-gray-900">
                 Server Installation & Setup
               </h2>
-              <div className="w-12 h-0.5 bg-red-800 mb-4"></div>
+              <motion.div
+                variants={scaleIn(0.3, 0.6)}
+                className="w-12 h-0.5 bg-red-800 mb-4"
+              ></motion.div>
               <p className="text-gray-600 text-sm leading-relaxed mb-6">
                 Professional server installation and configuration services to
                 power your business operations. We ensure optimal performance,
@@ -443,22 +604,38 @@ const ServiceDetailed = () => {
                 infrastructure and data management needs.
               </p>
 
-              <img
+              <motion.img
+                variants={zoomIn(0.4, 0.8)}
                 src="https://cdn.pixabay.com/photo/2024/08/22/09/07/ai-generated-8988761_640.jpg"
                 alt=""
                 className="object-cover w-full h-full"
               />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           {/* right Section - Services Grid */}
-          <div className="flex-1">
-            <h1 className="text-4xl font-bold mb-6">
+          <motion.div
+            variants={slideIn("right", 0.4, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1"
+          >
+            <motion.h1
+              variants={fadeUp(0.5, 0.6)}
+              className="text-4xl font-bold mb-6"
+            >
               <span className="text-gray-900">Consulting Service</span>
-            </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            </motion.h1>
+            <motion.div
+              variants={staggerContainer(0.1, 0.6)}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+            >
               {consultingservices.map((service, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={zoomIn(index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
                   <div className="flex items-center gap-4">
@@ -469,10 +646,10 @@ const ServiceDetailed = () => {
                       {service.title}
                     </h3>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

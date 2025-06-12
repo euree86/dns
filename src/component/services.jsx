@@ -6,7 +6,6 @@ import {
   Brain,
   Bot,
   Code,
-  ArrowRight,
   Globe,
   Smartphone,
   FileText,
@@ -16,6 +15,19 @@ import {
   TestTube,
   Star,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import {
+  fadeUp,
+  zoomIn,
+  slideIn,
+  fadeIn,
+  staggerContainer,
+  scaleIn,
+  rotateIn,
+  bounceIn,
+  slideUp,
+  flip,
+} from "../variants";
 import Nav from "./nav";
 import Footer from "./footer";
 import ServiceDetailed from "./servicedetailed";
@@ -89,19 +101,37 @@ const TechStackSection = () => {
     <section className="bg-white py-12 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12">
+        <motion.div
+          variants={fadeIn("up", 0.2, 0.8)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="text-center mb-8 sm:mb-12"
+        >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Tools & Tech Stack
           </h2>
-          <div className="w-20 h-1 bg-red-500 mx-auto"></div>
-        </div>
+          <motion.div
+            variants={scaleIn(0.3, 0.6)}
+            className="w-20 h-1 bg-red-500 mx-auto"
+          ></motion.div>
+        </motion.div>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 mb-8 sm:mb-12 border-b border-gray-200 overflow-x-auto">
-          {Object.keys(techCategories).map((category) => (
-            <button
+        <motion.div
+          variants={staggerContainer(0.1, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.3 }}
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-8 mb-8 sm:mb-12 border-b border-gray-200 overflow-x-auto"
+        >
+          {Object.keys(techCategories).map((category, index) => (
+            <motion.button
               key={category}
+              variants={slideIn("up", index * 0.1, 0.4)}
               onClick={() => setActiveTab(category)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               className={`pb-3 sm:pb-4 px-2 text-xs sm:text-sm md:text-lg font-medium transition-colors duration-200 whitespace-nowrap ${
                 activeTab === category
                   ? "text-red-500 border-b-2 border-red-500"
@@ -109,18 +139,30 @@ const TechStackSection = () => {
               }`}
             >
               {category}
-            </button>
+            </motion.button>
           ))}
-        </div>
+        </motion.div>
 
         {/* Technology Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
+        <motion.div
+          variants={staggerContainer(0.1, 0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.2 }}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8"
+        >
           {techCategories[activeTab]?.map((tech, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={zoomIn(index * 0.05, 0.4)}
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.95 }}
               className="flex flex-col items-center cursor-pointer group"
             >
-              <div className="text-xl sm:text-2xl md:text-4xl mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-200">
+              <div
+               
+                className="text-xl sm:text-2xl md:text-4xl mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-200"
+              >
                 {tech.logo}
               </div>
               <h3
@@ -128,9 +170,9 @@ const TechStackSection = () => {
               >
                 {tech.name}
               </h3>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -302,30 +344,52 @@ const OptimizedITServices = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="text-black space-y-6 lg:space-y-8 order-2 lg:order-1">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+            <motion.div
+              variants={fadeIn("right", 0.2, 0.8)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.3 }}
+              className="text-black space-y-6 lg:space-y-8 order-2 lg:order-1"
+            >
+              <motion.h1
+                variants={slideUp(0.3, 0.8)}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight"
+              >
                 From Robust Hardware Installation To Innovative Software
                 <span className="text-red-800"> Solutions</span>
-              </h1>
+              </motion.h1>
 
-              <p className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic">
+              <motion.p
+                variants={fadeUp(0.5, 0.6)}
+                className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic"
+              >
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Inventore temporibus corporis laboriosam illo voluptas quisquam
                 quo eum.
-              </p>
+              </motion.p>
 
-              <div className="pt-4">
+              <motion.div variants={fadeUp(0.5, 0.6)} className="pt-4">
                 <Link to="/contact">
                   {" "}
-                  <button className="px-4 sm:px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md text-sm sm:text-base">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-4 sm:px-6 py-2 sm:py-3 bg-red-700 hover:bg-red-800 text-white font-semibold transition-all rounded-md text-sm sm:text-base"
+                  >
                     Contact Us
-                  </button>
+                  </motion.button>
                 </Link>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Content - Hero Image */}
-            <div className="flex justify-center order-1 lg:order-2">
+            <motion.div
+              variants={zoomIn(0.4, 0.8)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.3 }}
+              className="flex justify-center order-1 lg:order-2"
+            >
               <div className="w-2/3 max-w-lg">
                 <img
                   src="https://cdn.pixabay.com/photo/2024/04/25/02/23/ai-generated-8718795_640.png"
@@ -333,7 +397,7 @@ const OptimizedITServices = () => {
                   className="w-full h-auto object-cover"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -359,20 +423,37 @@ const OptimizedITServices = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side */}
-            <div className="order-2 lg:order-1">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 md:mb-6">
+            <motion.div
+              variants={slideIn("left", 0.2, 0.8)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.3 }}
+              className="order-2 lg:order-1"
+            >
+              <motion.h2
+                variants={fadeUp(0.3, 0.6)}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 md:mb-6"
+              >
                 Why Choose Our IT Services
-              </h2>
-              <p className="text-sm sm:text-base text-gray-600 mb-6 md:mb-8 italic">
+              </motion.h2>
+              <motion.p
+                variants={fadeUp(0.4, 0.6)}
+                className="text-sm sm:text-base text-gray-600 mb-6 md:mb-8 italic"
+              >
                 We combine technical expertise with business understanding to
                 deliver solutions that drive your success. Our commitment to
                 excellence ensures you get the best service every time.
-              </p>
+              </motion.p>
 
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
+              <motion.div
+                variants={staggerContainer(0.1, 0.5)}
+                className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6"
+              >
                 {images.map((src, index) => (
-                  <div
+                  <motion.div
                     key={index}
+                    variants={zoomIn(index * 0.1, 0.6)}
+                    whileHover={{ scale: 1.05, y: -5 }}
                     className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
                   >
                     <img
@@ -380,16 +461,24 @@ const OptimizedITServices = () => {
                       alt={`Service ${index + 1}`}
                       className="w-full h-24 sm:h-32 md:h-48 object-cover"
                     />
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             {/* Right Side */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-10 order-1 lg:order-2">
+            <motion.div
+              variants={staggerContainer(0.2, 0.3)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.2 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-10 order-1 lg:order-2"
+            >
               {features.map((feature, index) => (
-                <div
+                <motion.div
                   key={index}
+                  variants={slideIn("right", index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -5 }}
                   className="bg-gray-50 p-3 sm:p-4 md:p-6 rounded-xl hover:shadow-md transition-all duration-300 border-t-4 border-red-600"
                 >
                   <div className="flex items-start gap-2 sm:gap-3 md:gap-4">
@@ -405,9 +494,9 @@ const OptimizedITServices = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -419,20 +508,37 @@ const OptimizedITServices = () => {
       >
         <div className="container mx-auto">
           {/* Header */}
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <motion.div
+            variants={fadeIn("up", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-center mb-8 sm:mb-12 md:mb-16"
+          >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
               Unlock The Future Of Tomorrow
             </h2>
-            <div className="w-20 md:w-26 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto"></div>
-          </div>
+            <motion.div
+              variants={scaleIn(0.3, 0.6)}
+              className="w-20 md:w-26 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto"
+            ></motion.div>
+          </motion.div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-            {services.map((service) => {
+          <motion.div
+            variants={staggerContainer(0.2, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+          >
+            {services.map((service, index) => {
               const IconComponent = service.icon;
               return (
-                <div
+                <motion.div
                   key={service.id}
+                  variants={flip(index * 0.1, 0.8)}
+                  whileHover={{ scale: 1.05, rotateY: 5 }}
                   className="group relative overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 md:p-8 hover:bg-white/15 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/25"
                 >
                   {/* Gradient Background Effect */}
@@ -462,18 +568,10 @@ const OptimizedITServices = () => {
                     className={`absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10`}
                   />
                   <div className="absolute inset-0.5 rounded-2xl bg-slate-900/90 backdrop-blur-md -z-10" />
-                </div>
+                </motion.div>
               );
             })}
-          </div>
-
-          {/* Call to Action */}
-          {/* <div className="flex justify-center mt-8 sm:mt-12 md:mt-16">
-            <button className="group bg-red-600 hover:bg-red-700 text-white font-medium py-2 sm:py-3 px-6 sm:px-8 rounded-full transition-all flex items-center text-sm sm:text-base">
-              Explore More
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div> */}
+          </motion.div>
         </div>
       </section>
 
@@ -486,7 +584,13 @@ const OptimizedITServices = () => {
       {/* Testimonials Section */}
       <section className="bg-gray-100 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <motion.div
+            variants={fadeIn("up", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-center mb-8 sm:mb-12 md:mb-16"
+          >
             <p className="text-red-800 font-semibold mb-2 text-sm sm:text-base">
               CLIENT TESTIMONIALS
             </p>
@@ -494,23 +598,36 @@ const OptimizedITServices = () => {
               Trusted By <span className="text-red-800">Businesses</span>{" "}
               Worldwide
             </h2>
-            <div className="w-20 sm:w-24 h-1 bg-red-600 mx-auto"></div>
-          </div>
+            <motion.div
+              variants={scaleIn(0.3, 0.6)}
+              className="w-20 sm:w-24 h-1 bg-red-600 mx-auto"
+            ></motion.div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+          <motion.div
+            variants={staggerContainer(0.2, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
+          >
             {testimonials.map((testimonial, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={zoomIn(index * 0.1, 0.6)}
+                whileHover={{ scale: 1.05, y: -10 }}
                 className="bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl hover:-translate-y-2 transition-transform duration-300"
               >
-                <div className="flex items-center mb-3 sm:mb-4">
+                <motion.div
+                  variants={staggerContainer(0.1, 0.2)}
+                  className="flex items-center mb-3 sm:mb-4"
+                >
                   {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-yellow-400 fill-current"
-                    />
+                    <motion.div key={i} variants={rotateIn(i * 0.1, 0.3)}>
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-yellow-400 fill-current" />
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
                 <p className="text-xs sm:text-sm md:text-base text-gray-300 mb-4 sm:mb-6 italic">
                   "{testimonial.content}"
                 </p>
@@ -527,9 +644,9 @@ const OptimizedITServices = () => {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -537,26 +654,46 @@ const OptimizedITServices = () => {
       <section id="process" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <motion.div
+            variants={fadeIn("up", 0.2, 0.8)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-center mb-8 sm:mb-12 md:mb-16"
+          >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Our Execution Process
             </h2>
-            <div className="w-20 md:w-26 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto"></div>
-          </div>
+            <motion.div
+              variants={scaleIn(0.3, 0.6)}
+              className="w-20 md:w-26 h-1 bg-gradient-to-r from-red-600 to-red-700 mx-auto"
+            ></motion.div>
+          </motion.div>
 
           {/* Top Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
-            {topSteps.map((step) => {
+          <motion.div
+            variants={staggerContainer(0.2, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16"
+          >
+            {topSteps.map((step, index) => {
               const IconComponent = step.icon;
               return (
-                <div
+                <motion.div
                   key={step.id}
+                  variants={slideIn("up", index * 0.1, 0.6)}
+                  whileHover={{ scale: 1.05, y: -10 }}
                   className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                    <motion.div
+                      variants={bounceIn(0.2)}
+                      className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 sm:mb-4"
+                    >
                       <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-red-800" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                       {step.title}
                     </h3>
@@ -564,35 +701,67 @@ const OptimizedITServices = () => {
                       {step.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
 
           {/* Connecting Lines */}
-          <div className="flex justify-center mb-8 sm:mb-12 md:mb-16">
+          <motion.div
+            variants={fadeIn("up", 0.5, 0.6)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.5 }}
+            className="flex justify-center mb-8 sm:mb-12 md:mb-16"
+          >
             <div className="hidden md:flex items-center">
-              <div className="w-20 sm:w-24 h-px bg-gray-900"></div>
-              <div className="w-2 sm:w-3 h-2 sm:h-3 bg-red-800 rounded-full mx-2"></div>
-              <div className="w-20 sm:w-24 h-px bg-gray-900"></div>
-              <div className="w-2 sm:w-3 h-2 sm:h-3 bg-red-800 rounded-full mx-2"></div>
-              <div className="w-20 sm:w-24 h-px bg-gray-900"></div>
+              <motion.div
+                variants={scaleIn(0.1, 0.4)}
+                className="w-20 sm:w-24 h-px bg-gray-900"
+              ></motion.div>
+              <motion.div
+                variants={bounceIn(0.2)}
+                className="w-2 sm:w-3 h-2 sm:h-3 bg-red-800 rounded-full mx-2"
+              ></motion.div>
+              <motion.div
+                variants={scaleIn(0.3, 0.4)}
+                className="w-20 sm:w-24 h-px bg-gray-900"
+              ></motion.div>
+              <motion.div
+                variants={bounceIn(0.4)}
+                className="w-2 sm:w-3 h-2 sm:h-3 bg-red-800 rounded-full mx-2"
+              ></motion.div>
+              <motion.div
+                variants={scaleIn(0.5, 0.4)}
+                className="w-20 sm:w-24 h-px bg-gray-900"
+              ></motion.div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Bottom Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
-            {bottomSteps.map((step) => {
+          <motion.div
+            variants={staggerContainer(0.2, 0.1)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto"
+          >
+            {bottomSteps.map((step, index) => {
               const IconComponent = step.icon;
               return (
-                <div
+                <motion.div
                   key={step.id}
+                  variants={slideIn("up", index * 0.2, 0.6)}
+                  whileHover={{ scale: 1.05, y: -10 }}
                   className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                    <motion.div
+                      variants={bounceIn(0.2)}
+                      className="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mb-3 sm:mb-4"
+                    >
                       <IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-red-800" />
-                    </div>
+                    </motion.div>
                     <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                       {step.title}
                     </h3>
@@ -600,10 +769,10 @@ const OptimizedITServices = () => {
                       {step.description}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
