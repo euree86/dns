@@ -39,11 +39,11 @@ const HomeHero = () => {
   }, []);
 
   return (
-    <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100">
+    <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100 overflow-x-hidden">
       <Nav />
 
       {/* Hero Section with Animation */}
-      <section className="overflow-hidden relative">
+      <section className="overflow-hidden relative overflow-x-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-24 items-center">
             {/* Left Content */}
@@ -51,7 +51,7 @@ const HomeHero = () => {
               className="flex flex-col justify-center space-y-4 sm:space-y-6 order-1 lg:order-0"
               variants={slideIn("left", 0.2)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: true }}
             >
               <div className="space-y-4 sm:space-y-6">
@@ -59,7 +59,7 @@ const HomeHero = () => {
                   className="inline-block rounded-lg bg-red-100 px-3 py-1 text-xs sm:text-sm text-red-700 mb-2 sm:mb-4"
                   variants={fadeIn("down", 0.3)}
                   initial="hidden"
-                  whileInView="show"
+                  animate="show"
                   viewport={{ once: true }}
                 >
                   Innovative Technology Solutions
@@ -68,7 +68,7 @@ const HomeHero = () => {
                   className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter leading-tight"
                   variants={fadeIn("left", 0.4)}
                   initial="hidden"
-                  whileInView="show"
+                  animate="show"
                   viewport={{ once: true }}
                 >
                   Transforming Your{" "}
@@ -78,7 +78,7 @@ const HomeHero = () => {
                   className="max-w-[600px] text-slate-500 text-sm sm:text-base md:text-lg lg:text-xl"
                   variants={fadeIn("left", 0.5)}
                   initial="hidden"
-                  whileInView="show"
+                  animate="show"
                   viewport={{ once: true }}
                 >
                   We build cutting-edge software and network solutions that help
@@ -91,7 +91,7 @@ const HomeHero = () => {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 variants={fadeUp(0.6)}
                 initial="hidden"
-                whileInView="show"
+                animate="show"
                 viewport={{ once: true }}
               >
                 <Link to="/services">
@@ -123,7 +123,7 @@ const HomeHero = () => {
                 className="flex items-center gap-3 sm:gap-4 mt-6 sm:mt-8"
                 variants={fadeUp(0.7)}
                 initial="hidden"
-                whileInView="show"
+                animate="show"
                 viewport={{ once: true }}
               >
                 <div className="flex -space-x-2">
@@ -133,7 +133,7 @@ const HomeHero = () => {
                       className="inline-block h-6 w-6 sm:h-8 sm:w-8 rounded-full ring-2 ring-white overflow-hidden"
                       variants={fadeIn("up", 0.2 + i * 0.1)}
                       initial="hidden"
-                      whileInView="show"
+                      animate="show"
                       viewport={{ once: true }}
                     >
                       <img
@@ -148,7 +148,7 @@ const HomeHero = () => {
                   className="text-xs sm:text-sm text-slate-500"
                   variants={fadeIn("up", 0.8)}
                   initial="hidden"
-                  whileInView="show"
+                  animate="show"
                   viewport={{ once: true }}
                 >
                   <span className="font-medium text-slate-900">500+</span>{" "}
@@ -162,14 +162,14 @@ const HomeHero = () => {
               className="relative order-0 lg:order-1"
               variants={slideIn("right", 0.3)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: true }}
             >
               <motion.div
                 className="relative bg-white rounded-xl overflow-hidden"
                 variants={zoomIn(0.4)}
                 initial="hidden"
-                whileInView="show"
+                animate="show"
                 viewport={{ once: true }}
               >
                 <img
@@ -213,7 +213,7 @@ const HomeHero = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="w-full py-6 sm:py-8 bg-gradient-to-r from-red-800 to-red-700 text-white">
+      <section className="w-full py-6 sm:py-8 bg-gradient-to-r from-red-800 to-red-700 text-white overflow-x-hidden">
         <motion.div
           className="container mx-auto px-4 sm:px-6 lg:px-8"
           ref={statsRef}
@@ -226,7 +226,7 @@ const HomeHero = () => {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center"
             variants={staggerContainer(0.1, 0.3)}
             initial="hidden"
-            whileInView="show"
+            animate="show"
             viewport={{ once: true }}
           >
             {[

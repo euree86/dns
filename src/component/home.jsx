@@ -155,7 +155,7 @@ const Home = () => {
   const ServiceCard = ({ service, index }) => (
     <motion.div
       key={index}
-      className="group"
+      className="group w-full"
       variants={fadeUp(index * 0.1)}
       initial="hidden"
       whileInView="show"
@@ -178,7 +178,7 @@ const Home = () => {
   const ProcessStep = ({ step, index, isLast }) => (
     <motion.div
       key={index}
-      className="flex gap-3 sm:gap-4"
+      className="flex gap-3 sm:gap-4 w-full"
       variants={slideIn("left", index * 0.1)}
       initial="hidden"
       whileInView="show"
@@ -190,9 +190,9 @@ const Home = () => {
           <div className="absolute w-0.5 bg-red-100 top-8 sm:top-10 left-1/2 -translate-x-1/2 h-[calc(100%+1.5rem)] hidden sm:block"></div>
         )}
       </div>
-      <div>
+      <div className="flex-1 min-w-0">
         <h3 className="text-lg sm:text-xl font-bold">{step.title}</h3>
-        <p className="text-slate-500 mt-2 text-sm sm:text-base">
+        <p className="text-slate-500 mt-2 text-sm sm:text-base break-words">
           {step.description}
         </p>
       </div>
@@ -202,7 +202,7 @@ const Home = () => {
   const PortfolioCard = ({ item, index }) => (
     <motion.div
       key={index}
-      className="group relative overflow-hidden rounded-xl shadow-xl"
+      className="group relative overflow-hidden rounded-xl shadow-xl w-full"
       variants={zoomIn(index * 0.1)}
       initial="hidden"
       whileInView="show"
@@ -244,14 +244,14 @@ const Home = () => {
   );
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
       <Homehero />
 
       {/* About Us Section */}
-      <section className="bg-white py-20 sm:py-28 lg:py-36">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 xl:gap-36">
+      <section className="bg-white py-20 sm:py-28 lg:py-36 overflow-x-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-20">
             <motion.div
               className="relative w-full lg:w-1/2 order-2 lg:order-1"
               variants={slideIn("left", 0.2)}
@@ -259,17 +259,17 @@ const Home = () => {
               whileInView="show"
               viewport={{ once: false }}
             >
-              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-full h-full bg-gray-100 rounded-lg transform -rotate-3"></div>
-              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-full h-full bg-gray-100 rounded-lg transform rotate-3"></div>
+              <div className="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 w-full h-full bg-gray-100 rounded-lg transform -rotate-3 -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-full h-full bg-gray-100 rounded-lg transform rotate-3 -z-10"></div>
               <img
                 src="https://img.freepik.com/premium-photo/person-using-laptop-with-dns-domain-name-system-icons-symbols-displayed-screen_973183-53181.jpg?w=900"
                 alt="DNS Technology"
-                className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-xl relative z-10 animate-fade-in-left"
+                className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-lg shadow-xl relative z-10"
               />
             </motion.div>
 
             <motion.div
-              className="w-full lg:w-1/2 animate-fade-in-right order-1 lg:order-2"
+              className="w-full lg:w-1/2 order-1 lg:order-2"
               variants={slideIn("right", 0.2)}
               initial="hidden"
               whileInView="show"
@@ -336,11 +336,11 @@ const Home = () => {
       <Producthome />
 
       {/* What We Do Section */}
-      <section className="w-full py-12 sm:py-16 md:py-24 lg:py-32 bg-white flex justify-center">
-        <div className="container px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 lg:gap-16 xl:gap-24 lg:grid-cols-2 items-center">
+      <section className="w-full py-12 sm:py-16 md:py-24 lg:py-32 bg-white overflow-x-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div className="grid gap-8 lg:gap-12 xl:gap-16 lg:grid-cols-2 items-center">
             <motion.div
-              className="relative order-2 lg:order-1"
+              className="relative order-2 lg:order-1 w-full"
               variants={slideIn("left", 0.2)}
               initial="hidden"
               whileInView="show"
@@ -349,7 +349,7 @@ const Home = () => {
               <img
                 src="https://cdn.pixabay.com/photo/2017/07/20/09/25/businessman-2521703_1280.jpg"
                 alt="What We Do"
-                className="mx-auto rounded-xl overflow-hidden h-80 sm:h-96 lg:h-[600px] w-full object-cover"
+                className="w-full rounded-xl overflow-hidden h-80 sm:h-96 lg:h-[500px] object-cover"
               />
               <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 bg-white rounded-lg shadow-lg p-3 sm:p-4 animate-float">
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -357,15 +357,15 @@ const Home = () => {
                     <Code className="h-4 w-4 sm:h-5 sm:w-5 text-red-600" />
                   </div>
                   <div>
-                    <p className="text-xs font-medium">Agile Development</p>
-                    <p className="text-xs text-slate-500">Iterative approach</p>
+                    <p className="text-xs font-medium whitespace-nowrap">Agile Development</p>
+                    <p className="text-xs text-slate-500 whitespace-nowrap">Iterative approach</p>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              className="order-1 lg:order-2"
+              className="order-1 lg:order-2 w-full"
               variants={slideIn("right", 0.2)}
               initial="hidden"
               whileInView="show"
@@ -399,8 +399,8 @@ const Home = () => {
       </section>
 
       {/* Our Services Section */}
-      <section className="bg-[#F3F4F6] py-12 sm:py-16 lg:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#F3F4F6] py-12 sm:py-16 lg:py-20 overflow-x-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
           <SectionHeader
             title="Our Services"
             subtitle="Specialized networking solutions for every industry"
@@ -418,7 +418,7 @@ const Home = () => {
               Hardware Level Services
             </motion.h3>
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10"
               variants={staggerContainer(0.1, 0.3)}
               initial="hidden"
               whileInView="show"
@@ -442,7 +442,7 @@ const Home = () => {
               Software Level Services
             </motion.h3>
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 lg:gap-16"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10"
               variants={staggerContainer(0.1, 0.3)}
               initial="hidden"
               whileInView="show"
@@ -461,8 +461,8 @@ const Home = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section className="bg-gray-50 py-16 sm:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-50 py-16 sm:py-20 overflow-x-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
           <SectionHeader
             title="Our Portfolio"
             subtitle="Explore our successful projects and implementations across various industries."

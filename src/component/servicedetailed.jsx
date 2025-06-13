@@ -178,7 +178,7 @@ const ServiceDetailed = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* cloud services */}
       <div className="container mx-auto p-8 ">
         <div className="flex flex-col lg:flex-row gap-8">

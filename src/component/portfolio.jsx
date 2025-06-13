@@ -124,7 +124,7 @@ const settings = {
 
 const Portfolio = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Nav />
 
       {/* Hero Section */}
@@ -134,7 +134,7 @@ const Portfolio = () => {
             <motion.div
               variants={zoomIn(0.2, 0.8)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="relative flex justify-center order-2 lg:order-1"
             >
@@ -149,7 +149,7 @@ const Portfolio = () => {
             <motion.div
               variants={fadeIn("left", 0.3, 0.8)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="text-black space-y-6 sm:space-y-8 order-1 lg:order-2"
             >

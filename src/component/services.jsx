@@ -336,7 +336,7 @@ const OptimizedITServices = () => {
   const bottomSteps = processSteps.filter((step) => step.position === "bottom");
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Nav />
 
       {/* Hero Section */}
@@ -347,7 +347,7 @@ const OptimizedITServices = () => {
             <motion.div
               variants={fadeIn("right", 0.2, 0.8)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="text-black space-y-6 lg:space-y-8 order-2 lg:order-1"
             >
@@ -386,7 +386,7 @@ const OptimizedITServices = () => {
             <motion.div
               variants={zoomIn(0.4, 0.8)}
               initial="hidden"
-              whileInView="show"
+           animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="flex justify-center order-1 lg:order-2"
             >

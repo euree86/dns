@@ -419,7 +419,7 @@ const ProductShowcase = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       <Nav />
 
       {/* Hero Section */}
@@ -429,7 +429,7 @@ const ProductShowcase = () => {
             <motion.div
               variants={zoomIn(0.2, 0.8)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="relative flex justify-center order-2 lg:order-1"
             >
@@ -444,7 +444,7 @@ const ProductShowcase = () => {
             <motion.div
               variants={fadeIn("left", 0.3, 0.8)}
               initial="hidden"
-              whileInView="show"
+              animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="text-black space-y-6 sm:space-y-8 order-1 lg:order-2"
             >

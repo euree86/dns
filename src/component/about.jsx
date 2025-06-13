@@ -196,25 +196,25 @@ const companies = [
 
 export default function ITSolutionsSection() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Nav />
 
       {/* Hero Section */}
-      <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100">
+      <div className="pt-16 sm:pt-20 md:pt-24 bg-gray-100 overflow-x-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               variants={fadeIn("right", 0.2, 0.8)}
               initial="hidden"
-              whileInView={"show"}
+              animate="show"
               viewport={{ once: false, amount: 0.2 }}
-              className="text-black space-y-6 lg:space-y-8 order-2 lg:order-1"
+              className="text-black space-y-6 lg:space-y-8 order-0 lg:order-1"
             >
               <motion.h1
                 variants={slideUp(0.3, 0.8)}
                 initial="hidden"
-                whileInView={"show"}
+                 animate="show"
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
               >
@@ -224,7 +224,7 @@ export default function ITSolutionsSection() {
               <motion.p
                 variants={fadeUp(0.5, 0.6)}
                 initial="hidden"
-                whileInView={"show"}
+                 animate="show"
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic"
               >
@@ -236,7 +236,7 @@ export default function ITSolutionsSection() {
               <motion.div
                 variants={fadeUp(0.5, 0.6)}
                 initial="hidden"
-                whileInView={"show"}
+                 animate="show"
                 viewport={{ once: false, amount: 0.3 }}
                 className="pt-4"
               >
@@ -252,9 +252,9 @@ export default function ITSolutionsSection() {
             <motion.div
               variants={zoomIn(0.4, 0.8)}
               initial="hidden"
-              whileInView={"show"}
+               animate="show"
               viewport={{ once: false, amount: 0.3 }}
-              className="relative flex justify-center order-1 lg:order-2"
+              className="relative flex justify-center order- lg:order-1"
             >
               <div className="relative w-2/3 max-w-lg">
                 <img
@@ -285,7 +285,7 @@ export default function ITSolutionsSection() {
       </div>
 
       {/* Introduction Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 overflow-x-hidden">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Image Section */}
           <motion.div
@@ -362,7 +362,7 @@ export default function ITSolutionsSection() {
       </div>
 
       {/* Services Section */}
-      <div className="bg-[#F2F2F2]">
+      <div className="bg-[#F2F2F2] overflow-x-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <motion.div
             variants={fadeIn("up", 0.2, 0.8)}
@@ -430,7 +430,7 @@ export default function ITSolutionsSection() {
       </div>
 
       {/* CEO Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 overflow-x-hidden">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-16">
           <motion.div
             variants={slideIn("left", 0.2, 0.8)}
@@ -526,7 +526,7 @@ export default function ITSolutionsSection() {
       </div>
 
       {/* Team Section */}
-      <div className="bg-[#F2F2F2] py-12 sm:py-16 lg:py-20">
+      <div className="bg-[#F2F2F2] py-12 sm:py-16 lg:py-20 overflow-x-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Section Header */}
           <motion.div
@@ -640,7 +640,7 @@ export default function ITSolutionsSection() {
       </div>
 
       {/* Trusted Companies Section */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 text-center overflow-x-hidden">
         <motion.div
           variants={fadeIn("up", 0.2, 0.8)}
           initial="hidden"
