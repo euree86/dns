@@ -183,7 +183,7 @@ const productCategories = [
         category: "Networking",
         price: "Rs 15,000",
         image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-photo/man-plugging-ethernet-cable-wireless-router_53876-139544.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Enterprise grade switches",
       },
       {
@@ -192,7 +192,7 @@ const productCategories = [
         category: "Networking",
         price: "Rs 8,500",
         image:
-          "https://images.unsplash.com/photo-1606904825846-647eb07f5be2?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-photo/network-switch-with-cables_1137-6.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Power over Ethernet solutions",
       },
     ],
@@ -207,7 +207,7 @@ const productCategories = [
         category: "Servers",
         price: "Rs 85,000",
         image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-vector/two-black-server-racks-realistic-illustration_1284-12129.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Enterprise rack servers",
       },
       {
@@ -216,7 +216,7 @@ const productCategories = [
         category: "Servers",
         price: "Rs 65,000",
         image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-vector/network-servers-isolated_98292-6502.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Powerful tower servers",
       },
       {
@@ -225,16 +225,16 @@ const productCategories = [
         category: "Storage",
         price: "Rs 45,000",
         image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-psd/cloud-computing-server-digital-data-storage-network-infrastructure_191095-86102.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Network attached storage",
       },
       {
         id: 8,
         name: "Server Rack",
-        category: "Infrastructure",
+        category: "Server",
         price: "Rs 25,000",
         image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-photo/mainframe-devices-racks-room-with-big-data-cyber-internet-content-neon-light-cloud-computing-server-cabinet-modern-communication-storage-hardware-system_90220-1386.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Professional server racks",
       },
     ],
@@ -249,7 +249,7 @@ const productCategories = [
         category: "Desktop",
         price: "Rs 35,000",
         image:
-          "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop&crop=center",
+          "https://img.freepik.com/free-photo/display-with-some-device-table_140725-8405.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
         description: "Entry level desktop systems",
       },
       {

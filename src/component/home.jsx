@@ -22,13 +22,13 @@ const Home = () => {
   const hardwareServices = [
     {
       image:
-        "https://cdn.pixabay.com/photo/2015/10/05/21/03/circuit-board-973311_960_720.jpg",
+        "https://img.freepik.com/free-photo/young-man-engineer-making-program-analyses_1303-20402.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Server and Computer Installation",
       description: "Expert setup and configuration",
     },
     {
       image:
-        "https://cdn.pixabay.com/photo/2023/04/10/10/30/keyboard-7913431_1280.jpg",
+        "https://img.freepik.com/free-photo/cctv-security-technology-with-lock-icon-digital-remix_53876-104935.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "CCTV Installation",
       description: "Comprehensive security monitoring",
     },
@@ -40,7 +40,7 @@ const Home = () => {
     },
     {
       image:
-        "https://cdn.pixabay.com/photo/2014/10/23/14/34/network-cables-499792_1280.jpg",
+        "https://img.freepik.com/free-photo/hacker-cracking-binary-code-data-security_53876-97922.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Firewall Configuration and Security",
       description: "Robust protection systems",
     },
@@ -49,14 +49,14 @@ const Home = () => {
   const softwareServices = [
     {
       image:
-        "https://cdn.pixabay.com/photo/2016/08/05/07/17/laptop-1571702_1280.jpg",
+        "https://img.freepik.com/free-photo/programming-background-collage_23-2149901789.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Website and Software Development",
       icon: <Code className="w-6 h-6 text-white" />,
       description: "Custom digital solutions",
     },
     {
       image:
-        "https://cdn.pixabay.com/photo/2015/06/24/15/45/code-820275_1280.jpg",
+        "https://img.freepik.com/free-photo/website-hosting-concept-with-screen_23-2149406775.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Domain and Hosting",
       icon: <Globe className="w-6 h-6 text-white" />,
       description: "Reliable web infrastructure",
@@ -70,7 +70,7 @@ const Home = () => {
     },
     {
       image:
-        "https://cdn.pixabay.com/photo/2015/10/21/08/22/media-998990_1280.jpg",
+        "https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149024129.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "UI/UX Design",
       icon: <Palette className="w-6 h-6 text-white" />,
       description: "Intuitive user experiences",
@@ -347,7 +347,7 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <img
-                src="https://cdn.pixabay.com/photo/2017/07/20/09/25/businessman-2521703_1280.jpg"
+                src="https://img.freepik.com/free-vector/meeting-question-concept-illustration_114360-24586.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740"
                 alt="What We Do"
                 className="w-full rounded-xl overflow-hidden h-80 sm:h-96 lg:h-[500px] object-cover"
               />

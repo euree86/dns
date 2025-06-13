@@ -8,32 +8,32 @@ import { slideIn, fadeUp, zoomIn, staggerContainer, bounceIn } from "../variants
 const ProductHome = () => {
   const products = [
     {
-      image: "https://cdn.pixabay.com/photo/2017/06/18/23/10/cctv-2417559_960_720.jpg",
+      image: "https://img.freepik.com/free-vector/server-rack-security-shield-realistic-illustration_1284-12131.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "FireWalls Devices and Licences",
       description: "From new installations to repairs, we ensure your network is safe and fully protected.",
     },
     {
-      image: "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_1280.jpg",
+      image: "https://img.freepik.com/free-photo/networking-concept-still-life-composition_23-2149035685.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Network Cables",
       description: "From new installations to repairs, we ensure your network is safe and fully connected.",
     },
     {
-      image: "https://cdn.pixabay.com/photo/2023/03/17/20/42/camera-7859402_1280.jpg",
+      image: "https://img.freepik.com/free-psd/technological-camera-isolated_23-2151196899.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "CCTV and Surveillance",
       description: "From new installations to repairs, we ensure your home is safe and fully monitored.",
     },
     {
-      image: "https://cdn.pixabay.com/photo/2014/05/21/15/35/photographer-349871_1280.jpg",
+      image: "https://img.freepik.com/free-vector/network-servers-isolated_98292-6502.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Server and Network Rack",
       description: "From new installations to repairs, we ensure your infrastructure is safe and fully optimized.",
     },
     {
-      image: "https://cdn.pixabay.com/photo/2019/11/12/09/03/proxy-4620559_1280.jpg",
+      image: "https://img.freepik.com/free-photo/network-switch-with-cables_1137-6.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "Network Switches",
       description: "From new installations to repairs, we ensure your connectivity is safe and fully managed.",
     },
     {
-      image: "https://cdn.pixabay.com/photo/2014/12/18/13/53/raspberry-pi-572481_960_720.jpg",
+      image: "https://img.freepik.com/free-photo/man-plugging-ethernet-cable-wireless-router_53876-139544.jpg?ga=GA1.1.2040509304.1743746768&semt=ais_hybrid&w=740",
       title: "AP (Access Point Devices)",
       description: "From new installations to repairs, we ensure your wireless coverage is safe and fully reliable.",
     },

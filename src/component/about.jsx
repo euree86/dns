@@ -89,11 +89,11 @@ const services = [
 const teamMembers = [
   {
     id: 1,
-    name: "Sophia Lee",
-    position: "CEO & Co-Founder",
+    name: "Ranjit Basu",
+    position: "Dot Net Developer",
     image:
       "https://cdn.pixabay.com/photo/2017/05/19/12/38/entrepreneur-2326419_960_720.jpg",
-    bio: "Visionary leader with 12+ years in tech innovation and strategic business development.",
+    bio: "Visionary .NET Developer and Tech Leader with 12+ years of experience driving innovation, leading cross-functional teams, and delivering scalable software solutions. ",
     skills: ["Leadership", "Strategy", "Innovation"],
     social: {
       linkedin: "#",
@@ -103,11 +103,11 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Olivia Kim",
-    position: "Co-Founder & CTO",
+    name: "Sarad Bhatta",
+    position: "Backend Developer",
     image:
       "https://cdn.pixabay.com/photo/2024/11/22/13/20/man-9216455_1280.jpg",
-    bio: "Technical architect specializing in scalable solutions and emerging technologies.",
+    bio: "Results-driven Backend Developer with 4+ years of experience in building robust, scalable, and high-performance server-side applications. ",
     skills: ["Full-Stack", "Cloud", "AI/ML"],
     social: {
       linkedin: "#",
@@ -117,11 +117,11 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Mark Martin",
-    position: "Business Developer",
+    name: "Sailesh Kadel",
+    position: "Mobile App Developer",
     image:
       "https://cdn.pixabay.com/photo/2022/09/02/18/35/man-7428188_1280.jpg",
-    bio: "Growth expert focused on partnerships and market expansion strategies.",
+    bio: "Innovative Mobile App Developer with  years of experience crafting high-performing, user-centric applications for iOS and Android platforms. ",
     skills: ["Sales", "Partnerships", "Growth"],
     social: {
       linkedin: "#",
@@ -131,11 +131,11 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Sarah Chen",
-    position: "Head of Design",
+    name: "Bimala Bhatta",
+    position: "UI/UX Designer",
     image:
       "https://img.freepik.com/free-photo/business-owner-working-their-strategy_23-2149241318.jpg?semt=ais_hybrid&w=740",
-    bio: "Creative designer passionate about user experience and visual storytelling.",
+    bio: "Creative UI/UX Designer with 1+ years of experience transforming ideas into intuitive, engaging digital experiences.",
     skills: ["UI/UX", "Branding", "Product"],
     social: {
       linkedin: "#",
