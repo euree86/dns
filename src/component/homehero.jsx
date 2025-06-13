@@ -44,7 +44,7 @@ const HomeHero = () => {
 
       {/* Hero Section with Animation */}
       <section className="overflow-hidden relative overflow-x-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-24 items-center">
             {/* Left Content */}
             <motion.div
@@ -213,7 +213,7 @@ const HomeHero = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="w-full py-6 sm:py-8 bg-gradient-to-r from-red-800 to-red-700 text-white overflow-x-hidden">
+      <section className="w-full py-6 sm:py-8 bg-gradient-to-r  from-red-800 to-red-700 text-white overflow-x-hidden mt-8">
         <motion.div
           className="container mx-auto px-4 sm:px-6 lg:px-8"
           ref={statsRef}
