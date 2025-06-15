@@ -205,7 +205,7 @@ const ServiceDetailed = () => {
                 <motion.div
                   key={index}
                   variants={zoomIn(index * 0.1, 0.6)}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.0, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
@@ -318,7 +318,7 @@ const ServiceDetailed = () => {
                 <motion.div
                   key={index}
                   variants={zoomIn(index * 0.1, 0.6)}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.0, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
@@ -363,7 +363,7 @@ const ServiceDetailed = () => {
                 <motion.div
                   key={index}
                   variants={zoomIn(index * 0.1, 0.6)}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.0, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
@@ -476,7 +476,7 @@ const ServiceDetailed = () => {
                 <motion.div
                   key={index}
                   variants={zoomIn(index * 0.1, 0.6)}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.0, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
@@ -521,7 +521,7 @@ const ServiceDetailed = () => {
                 <motion.div
                   key={index}
                   variants={zoomIn(index * 0.1, 0.6)}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.0, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >
@@ -634,7 +634,7 @@ const ServiceDetailed = () => {
                 <motion.div
                   key={index}
                   variants={zoomIn(index * 0.1, 0.6)}
-                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileHover={{ scale: 1.0, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`${service.bgColor} ${service.borderColor} border-2 rounded-lg p-6 hover:scale-105 transition-transform duration-300 cursor-pointer group`}
                 >

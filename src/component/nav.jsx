@@ -347,7 +347,7 @@ export default function Navbar() {
   ]
 
   const navItems = [
-    { to: "/home", label: "Home" },
+    { to: "/", label: "Home" },
     { to: "/about", label: "About Us", hasDropdown: true, megaMenuType: "about" },
     { to: "/products", label: "Product", hasDropdown: true, megaMenuType: "products" },
     { to: "/services", label: "Services", hasDropdown: true, megaMenuType: "services" },
