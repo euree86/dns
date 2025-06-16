@@ -612,7 +612,7 @@ export default function ITSolutionsSection() {
           </motion.div>
 
           {/* Call to Action */}
-          <motion.div
+          {/* <motion.div
             variants={zoomIn(0.5, 0.8)}
             initial="hidden"
             whileInView={"show"}
@@ -635,7 +635,7 @@ export default function ITSolutionsSection() {
                 View Open Positions
               </motion.button>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 
