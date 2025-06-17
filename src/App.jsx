@@ -11,7 +11,8 @@ import Footer from "./component/footer";
 import Homehero from "./component/homehero";
 import Eg from "./component/services.jsx";
 import Servicedetailed from "./component/servicedetailed";
-
+import Liscence from "./component/liscence.jsx";
+import Blogs from "./component/blogs.jsx";
 function App() {
   return (
     <Router>
@@ -24,6 +25,8 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/nav" element={<Nav />} />
+        <Route path="/liscence" element={<Liscence/>} />
+        <Route path="/blogs" element={<Blogs />} />
 
         <Route path="/homehero" element={<Homehero />} />
         <Route path="/eg" element={<Eg />} />

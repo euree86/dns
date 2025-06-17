@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import logo from "../image/logo.png"
-import { IoIosCall } from "react-icons/io"
-import { MdEmail } from "react-icons/md"
-import { IoChevronDown } from "react-icons/io5"
-import { CiLocationOn } from "react-icons/ci"
-import { FaFacebookF, FaLinkedinIn } from "react-icons/fa"
-import { FiInstagram } from "react-icons/fi"
-import { HiMenu, HiX } from "react-icons/hi"
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import logo from "../image/logo.png";
+import { IoIosCall } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { IoChevronDown } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FiInstagram } from "react-icons/fi";
+import { HiMenu, HiX } from "react-icons/hi";
 
 // Mega menu data structure for better maintainability
 const megaMenuData = {
@@ -41,7 +41,12 @@ const megaMenuData = {
       sections: [
         {
           title: "Networking",
-          items: ["Switch (Brand)", "POE / Non-POE", "Full Gig Switch", "Non-Gig Switch"],
+          items: [
+            "Switch (Brand)",
+            "POE / Non-POE",
+            "Full Gig Switch",
+            "Non-Gig Switch",
+          ],
         },
         {
           title: "Security",
@@ -73,7 +78,14 @@ const megaMenuData = {
         },
         {
           title: "Accessories",
-          items: ["Keyboard", "Mouse", "HDMI Cables", "Power Bank", "Storage", "RAM"],
+          items: [
+            "Keyboard",
+            "Mouse",
+            "HDMI Cables",
+            "Power Bank",
+            "Storage",
+            "RAM",
+          ],
         },
       ],
     },
@@ -97,7 +109,12 @@ const megaMenuData = {
   services: [
     {
       title: "IT Services",
-      items: ["Network Setup & Configuration", "System Integration", "Cloud Solutions", "IT Support & Maintenance"],
+      items: [
+        "Network Setup & Configuration",
+        "System Integration",
+        "Cloud Solutions",
+        "IT Support & Maintenance",
+      ],
     },
     {
       title: "Hardware Services",
@@ -137,13 +154,23 @@ const megaMenuData = {
     },
     {
       title: "Managed IT Services",
-      items: ["24/7 Monitoring", "Managed Network Security", "Data Backup & Disaster Recovery", "IT Helpdesk Support"],
+      items: [
+        "24/7 Monitoring",
+        "Managed Network Security",
+        "Data Backup & Disaster Recovery",
+        "IT Helpdesk Support",
+      ],
     },
   ],
   portfolio: [
     {
       title: "Networking Projects",
-      items: ["Enterprise Network Setup", "Campus Wi-Fi Solutions", "Secure VPN Deployment", "Data Center Networking"],
+      items: [
+        "Enterprise Network Setup",
+        "Campus Wi-Fi Solutions",
+        "Secure VPN Deployment",
+        "Data Center Networking",
+      ],
     },
     {
       title: "Surveillance Projects",
@@ -156,7 +183,12 @@ const megaMenuData = {
     },
     {
       title: "Software Development",
-      items: ["Custom ERP Systems", "Courier Management Apps", "Inventory Systems", "Business Automation Tools"],
+      items: [
+        "Custom ERP Systems",
+        "Courier Management Apps",
+        "Inventory Systems",
+        "Business Automation Tools",
+      ],
     },
     {
       title: "Server & Cloud Projects",
@@ -178,10 +210,15 @@ const megaMenuData = {
     },
     {
       title: "Web & Mobile Apps",
-      items: ["E-Commerce Platforms", "Educational Portals", "Mobile CRM Solutions", "Job Portals & Listings"],
+      items: [
+        "E-Commerce Platforms",
+        "Educational Portals",
+        "Mobile CRM Solutions",
+        "Job Portals & Listings",
+      ],
     },
   ],
-}
+};
 
 // Reusable components
 const SocialIcon = ({ href, children, className = "" }) => (
@@ -192,7 +229,7 @@ const SocialIcon = ({ href, children, className = "" }) => (
   >
     {children}
   </a>
-)
+);
 
 const MegaMenuSection = ({ title, items, isProductSection = false }) => (
   <div>
@@ -224,21 +261,22 @@ const MegaMenuSection = ({ title, items, isProductSection = false }) => (
           ))}
     </ul>
   </div>
-)
+);
 
 const MegaMenu = ({ type, data, isMobile = false }) => {
   const baseClasses = isMobile
     ? `bg-gray-50 p-4 border-t border-gray-200`
     : `absolute top-full left-0 right-0 bg-gray-100 shadow-lg p-6 
  z-50 opacity-0 invisible translate-y-2 group-hover:translate-y-0 
- group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out mx-8`
+ group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out mx-8`;
 
   const getGridClasses = () => {
-    if (isMobile) return "grid grid-cols-1 gap-4"
+    if (isMobile) return "grid grid-cols-1 gap-4";
 
-    if (type === "about" || type === "products") return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-    return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-  }
+    if (type === "about" || type === "products")
+      return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6";
+    return "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8";
+  };
 
   if (type === "about") {
     return (
@@ -251,7 +289,7 @@ const MegaMenu = ({ type, data, isMobile = false }) => {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   if (type === "products") {
@@ -260,12 +298,17 @@ const MegaMenu = ({ type, data, isMobile = false }) => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className={getGridClasses()}>
             {Object.entries(data).map(([title, items]) => (
-              <MegaMenuSection key={title} title={title} items={items} isProductSection={true} />
+              <MegaMenuSection
+                key={title}
+                title={title}
+                items={items}
+                isProductSection={true}
+              />
             ))}
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   // For services and portfolio (array-based data)
@@ -274,13 +317,17 @@ const MegaMenu = ({ type, data, isMobile = false }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={getGridClasses()}>
           {data.map((section, idx) => (
-            <MegaMenuSection key={idx} title={section.title} items={section.items} />
+            <MegaMenuSection
+              key={idx}
+              title={section.title}
+              items={section.items}
+            />
           ))}
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const NavItem = ({
   to,
@@ -298,18 +345,30 @@ const NavItem = ({
           className="flex justify-between items-center py-3 px-4 cursor-pointer hover:bg-gray-50"
           onClick={hasDropdown ? onToggle : undefined}
         >
-          <Link to={to} className="flex-1 font-semibold text-gray-700" onClick={!hasDropdown ? onToggle : undefined}>
+          <Link
+            to={to}
+            className="flex-1 font-semibold text-gray-700"
+            onClick={!hasDropdown ? onToggle : undefined}
+          >
             {label}
           </Link>
           {hasDropdown && (
-            <IoChevronDown className={`font-semibold transition-transform ${isOpen ? "rotate-180" : ""}`} />
+            <IoChevronDown
+              className={`font-semibold transition-transform ${
+                isOpen ? "rotate-180" : ""
+              }`}
+            />
           )}
         </div>
         {hasDropdown && isOpen && megaMenuType && (
-          <MegaMenu type={megaMenuType} data={megaMenuData[megaMenuType]} isMobile={true} />
+          <MegaMenu
+            type={megaMenuType}
+            data={megaMenuData[megaMenuType]}
+            isMobile={true}
+          />
         )}
       </div>
-    )
+    );
   }
 
   return (
@@ -318,51 +377,76 @@ const NavItem = ({
         <h1 className="font-semibold">{label}</h1>
         {hasDropdown && <IoChevronDown className="font-semibold" />}
       </Link>
-      {hasDropdown && megaMenuType && <MegaMenu type={megaMenuType} data={megaMenuData[megaMenuType]} />}
+      {hasDropdown && megaMenuType && (
+        <MegaMenu type={megaMenuType} data={megaMenuData[megaMenuType]} />
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [openMobileDropdown, setOpenMobileDropdown] = useState(null)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 0)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setIsScrolled(window.scrollY > 0);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const contactInfo = [
     { icon: IoIosCall, text: "+977 1-4782849" },
     { icon: MdEmail, text: "dnstechnology@gmail.com" },
     { icon: CiLocationOn, text: "New Baneshwor, Kathmandu" },
-  ]
+  ];
 
   const socialLinks = [
     { icon: FaFacebookF, href: "#" },
     { icon: FiInstagram, href: "#" },
     { icon: FaLinkedinIn, href: "#" },
-  ]
+  ];
 
   const navItems = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About Us", hasDropdown: true, megaMenuType: "about" },
-    { to: "/products", label: "Product", hasDropdown: true, megaMenuType: "products" },
-    { to: "/services", label: "Services", hasDropdown: true, megaMenuType: "services" },
-    { to: "/portfolio", label: "Portfolio", hasDropdown: true, megaMenuType: "portfolio" },
+    {
+      to: "/about",
+      label: "About Us",
+      hasDropdown: true,
+      megaMenuType: "about",
+    },
+    {
+      to: "/products",
+      label: "Product",
+      hasDropdown: true,
+      megaMenuType: "products",
+    },
+
+    {
+      to: "/services",
+      label: "Services",
+      hasDropdown: true,
+      megaMenuType: "services",
+    },
+    {
+      to: "/portfolio",
+      label: "Portfolio",
+      hasDropdown: true,
+      megaMenuType: "portfolio",
+    },
+    { to: "/liscence", label: "Liscence" },
+    { to: "/blogs", label: "Blogs" },
     { to: "/contact", label: "Contact" },
-  ]
+  ];
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-    setOpenMobileDropdown(null)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setOpenMobileDropdown(null);
+  };
 
   const toggleMobileDropdown = (index) => {
-    setOpenMobileDropdown(openMobileDropdown === index ? null : index)
-  }
+    setOpenMobileDropdown(openMobileDropdown === index ? null : index);
+  };
 
   return (
     <nav
@@ -400,12 +484,18 @@ export default function Navbar() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-14 relative">
           {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <img src={logo || "/placeholder.svg"} alt="DNS Technology Logo" className="w-8 sm:w-10" />
-            <span className="text-sm sm:text-base font-semibold text-gray-700">DNS Technology Pvt Ltd.</span>
+            <img
+              src={logo || "/placeholder.svg"}
+              alt="DNS Technology Logo"
+              className="w-8 sm:w-10"
+            />
+            <span className="text-sm sm:text-base font-semibold text-gray-700">
+              DNS Technology Pvt Ltd.
+            </span>
           </div>
 
           {/* Desktop Navigation items */}
-          <div className="hidden lg:flex justify-between items-center gap-8 xl:gap-12">
+          <div className="hidden lg:flex justify-between items-center gap-6 xl:gap-12">
             {navItems.map((item, idx) => (
               <NavItem key={idx} {...item} />
             ))}
@@ -417,7 +507,11 @@ export default function Navbar() {
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <HiX className="w-6 h-6" /> : <HiMenu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <HiX className="w-6 h-6" />
+            ) : (
+              <HiMenu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -464,7 +558,11 @@ export default function Navbar() {
                   {...item}
                   isMobile={true}
                   isOpen={openMobileDropdown === idx}
-                  onToggle={() => (item.hasDropdown ? toggleMobileDropdown(idx) : toggleMobileMenu())}
+                  onToggle={() =>
+                    item.hasDropdown
+                      ? toggleMobileDropdown(idx)
+                      : toggleMobileMenu()
+                  }
                 />
               ))}
             </div>
@@ -472,5 +570,5 @@ export default function Navbar() {
         )}
       </div>
     </nav>
-  )
+  );
 }
