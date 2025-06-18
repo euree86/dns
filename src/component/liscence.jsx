@@ -152,7 +152,7 @@ const License = () => {
 
   const faqData = [
     {
-      question: "What IT services do you provide for businesses?",
+      question: "What IT services do you provide ",
       answer:
         "We offer comprehensive IT solutions including network infrastructure setup, cloud migration, cybersecurity implementation, managed IT support, system monitoring, data backup and recovery, software installation and maintenance, and 24/7 technical support. Our services are tailored to meet the specific needs of small to enterprise-level businesses.",
     },
