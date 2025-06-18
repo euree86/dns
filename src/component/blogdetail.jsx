@@ -1,9 +1,16 @@
-"use client"
-import { motion } from "framer-motion"
-import Nav from "./nav"
-import Footer from "./footer"
-import { Calendar, ArrowRight } from "lucide-react"
-import { fadeIn, slideIn, fadeUp, zoomIn, staggerContainer, scaleIn } from "../variants"
+"use client";
+import { motion } from "framer-motion";
+import Nav from "./nav";
+import Footer from "./footer";
+import { Calendar, ArrowRight } from "lucide-react";
+import {
+  fadeIn,
+  slideIn,
+  fadeUp,
+  zoomIn,
+  staggerContainer,
+  scaleIn,
+} from "../variants";
 
 const BlogDetail = () => {
   const blogPosts = [
@@ -11,33 +18,38 @@ const BlogDetail = () => {
       id: 1,
       title: "How Courier Services Work",
       date: "1 May 2026",
-      image: "https://cdn.pixabay.com/photo/2017/06/18/23/10/cctv-2417559_640.jpg",
+      image:
+        "https://cdn.pixabay.com/photo/2017/06/18/23/10/cctv-2417559_640.jpg",
     },
     {
       id: 2,
       title: "How Pickups Are Managed",
       date: "1 May 2026",
-      image: "https://cdn.pixabay.com/photo/2018/04/21/02/11/iot-3337536_640.png",
+      image:
+        "https://cdn.pixabay.com/photo/2018/04/21/02/11/iot-3337536_640.png",
     },
     {
       id: 3,
       title: "How Parcel Care and Handling",
       date: "1 May 2026",
-      image: "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_640.jpg",
+      image:
+        "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_640.jpg",
     },
     {
       id: 4,
       title: "How Your Parcel Is Delivered",
       date: "1 May 2026",
-      image: "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_640.jpg",
+      image:
+        "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_640.jpg",
     },
     {
       id: 5,
       title: "Technology Behind Modern Couriers",
       date: "1 May 2026",
-      image: "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_640.jpg",
+      image:
+        "https://cdn.pixabay.com/photo/2017/04/04/17/20/linksys-2202250_640.jpg",
     },
-  ]
+  ];
 
   const keyTakeaways = [
     "What release notes are and why they matter",
@@ -45,7 +57,7 @@ const BlogDetail = () => {
     "Best practices for tone, clarity, and consistency",
     "Common mistakes to avoid",
     "Tools and templates that can help automate and streamline the process",
-  ]
+  ];
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -58,7 +70,10 @@ const BlogDetail = () => {
           animate="show"
         >
           {/* Main Content */}
-          <motion.div className="lg:w-2/3 w-full" variants={slideIn("left", 0.2)}>
+          <motion.div
+            className="lg:w-2/3 w-full"
+            variants={slideIn("left", 0.2)}
+          >
             {/* Hero Image */}
             <motion.div className="mb-8" variants={zoomIn(0.3)}>
               <motion.img
@@ -77,42 +92,70 @@ const BlogDetail = () => {
               animate="show"
               viewport={{ once: true, amount: 0.3 }}
             >
-              <motion.h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4" variants={fadeIn("up", 0.1)}>
-                Learn how to write release notes for product releases. Follow best practices and find tools
+              <motion.h1
+                className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                variants={fadeIn("up", 0.1)}
+              >
+                Learn how to write release notes for product releases. Follow
+                best practices and find tools
               </motion.h1>
 
-              <motion.p className="text-base sm:text-lg text-red-800 mb-6 font-medium" variants={fadeIn("up", 0.2)}>
-                From pickup request to final delivery, explore the journey of your parcel.
+              <motion.p
+                className="text-base sm:text-lg text-red-800 mb-6 font-medium"
+                variants={fadeIn("up", 0.2)}
+              >
+                From pickup request to final delivery, explore the journey of
+                your parcel.
               </motion.p>
 
               <motion.div
                 className="prose text-gray-600 leading-relaxed space-y-4"
                 variants={staggerContainer(0.1, 0.3)}
               >
-                <motion.p className="text-sm sm:text-base" variants={fadeUp(0.1)}>
-                  Writing release notes may seem like a small task in the product development cycle, but it's one of the
-                  most important ways to communicate value to your users. Whether you're launching a new feature, fixing
-                  bugs, or making performance improvements, well-crafted release notes can build trust, improve user
-                  engagement, and reduce confusion or support tickets. In this guide, we'll explore how to write clear,
-                  user-friendly release notes that strike the right balance between technical accuracy and customer
-                  understanding. You'll learn:
+                <motion.p
+                  className="text-sm sm:text-base"
+                  variants={fadeUp(0.1)}
+                >
+                  Writing release notes may seem like a small task in the
+                  product development cycle, but it's one of the most important
+                  ways to communicate value to your users. Whether you're
+                  launching a new feature, fixing bugs, or making performance
+                  improvements, well-crafted release notes can build trust,
+                  improve user engagement, and reduce confusion or support
+                  tickets. In this guide, we'll explore how to write clear,
+                  user-friendly release notes that strike the right balance
+                  between technical accuracy and customer understanding. You'll
+                  learn:
                 </motion.p>
 
-                <motion.p className="text-sm sm:text-base" variants={fadeUp(0.2)}>
-                  What release notes are and why they matter How to structure your release notes for different types of
-                  updates Best practices for tone, clarity, and consistency Common mistakes to avoid Tools and templates
-                  that can help automate and streamline the process Examples from top companies doing it right Whether
-                  you're a product manager, developer, marketer, or customer support professional, mastering release
-                  note writing can enhance your product's reputation and user experience. Let's dive in and level up
-                  your product communication skills.
+                <motion.p
+                  className="text-sm sm:text-base"
+                  variants={fadeUp(0.2)}
+                >
+                  What release notes are and why they matter How to structure
+                  your release notes for different types of updates Best
+                  practices for tone, clarity, and consistency Common mistakes
+                  to avoid Tools and templates that can help automate and
+                  streamline the process Examples from top companies doing it
+                  right Whether you're a product manager, developer, marketer,
+                  or customer support professional, mastering release note
+                  writing can enhance your product's reputation and user
+                  experience. Let's dive in and level up your product
+                  communication skills.
                 </motion.p>
 
-                <motion.p className="text-sm sm:text-base" variants={fadeUp(0.3)}>
-                  Throughout the journey, real-time tracking updates are generated at key milestones (pickup, sorting,
-                  in transit, out for delivery, delivered). This transparency keeps both senders and recipients informed
-                  and reassured. On the delivery day, couriers arrive at the recipient's address, verify identity, and
-                  obtain an electronic signature or photo proof before handing over the parcel. Any missed deliveries
-                  are promptly rescheduled or routed to safe-drop options.
+                <motion.p
+                  className="text-sm sm:text-base"
+                  variants={fadeUp(0.3)}
+                >
+                  Throughout the journey, real-time tracking updates are
+                  generated at key milestones (pickup, sorting, in transit, out
+                  for delivery, delivered). This transparency keeps both senders
+                  and recipients informed and reassured. On the delivery day,
+                  couriers arrive at the recipient's address, verify identity,
+                  and obtain an electronic signature or photo proof before
+                  handing over the parcel. Any missed deliveries are promptly
+                  rescheduled or routed to safe-drop options.
                 </motion.p>
               </motion.div>
 
@@ -123,10 +166,16 @@ const BlogDetail = () => {
                 whileInView="show"
                 viewport={{ once: true, amount: 0.5 }}
               >
-                <motion.h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4" variants={fadeIn("up", 0.1)}>
+                <motion.h3
+                  className="text-lg sm:text-xl font-bold text-gray-900 mb-4"
+                  variants={fadeIn("up", 0.1)}
+                >
                   Key Takeaways
                 </motion.h3>
-                <motion.ul className="space-y-3" variants={staggerContainer(0.1, 0.2)}>
+                <motion.ul
+                  className="space-y-3"
+                  variants={staggerContainer(0.1, 0.2)}
+                >
                   {keyTakeaways.map((takeaway, index) => (
                     <motion.li
                       key={index}
@@ -138,9 +187,16 @@ const BlogDetail = () => {
                         className="inline-block w-2 h-2 bg-red-800 rounded-full mt-2 mr-3 flex-shrink-0"
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
-                        transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 260, damping: 20 }}
+                        transition={{
+                          delay: 0.5 + index * 0.1,
+                          type: "spring",
+                          stiffness: 260,
+                          damping: 20,
+                        }}
                       />
-                      <span className="text-gray-700 text-sm sm:text-base">{takeaway}</span>
+                      <span className="text-gray-700 text-sm sm:text-base">
+                        {takeaway}
+                      </span>
                     </motion.li>
                   ))}
                 </motion.ul>
@@ -148,24 +204,33 @@ const BlogDetail = () => {
 
               <motion.div className="mt-8 p-2" variants={fadeUp(0.6)}>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                  This streamlined process ensures parcels move efficiently and securely from sender to recipient,
-                  making courier services an indispensable part of modern commerce and communication.
+                  This streamlined process ensures parcels move efficiently and
+                  securely from sender to recipient, making courier services an
+                  indispensable part of modern commerce and communication.
                 </p>
               </motion.div>
             </motion.article>
           </motion.div>
 
           {/* Sidebar */}
-          <motion.div className="lg:w-1/3 w-full" variants={slideIn("right", 0.3)}>
+          <motion.div
+            className="lg:w-1/3 w-full"
+            variants={slideIn("right", 0.3)}
+          >
             <motion.div
               className="bg-white rounded-lg shadow-lg overflow-hidden"
               whileHover={{ y: -5, transition: { duration: 0.3 } }}
             >
               <motion.div className="bg-gray-50" variants={fadeIn("down", 0.1)}>
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 p-4 sm:p-6">Latest Blog Posts</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800 p-4 sm:p-6">
+                  Latest Blog Posts
+                </h2>
               </motion.div>
 
-              <motion.div className="p-2 sm:p-4" variants={staggerContainer(0.1, 0.2)}>
+              <motion.div
+                className="p-2 sm:p-4"
+                variants={staggerContainer(0.1, 0.2)}
+              >
                 {blogPosts.map((post, index) => (
                   <motion.div
                     key={post.id}
@@ -214,7 +279,7 @@ const BlogDetail = () => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default BlogDetail
+export default BlogDetail;
