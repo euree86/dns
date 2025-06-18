@@ -214,7 +214,7 @@ export default function ITSolutionsSection() {
               <motion.h1
                 variants={slideUp(0.3, 0.8)}
                 initial="hidden"
-                 animate="show"
+                animate="show"
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
               >
@@ -224,7 +224,7 @@ export default function ITSolutionsSection() {
               <motion.p
                 variants={fadeUp(0.5, 0.6)}
                 initial="hidden"
-                 animate="show"
+                animate="show"
                 viewport={{ once: false, amount: 0.3 }}
                 className="text-sm sm:text-base md:text-lg text-black leading-relaxed italic"
               >
@@ -236,7 +236,7 @@ export default function ITSolutionsSection() {
               <motion.div
                 variants={fadeUp(0.5, 0.6)}
                 initial="hidden"
-                 animate="show"
+                animate="show"
                 viewport={{ once: false, amount: 0.3 }}
                 className="pt-4"
               >
@@ -252,7 +252,7 @@ export default function ITSolutionsSection() {
             <motion.div
               variants={zoomIn(0.4, 0.8)}
               initial="hidden"
-               animate="show"
+              animate="show"
               viewport={{ once: false, amount: 0.3 }}
               className="relative flex justify-center order- lg:order-1"
             >
@@ -511,15 +511,20 @@ export default function ITSolutionsSection() {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="lg:w-1/2 w-full max-w-lg order-0 lg:order-1"
+            className="lg:w-1/2 w-full max-w-lg order-0 lg:order-1  "
           >
             <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-75 blur-md group-hover:opacity-100 transition duration-200"></div>
-              <img
-                src="https://cdn.pixabay.com/photo/2023/12/21/06/23/middle-age-8461306_1280.jpg"
-                alt="Dipesh Silwal"
-                className="relative rounded-2xl w-full h-auto shadow-xl"
-              />
+              <div className="relative">
+                <img
+                  src="https://cdn.pixabay.com/photo/2023/12/21/06/23/middle-age-8461306_1280.jpg"
+                  alt="Dipesh Silwal"
+                  className="relative rounded-lg w-full h-auto shadow-xl z-10  group-hover:scale-105 transform duration-300 ease-in-out"
+                />
+                {/* Top-right L-shape */}
+                <div className="absolute -top-4 -right-4 w-32 h-38 border-t-3 border-r-3 border-red-600 rounded-tr-lg z-20 "></div>
+                {/* Bottom-left L-shape */}
+                <div className="absolute -bottom-4 -left-4 w-32 h-38 border-b-3 border-l-3 border-red-600 rounded-bl-lg z-20"></div>
+              </div>
             </div>
           </motion.div>
         </div>

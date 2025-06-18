@@ -13,25 +13,25 @@ import Eg from "./component/services.jsx";
 import Servicedetailed from "./component/servicedetailed";
 import Liscence from "./component/liscence.jsx";
 import Blogs from "./component/blogs.jsx";
+import Blogdetail from "./component/blogdetail.jsx";
 function App() {
   return (
     <Router>
       <ScrollToTop />
       <Routes>
-
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/nav" element={<Nav />} />
-        <Route path="/liscence" element={<Liscence/>} />
+        <Route path="/liscence" element={<Liscence />} />
         <Route path="/blogs" element={<Blogs />} />
-
         <Route path="/homehero" element={<Homehero />} />
         <Route path="/eg" element={<Eg />} />
         <Route path="/svc" element={<Servicedetailed />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/blogdetail" element={<Blogdetail />} />
       </Routes>
     </Router>
   );
